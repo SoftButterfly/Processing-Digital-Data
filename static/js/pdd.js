@@ -1,6 +1,8 @@
 $(document).ready(function() {
     SyntaxHighlighter.all()
 
+    MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+
     $(".scrollspy").scrollSpy();
     $(".button-collapse").sideNav();
     $(".button-collapse").click(function(event) {
