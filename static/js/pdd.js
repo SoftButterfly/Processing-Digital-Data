@@ -1,5 +1,4 @@
 $(document).ready(function() {
-    $("#main").smoothState();
     SyntaxHighlighter.all()
 
     MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});
