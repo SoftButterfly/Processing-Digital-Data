@@ -1,0 +1,285 @@
+/******************************************************************************/
+/* Animation effects                                                          */
+/******************************************************************************/
+/* Fade effect */
+@-webkit-keyframes fade {
+    0% { opacity: 1; }
+   90% { opacity: 0; }
+  100% { opacity: 0;
+         display: none;
+         height: 0;
+         width: 0; }
+}
+
+@keyframes fade {
+    0% { opacity: 1; }
+   90% { opacity: 0; }
+  100% { opacity: 0;
+         display: none;
+         height: 0;
+         width: 0; }
+}
+
+/* Spin effect */
+@-webkit-keyframes spin {
+    0% { -webkit-transform: rotate(  0deg);
+            -moz-transform: rotate(  0deg);
+             -ms-transform: rotate(  0deg);
+              -o-transform: rotate(  0deg);
+                 transform: rotate(  0deg); }
+  100% { -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+             -ms-transform: rotate(360deg);
+              -o-transform: rotate(360deg);
+                 transform: rotate(360deg); }
+}
+
+@keyframes spin {
+    0% { -webkit-transform: rotate(  0deg);
+            -moz-transform: rotate(  0deg);
+             -ms-transform: rotate(  0deg);
+              -o-transform: rotate(  0deg);
+                 transform: rotate(  0deg); }
+  100% { -webkit-transform: rotate(360deg);
+            -moz-transform: rotate(360deg);
+             -ms-transform: rotate(360deg);
+              -o-transform: rotate(360deg);
+                 transform: rotate(360deg); }
+}
+
+/* Expand all page effect */
+@-webkit-keyframes growth {
+  100% { height: 5000px;
+         width: 5000px; }
+}
+
+@keyframes growth {
+  100% { height: 5000px;
+         width: 5000px; }
+}
+
+.growth{
+
+}
+
+/* Stop animation in final state */
+.stop-animation{
+  -webkit-animation-fill-mode: forwards!important;
+     -moz-animation-fill-mode: forwards!important;
+      -ms-animation-fill-mode: forwards!important;
+       -o-animation-fill-mode: forwards!important;
+          animation-fill-mode: forwards!important;
+}
+
+/******************************************************************************/
+/* Main layout configuration: html, body, header, main, footer                */
+/******************************************************************************/
+html, body {
+  font-size: 15px;
+  min-width: 320px;
+}
+
+body {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  margin: 0;
+  padding: 0;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #fafafa;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+/******************************************************************************/
+/* Pre loader configuration                                                   */
+/******************************************************************************/
+body{
+  overflow: hidden;1
+}
+
+body.loaded{
+  overflow: auto;
+}
+
+.page-preloader{
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  z-index: 10000;
+  overflow: hidden;
+
+  background-size: cover;
+  background-color: #FAFAFA;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.page-preloader.loaded{
+  -webkit-animation: fade 0.45s linear 0.35s;
+     -moz-animation: fade 0.45s linear 0.35s;
+      -ms-animation: fade 0.45s linear 0.35s;
+       -o-animation: fade 0.45s linear 0.35s;
+          animation: fade 0.45s linear 0.35s;
+}
+
+.page-preloader .spining-button{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 150px;
+  padding: 25px;
+
+  border-radius: 50%;
+  background-color: #FFFFFF;
+
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+.page-preloader.loaded .spining-button{
+  -webkit-animation: growth 1s ease-in-out;
+     -moz-animation: growth 1s ease-in-out;
+      -ms-animation: growth 1s ease-in-out;
+       -o-animation: growth 1s ease-in-out;
+          animation: growth 1s ease-in-out;
+}
+
+.page-preloader .spining-button i{
+  display: block;
+  height: 100%;
+  width: 100%;
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  -webkit-animation: spin 3s ease-in-out infinite;
+     -moz-animation: spin 3s ease-in-out infinite;
+      -ms-animation: spin 3s ease-in-out infinite;
+       -o-animation: spin 3s ease-in-out infinite;
+          animation: spin 3s ease-in-out infinite;
+
+  -webkit-transition: opacity 0.15s linear;
+     -moz-transition: opacity 0.15s linear;
+      -ms-transition: opacity 0.15s linear;
+       -o-transition: opacity 0.15s linear;
+          transition: opacity 0.15s linear;
+}
+
+.page-preloader.loaded .spining-button i{
+  opacity: 0;
+}
+
+/******************************************************************************/
+/* Navigation bar styles                                                   */
+/******************************************************************************/
+main, footer {
+  padding-left: 240px;
+    margin-top: 56px;
+}
+
+@media only screen and (max-width : 992px) {
+  main, footer {
+    padding-left: 0;
+  }
+}
+
+@media only screen and (max-width : 601px) {
+  mail{
+    margin-top: 64px;
+  }
+}
+
+header.navbar-fixed{
+  background-repeat: repeat-y;
+  background-position: center center;
+  background-size: 100% 100%;
+  background: -webkit-linear-gradient(to right, #FAFAFA 50%, #651FFF 50%);
+  background:    -moz-linear-gradient(to right, #FAFAFA 50%, #651FFF 50%);
+  background:     -ms-linear-gradient(to right, #FAFAFA 50%, #651FFF 50%);
+  background:      -o-linear-gradient(to right, #FAFAFA 50%, #651FFF 50%);
+  background:         linear-gradient(to right, #FAFAFA 50%, #651FFF 50%);
+}
+
+nav{
+  overflow: hidden;
+}
+
+nav a.button-collapse i{
+  width: 2.7rem;
+  background-position: center center;
+  background-size: 2.7rem 2.7rem;
+  background-repeat: no-repeat;
+}
+
+nav a.button-collapse i{
+  -webkit-transition: -webkit-transform .15s ease-in-out;
+     -moz-transition: -moz-transform .15s ease-in-out;
+      -ms-transition: -ms-transform .15s ease-in-out;
+       -o-transition: -o-transform .15s ease-in-out;
+          transition: transform .15s ease-in-out;
+}
+
+nav a.button-collapse.active i{
+  -webkit-transform: rotate(90deg);
+     -moz-transform: rotate(90deg);
+      -ms-transform: rotate(90deg);
+       -o-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+nav .brand-logo{
+  left: auto;
+  padding-left: 15px;
+  display: inline-block;
+  -webkit-transform: translateX(0);
+     -moz-transform: translateX(0);
+      -ms-transform: translateX(0);
+       -o-transform: translateX(0);
+          transform: translateX(0);
+}
+
+nav > img.nav-background{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: auto;
+  height: 100%;
+  min-height: 90px;
+
+  -webkit-transform: translate(-50%, -50%);
+     -moz-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+       -o-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+}
+
+@media only screen and (min-width: 993px){
+  nav a.button-collapse,
+  nav a.button-collapse *{
+    pointer-events: none;
+  }
+}
+
+nav a.button-collapse{
+  display: block;
+}
+
+.side-nav{
+  box-shadow: 0 5px 5px 0 rgba(0, 0, 0, 0.16), 0 5px 10px 0 rgba(0, 0, 0, 0.12);
+}
+
+
+.card .syntaxhighlighter{
+  margin: 0!important;
+}
