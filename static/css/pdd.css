@@ -293,7 +293,8 @@ ul.table-of-contents > li {
 }
 
 .table-of-contents > li > a.active {
+    color: #f50057;
     font-weight: 500;
     padding-left: 20px;
-    border-left: 10px solid #ea4a4f;
+    border-left: 10px solid #7c4dff;
 }
