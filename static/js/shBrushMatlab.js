@@ -32,14 +32,14 @@
 		var special =  'ans clc diary format home iskeyword more';
 
 		this.regexList = [
-				{ regex: /%.*$/gm,	                                        css: 'comments' },
+				{ regex: /%.*$/gm,	                                        css: 'comments'},
     			{ regex: /\%\{[\s\S]*?\%\}/gm,                              css: 'comments'},
 				{ regex: /^\s*@\w+/gm, 										css: 'decorator' },
 				{ regex: /"(?!")(?:\.|\\\"|[^\""\n])*"/gm, 					css: 'string' },
 				{ regex: /'(?!')(?:\.|(\\\')|[^\''\n])*'/gm, 				css: 'string' },
 				{ regex: /\+|\-|\*|\/|\%|=|==/gm, 							css: 'keyword' },
 				{ regex: /\b\d+\.?\w*/g, 									css: 'value' },
-				{ regex: new RegExp(this.getKeywords(funcs), 'gmi'),		css: 'functions' },
+				//{ regex: new RegExp(this.getKeywords(funcs), 'gmi'),		css: 'functions' },
 				{ regex: new RegExp(this.getKeywords(keywords), 'gm'), 		css: 'keyword' },
 				{ regex: new RegExp(this.getKeywords(special), 'gm'), 		css: 'color1' }
 				];
