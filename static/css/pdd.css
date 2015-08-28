@@ -287,3 +287,13 @@ nav a.button-collapse{
 code{
   font-size: 0.9rem;
 }
+
+ul.table-of-contents > li {
+  padding-left:0;
+}
+
+.table-of-contents > li > a.active {
+    font-weight: 500;
+    padding-left: 20px;
+    border-left: 10px solid #ea4a4f;
+}
