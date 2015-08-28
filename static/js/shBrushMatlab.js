@@ -39,7 +39,7 @@
 				{ regex: /'(?!')(?:\.|(\\\')|[^\''\n])*'/gm, 				css: 'string' },
 				{ regex: /\+|\-|\*|\/|\%|=|==/gm, 							css: 'keyword' },
 				{ regex: /\b\d+\.?\w*/g, 									css: 'value' },
-				//{ regex: new RegExp(this.getKeywords(funcs), 'gmi'),		css: 'functions' },
+				// { regex: new RegExp(this.getKeywords(funcs), 'gmi'),		css: 'functions' },
 				{ regex: new RegExp(this.getKeywords(keywords), 'gm'), 		css: 'keyword' },
 				{ regex: new RegExp(this.getKeywords(special), 'gm'), 		css: 'color1' }
 				];
