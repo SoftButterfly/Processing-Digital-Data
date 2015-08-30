@@ -299,3 +299,8 @@ ul.table-of-contents > li {
 blockquote{
   border-left: 10px solid #7c4dff;
 }
+
+
+.panel-fit, .panel-fit body{
+  width: 100%;
+}

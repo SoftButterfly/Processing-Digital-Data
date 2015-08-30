@@ -18,11 +18,9 @@ $(document).ready(function() {
 
             if(e.attributeName==="style"){
                 if(oldLeft < newLeft && oldLeft == -250){
-                    console.log("aparece");
                     $(".button-collapse").addClass("active");
                 }
                 else if(oldLeft > newLeft  && oldLeft == 0){
-                    console.log("desaparece");
                     $(".button-collapse").removeClass("active");
                 }
                 oldLeft = newLeft;
