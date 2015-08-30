@@ -300,6 +300,9 @@ blockquote{
   border-left: 10px solid #7c4dff;
 }
 
+iframe{
+  border: 0 none;
+}
 
 .panel-fit, .panel-fit body{
   width: 100%;
