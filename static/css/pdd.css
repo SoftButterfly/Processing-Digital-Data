@@ -112,6 +112,7 @@ body.loaded{
   z-index: 10000;
   overflow: hidden;
 
+  pointer-events: none;
   background-size: cover;
   background-color: #FAFAFA;
   background-position: center;
