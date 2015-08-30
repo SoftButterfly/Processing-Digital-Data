@@ -17,7 +17,8 @@
   100% { opacity: 0;
          display: none;
          height: 0;
-         width: 0; }
+         width: 0;
+         z-idex: -1; }
 }
 
 /* Spin effect */
