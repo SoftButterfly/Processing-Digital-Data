@@ -267,6 +267,17 @@ nav .brand-logo{
   }
 }
 
+ul.side-nav {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+}
+
+ul.side-nav:hover {
+  overflow-y: scroll;
+}
+
 ul.side-nav li a > *{
   line-height: inherit;
 }
