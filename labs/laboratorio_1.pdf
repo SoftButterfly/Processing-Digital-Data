@@ -1,0 +1,314 @@
+<!--[if lt IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>       <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>       <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="author" content="Martin Josemaria Vuelta Rojas">
+    <meta name="description" content="Web para el curso de procesamiento de datos digitales">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00000">
+    <meta name="msapplication-TileImage" content="../static/img/favicon.png">
+    <meta name="theme-color" content="#000000">
+
+
+    <title>Procesamiento de Datos Digitales</title>
+
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.png"/>
+
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/shCore.css">
+    <link rel="stylesheet" href="../static/css/shThemeDefault.css">
+    <link rel="stylesheet" href="../static/css/materialize.css">
+    <link rel="stylesheet" href="../static/css/extensions.css">
+    <link rel="stylesheet" href="../static/css/overrides.css">
+    <link rel="stylesheet" href="../static/css/helpers.css">
+    <link rel="stylesheet" href="../static/css/pdd.css">
+  </head>
+
+  <body>
+    <ul id="sidenav" class="side-nav fixed grey lighten-5 table-of-contents">
+      <li class="deep-purple accent-2">
+        <a href="./">
+          <h4 class="grey-text text-lighten-5 text700 s-mar-0 center-align">PDD</h4>
+        </a>
+      </li>
+      <li><a href="/" class="active"><i class="fa fa-fw fa-home"></i>Inicio</a></li>
+      <li><a href="#problema1">Problema 1</a></li>
+      <li><a href="#problema2">Problema 2</a></li>
+      <li><a href="#problema3">Problema 3</a></li>
+      <li><a href="#problema4">Problema 4</a></li>
+      <li><a href="#problema5">Problema 5</a></li>
+      <li><a href="#problema6">Problema 6</a></li>
+      <li><a href="#problema7">Problema 7</a></li>
+      <li><a href="#materials">Materiales</a></li>
+    </ul>
+
+    <header class="deep-purple accent-2">
+      <div class="container">
+        <nav class="transparent">
+          <div class="nav-wrapper">
+            <a href="javascript:void(0);" data-activates="sidenav" class="button-collapse left grey lighten-5">
+              <i style="background-image: url(../static/img/spin.png)"></i>
+            </a>
+
+            <a href="./" class="brand-logo">
+              <span class="text300">
+                Laboratorio 1
+              </span>
+            </a>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="col s12">
+            <blockquote>
+              <h1 class="h5 text300">Introducción a <span class="smallcaps">Matlab</span><sup>®</sup></h1>
+            </blockquote>
+          </div>
+        </div>
+
+        <div id="problema1" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 1</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hacer un programa que genere una matriz <strong>cuadrado mágico</strong> de $n \times n$ elementos y que la
+              guarde en un archivo de datos <code>magico_n.txt</code>. Modificar el programa para que lea dicho
+              archivo y calcule el valor máximo de la matriz y la posición correspondiente.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema2" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 2</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hacer un programa para resolver la ecuación de 2<sup>do</sup> grado: $ax^2+bx+c = 0$. Los parámetros $a$,
+              $b$ y $c$ serán introducidos desde el teclado. Debe tener en cuenta las raíces reales y complejas.
+              Las raíces deben aparecer en la pantalla con 6 decimales. No debe usar la sentencia
+              <code class="text700 blue-text">roots</code>.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema3" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 3</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hacer un programa para resolver un sistema de ecuaciones lineales:
+              $\mathbf{A} \cdot \mathbf{X} = \mathbf{B}$, donde $\mathbf{B}$ es una
+              matriz cuadrada y $\mathbf{B}$ y $\mathbf{X}$ son vectores columna.
+              Los datos serán leídos desde un archivo. Las incógnitas deben
+              aparecer en la pantalla con 4 decimales. Debe grabar las incógnitas
+              en un archivo <code>solucion.txt</code>.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema4" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 4</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hacer un programa para calcular la distancia entre dos puntos
+              geográficos de latitud y longitud determinados. Considerar que
+              la Tierra tiene una forma esférica y que la distancia <strong>NO</strong>
+              es una línea recta, sino una longitud de arco esférica.
+              ¿Cuál es la distancia entre Lima y New York?
+              Verifique con Google Earth.
+            </p>
+            <p>
+              <strong>Sugerencia:</strong> $L = R\times\theta$, donde $\theta$ es el ángulo
+              formado por los vectores que van del centro a los puntos geográficos.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema5" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 5</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              El día <i>juliano</i> es el número de orden que le corresponde a una fecha dada; por ejemplo, el
+              01 de enero sería el día juliano 1 y el 31 de diciembre sería el día juliano 365. Hacer un
+              programa para convertir de día juliano a fecha. ¿A que fecha corresponde el día juliano 220?
+              Variar el programa para tener en cuenta los años bisiestos: múltiplos de 4, excepto los que
+              terminen en 00, como el año 2000.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema6" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 6</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Se tiene un cuadrado de lado $L$ y una circunferencia inscrita en él.
+              Supongamos que lanzamos pequeños dardos a gran distancia. Muchos caerán dentro
+              y otros caerán fuera de la circunferencia. Sea: $n$ el número de dardos
+              que caen dentro del circulo y $N$ el número de dardos que caen dentro del cuadrado.
+              La razón de estas dos cantidades será proporcional a la razón de las áreas del cuadrado y de la
+              circunferencia. Hallar una aproximación de $\pi$ en función de $n$ y $N$. Hacer un programa para
+              hallar el valor de $\pi$ para un valor de $N$ introducido por el usuario.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema7" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Problema 7</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hacer una gráfica en 3 dimensiones de la curva gaussiana:
+              $$z = A\cdot\mathrm{e}^\left(x^2 + y^2\right)$$
+              donde $A = 10$ es la amplitud de la curva. Utilice una grilla para el dominio:
+              $-10 < x < 10 \wedge -10 < y < 10$.
+            </p>
+            <ol>
+              <li>Considere que la dimensión de la grilla es unitaria.</li>
+              <li>Considere que la dimensión de la grilla es $0.2$</li>
+              <li>Modifique el programa para visualizar curvas de nivel</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="materials" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 grey-text text-darken-4">Materiales</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Fundamentos de <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="http://www.mathworks.com/help/matlab/language-fundamentals.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Matemáticas en <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="http://www.mathworks.com/help/matlab/mathematics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Gráficos en <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="http://www.mathworks.com/help/matlab/plotting-basics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Scripting en <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="http://www.mathworks.com/help/matlab/programming-and-data-types.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">API de Google Maps</span>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="https://developers.google.com/maps/documentation/javascript/" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Soluciones</span>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_1.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_1.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action grey-text text-darken-4">
+                <span class="grey-text text-darken-4">Códigos</span>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_1.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_1.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="page-footer gray-gradient s-mar-t0">
+      <div class="footer-copyright transparent">
+        <div class="container center grey-text text-darken-4">
+        © 2015 <a href="http://djeng.co" class="grey-text text-darken-4">Martín Josemaría Vuelta Rojas</a>
+        </div>
+      </div>
+    </footer>
+
+    <!-- script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script -->
+    <script type="text/javascript" charset="utf-8" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery.smoothState.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/attrchange.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushGNUPlot.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/pdd.js"></script>
+  </body>
+</html>
