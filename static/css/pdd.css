@@ -1,320 +1,358 @@
 /******************************************************************************/
-/* Animation effects                                                          */
+/* Color Palette                                                              */
 /******************************************************************************/
-/* Fade effect */
-@-webkit-keyframes fade {
-    0% { opacity: 1; }
-   90% { opacity: 0; }
-  100% { opacity: 0;
-         display: none;
-         height: 0;
-         width: 0; }
-}
+  .dark-color { /* grey darken-4 */
+    background-color: #212121!important;
+  }
 
-@keyframes fade {
-    0% { opacity: 1; }
-   90% { opacity: 0; }
-  100% { opacity: 0;
-         display: none;
-         height: 0;
-         width: 0;
-         z-index: -1; }
-}
+  .base-color { /* grey */
+    background-color: #9E9E9E!important;
+  }
 
-/* Spin effect */
-@-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(  0deg);
-            -moz-transform: rotate(  0deg);
-             -ms-transform: rotate(  0deg);
-              -o-transform: rotate(  0deg);
-                 transform: rotate(  0deg); }
-  100% { -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-             -ms-transform: rotate(360deg);
-              -o-transform: rotate(360deg);
-                 transform: rotate(360deg); }
-}
+  .light-color { /* light-color */
+    background-color: #FAFAFA!important;
+  }
 
-@keyframes spin {
-    0% { -webkit-transform: rotate(  0deg);
-            -moz-transform: rotate(  0deg);
-             -ms-transform: rotate(  0deg);
-              -o-transform: rotate(  0deg);
-                 transform: rotate(  0deg); }
-  100% { -webkit-transform: rotate(360deg);
-            -moz-transform: rotate(360deg);
-             -ms-transform: rotate(360deg);
-              -o-transform: rotate(360deg);
-                 transform: rotate(360deg); }
-}
+  .accent-color { /* amber */
+    background-color: #FFC107!important;
+  }
 
-/* Expand all page effect */
-@-webkit-keyframes growth {
-  100% { height: 5000px;
-         width: 5000px; }
-}
+  .base-text { /* grey darken-4 */
+    color: #212121!important;
+  }
 
-@keyframes growth {
-  100% { height: 5000px;
-         width: 5000px; }
-}
+  .secondary-text { /* grey lighten-2 */
+    color: #616161!important;
+  }
 
-/* Stop animation in final state */
-.stop-animation{
-  -webkit-animation-fill-mode: forwards!important;
-     -moz-animation-fill-mode: forwards!important;
-      -ms-animation-fill-mode: forwards!important;
-       -o-animation-fill-mode: forwards!important;
-          animation-fill-mode: forwards!important;
-}
+  .light-text { /* light-color */
+    color: #FAFAFA!important;
+  }
+
+  .accent-text { /* amber */
+    color: #FFC107!important;
+  }
+
+  .divider-color { /* grey lighten-2 */
+    border-color: #616161!important;
+  }
 
 /******************************************************************************/
 /* Main layout configuration: html, body, header, main, footer                */
 /******************************************************************************/
-html, body {
-  font-size: 15px;
-  min-width: 320px;
-}
+  html, body {
+    font-size: 15px;
+    min-width: 320px;
+  }
 
-body {
-  display: flex;
-  min-height: 100vh;
-  flex-direction: column;
-  margin: 0;
-  padding: 0;
-  background-position: center;
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-color: #fafafa;
-}
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #FAFAFA;
+  }
 
-main {
-  flex: 1 0 auto;
-}
+  main {
+    flex: 1 0 auto;
+  }
 
 /******************************************************************************/
 /* Pre loader configuration                                                   */
 /******************************************************************************/
-body{
-  overflow: hidden;1
-}
+  /* Animation effects */
+    /* Fade Effect */
+      @-webkit-keyframes fade {
+          0% { opacity: 1; }
+         90% { opacity: 0; }
+        100% { opacity: 0;
+               display: none;
+               height: 0;
+               width: 0; }
+      }
 
-body.loaded{
-  overflow: auto;
-}
+      @keyframes fade {
+          0% { opacity: 1; }
+         90% { opacity: 0; }
+        100% { opacity: 0;
+               display: none;
+               height: 0;
+               width: 0;
+               z-index: -1; }
+      }
 
-.page-preloader{
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  z-index: 10000;
-  overflow: hidden;
+    /* Spin effect */
+      @-webkit-keyframes spin {
+          0% { -webkit-transform: rotate(  0deg);
+                  -moz-transform: rotate(  0deg);
+                   -ms-transform: rotate(  0deg);
+                    -o-transform: rotate(  0deg);
+                       transform: rotate(  0deg); }
+        100% { -webkit-transform: rotate(360deg);
+                  -moz-transform: rotate(360deg);
+                   -ms-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                       transform: rotate(360deg); }
+      }
 
-  pointer-events: none;
-  background-size: cover;
-  background-color: #FAFAFA;
-  background-position: center;
-  background-repeat: no-repeat;
-}
+      @keyframes spin {
+          0% { -webkit-transform: rotate(  0deg);
+                  -moz-transform: rotate(  0deg);
+                   -ms-transform: rotate(  0deg);
+                    -o-transform: rotate(  0deg);
+                       transform: rotate(  0deg); }
+        100% { -webkit-transform: rotate(360deg);
+                  -moz-transform: rotate(360deg);
+                   -ms-transform: rotate(360deg);
+                    -o-transform: rotate(360deg);
+                       transform: rotate(360deg); }
+      }
 
-.page-preloader.loaded{
-  -webkit-animation: fade 0.45s linear 0.35s;
-     -moz-animation: fade 0.45s linear 0.35s;
-      -ms-animation: fade 0.45s linear 0.35s;
-       -o-animation: fade 0.45s linear 0.35s;
-          animation: fade 0.45s linear 0.35s;
-}
+    /* growth to cover all the page */
+      @-webkit-keyframes growth {
+        100% { height: 5000px;
+               width: 5000px; }
+      }
 
-.page-preloader .spining-button{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  height: 150px;
-  width: 150px;
-  padding: 25px;
+      @keyframes growth {
+        100% { height: 5000px;
+               width: 5000px; }
+      }
 
-  border-radius: 50%;
-  background-color: #FFFFFF;
+    /* Stop animation in final state */
+      .stop-animation{
+        -webkit-animation-fill-mode: forwards!important;
+           -moz-animation-fill-mode: forwards!important;
+            -ms-animation-fill-mode: forwards!important;
+             -o-animation-fill-mode: forwards!important;
+                animation-fill-mode: forwards!important;
+      }
 
-  -webkit-transform: translate(-50%, -50%);
-     -moz-transform: translate(-50%, -50%);
-      -ms-transform: translate(-50%, -50%);
-       -o-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-}
+    /* Layout configuration */
+      body{
+        overflow: hidden;1
+      }
 
-.page-preloader.loaded .spining-button{
-  -webkit-animation: growth 1s ease-in-out;
-     -moz-animation: growth 1s ease-in-out;
-      -ms-animation: growth 1s ease-in-out;
-       -o-animation: growth 1s ease-in-out;
-          animation: growth 1s ease-in-out;
-}
+      body.loaded{
+        overflow: auto;
+      }
 
-.page-preloader .spining-button i{
-  display: block;
-  height: 100%;
-  width: 100%;
-  background-size: 100% 100%;
-  background-position: center;
-  background-repeat: no-repeat;
+      .page-preloader{
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: 10000;
+        overflow: hidden;
+        pointer-events: none;
+        background-size: cover;
+        background-color: #FAFAFA;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
 
-  -webkit-animation: spin 3s ease-in-out infinite;
-     -moz-animation: spin 3s ease-in-out infinite;
-      -ms-animation: spin 3s ease-in-out infinite;
-       -o-animation: spin 3s ease-in-out infinite;
-          animation: spin 3s ease-in-out infinite;
+      .page-preloader.loaded{
+        -webkit-animation: fade 0.45s linear 0.35s;
+           -moz-animation: fade 0.45s linear 0.35s;
+            -ms-animation: fade 0.45s linear 0.35s;
+             -o-animation: fade 0.45s linear 0.35s;
+                animation: fade 0.45s linear 0.35s;
+      }
 
-  -webkit-transition: opacity 0.15s linear;
-     -moz-transition: opacity 0.15s linear;
-      -ms-transition: opacity 0.15s linear;
-       -o-transition: opacity 0.15s linear;
-          transition: opacity 0.15s linear;
-}
+      .page-preloader .spining-button{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        height: 150px;
+        width: 150px;
+        padding: 25px;
+        border-radius: 50%;
+        background-color: #FFFFFF;
+        -webkit-transform: translate(-50%, -50%);
+           -moz-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+             -o-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+      }
 
-.page-preloader.loaded .spining-button i{
-  opacity: 0;
-}
+      .page-preloader.loaded .spining-button{
+        -webkit-animation: growth 1s ease-in-out;
+           -moz-animation: growth 1s ease-in-out;
+            -ms-animation: growth 1s ease-in-out;
+             -o-animation: growth 1s ease-in-out;
+                animation: growth 1s ease-in-out;
+      }
+
+      .page-preloader .spining-button i{
+        display: block;
+        height: 100%;
+        width: 100%;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+        -webkit-animation: spin 3s ease-in-out infinite;
+           -moz-animation: spin 3s ease-in-out infinite;
+            -ms-animation: spin 3s ease-in-out infinite;
+             -o-animation: spin 3s ease-in-out infinite;
+                animation: spin 3s ease-in-out infinite;
+        -webkit-transition: opacity 0.15s linear;
+           -moz-transition: opacity 0.15s linear;
+            -ms-transition: opacity 0.15s linear;
+             -o-transition: opacity 0.15s linear;
+                transition: opacity 0.15s linear;
+      }
+
+      .page-preloader.loaded .spining-button i{
+        opacity: 0;
+      }
 
 /******************************************************************************/
-/* Navigation bar styles                                                   */
+/* Navigation bar styles                                                      */
 /******************************************************************************/
-@media only screen and (min-width: 993px){
-  body > header,
-  body > main,
-  body > footer {
-    padding-left: 240px;
+  /* Layout for fixed navbar */
+    @media only screen and (min-width: 993px){
+      body > header,
+      body > main,
+      body > footer {
+        padding-left: 240px;
+      }
+
+      /* wide contanier in big screens*/
+      header > nav > .container,
+      main > .container{
+        width: 90%;
+      }
+    }
+
+  /* Formatting colapse button */
+    nav a.button-collapse i{
+      width: 2.7rem;
+      margin-right: 15px;
+
+      background-position: center center;
+      background-size: 2.7rem 2.7rem;
+      background-repeat: no-repeat;
+
+      -webkit-transition: -webkit-transform .15s ease-in-out;
+         -moz-transition: -moz-transform .15s ease-in-out;
+          -ms-transition: -ms-transform .15s ease-in-out;
+           -o-transition: -o-transform .15s ease-in-out;
+              transition: transform .15s ease-in-out;
+    }
+
+    nav a.button-collapse.active i{
+      -webkit-transform: rotate(90deg);
+         -moz-transform: rotate(90deg);
+          -ms-transform: rotate(90deg);
+           -o-transform: rotate(90deg);
+              transform: rotate(90deg);
+    }
+
+  /* Keep brand logo left aligned */
+    nav .brand-logo{
+      left: auto;
+      padding-left: 15px;
+      display: inline-block;
+      -webkit-transform: translateX(0);
+         -moz-transform: translateX(0);
+          -ms-transform: translateX(0);
+           -o-transform: translateX(0);
+              transform: translateX(0);
+    }
+
+  /* removing brand-logo padding in large screens */
+    @media only screen and (min-width: 993px){
+      nav .brand-logo{
+        padding-left: 0;
+      }
+    }
+
+  /* Formatting side-nav */
+    ul.side-nav {
+      height: 100%;
+      padding: 0;
+      margin: 0;
+      overflow: hidden;
+    }
+
+    ul.side-nav *,
+    ul.side-nav *:hover {
+      -webkit-transition: all 0.15s linear;
+         -moz-transition: all 0.15s linear;
+          -ms-transition: all 0.15s linear;
+           -o-transition: all 0.15s linear;
+              transition: all 0.15s linear;
+    }
+
+    ul.side-nav:hover {
+      overflow-y: auto;
+    }
+
+    ul.side-nav li{
+      width: 100%;
+    }
+
+    ul.side-nav li:hover{
+      background-color: transparent;
+    }
+
+    ul.side-nav li:nth-child(n+2) a{
+      line-height: 3rem;
+      height: 3rem;
+    }
+
+    ul.side-nav li a > *{
+      line-height: inherit;
+    }
+
+  ul.table-of-contents > li:first-child a:hover{
+    border-left: 0px none;
   }
 
-  header > .container,
-  main > .container{
-    width: 95%;
-  }
-}
-
-@media only screen and (max-width : 992px) {
-  main, footer {
-    padding-left: 0;
+  ul.table-of-contents > li:nth-child(n+2) {
+    padding: 0;
   }
 
-  body > header{
-    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
-  }
-}
-
-@media only screen and (max-width : 601px) {
-  mail{
-    margin-top: 64px;
-  }
-}
-
-body > header{
-  background-repeat: repeat-y;
-  background-position: center center;
-  background-size: 100% 100%;
-}
-
-nav{
-  overflow: hidden;
-  box-shadow: none;
-}
-
-nav a.button-collapse i{
-  width: 2.7rem;
-  background-position: center center;
-  background-size: 2.7rem 2.7rem;
-  background-repeat: no-repeat;
-}
-
-nav a.button-collapse i{
-  margin-right: 15px;
-  -webkit-transition: -webkit-transform .15s ease-in-out;
-     -moz-transition: -moz-transform .15s ease-in-out;
-      -ms-transition: -ms-transform .15s ease-in-out;
-       -o-transition: -o-transform .15s ease-in-out;
-          transition: transform .15s ease-in-out;
-}
-
-nav a.button-collapse.active i{
-  -webkit-transform: rotate(90deg);
-     -moz-transform: rotate(90deg);
-      -ms-transform: rotate(90deg);
-       -o-transform: rotate(90deg);
-          transform: rotate(90deg);
-}
-
-nav .brand-logo{
-  left: auto;
-  padding-left: 15px;
-  display: inline-block;
-  -webkit-transform: translateX(0);
-     -moz-transform: translateX(0);
-      -ms-transform: translateX(0);
-       -o-transform: translateX(0);
-          transform: translateX(0);
-}
-
-@media only screen and (min-width: 993px){
-  nav a.button-collapse,
-  nav a.button-collapse *{
-    pointer-events: none;
-  }
-
-  nav .brand-logo{
-    padding-left: 0;
-  }
-}
-
-ul.side-nav {
-  height: 100%;
-  padding: 0;
-  margin: 0;
-  overflow: hidden;
-}
-
-ul.side-nav:hover {
-  overflow-y: scroll;
-}
-
-ul.side-nav li a > *{
-  line-height: inherit;
-}
-
-.card .syntaxhighlighter{
-  margin: 0!important;
-}
-
-code{
-  font-size: 0.9rem;
-}
-
-ul.table-of-contents > li {
-  padding-left:0;
-}
-
-.table-of-contents > li > a.active {
-    color: #f50057;
-    font-weight: 500;
+  ul.table-of-contents > li:nth-child(n+2) > a:hover {
+    color: #FFC107;
     padding-left: 20px;
-    border-left: 10px solid #7c4dff;
-}
+    border-left: 10px solid #FFC107;
+  }
 
-.h5 {
-  font-size: 1.64rem;
-  line-height: 110%;
-  margin: 0.82rem 0 0.656rem 0;
-}
+  ul.table-of-contents > li > a.active {
+    color: #FFC107;
+    padding-left: 20px;
+    border-left: 10px solid #FFC107;
+  }
 
-blockquote{
-  border-left: 10px solid #7c4dff;
-}
+/******************************************************************************/
+/* Overriding and extesions                                                   */
+/******************************************************************************/
+  blockquote{
+    border-left: 10px solid #FFC107; /* Amber */
+    font-size: 1.25rem;
+    font-weight: 300;
+  }
 
-iframe{
-  border: 0 none;
-}
+  .waves-effect{
+    cursor: initial;
+  }
 
-.panel-fit, .panel-fit body{
-  width: 100%;
-}
+  .h5 {
+    font-size: 1.64rem;
+    line-height: 110%;
+    margin: 0.82rem 0 0.656rem 0;
+  }
+
+  .card .syntaxhighlighter{
+    margin: 0!important;
+  }
+
+  code{
+    font-size: 0.9rem;
+  }
