@@ -339,6 +339,10 @@
     margin: 0!important;
   }
 
+  .card .card-action a{
+    color: #FFC107;
+  }
+
   code{
     font-size: 0.9rem;
   }
