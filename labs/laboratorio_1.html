@@ -127,8 +127,8 @@
                   fprintf('Escritura completa.\n');
                 </pre>
               </div>
-              <div class="card-action s-pad-5 center-align">
-                <strong>Script 1.</strong> Archivo <code>problema01_a.m</code>. Generación y guardado de la matriz en un archivo.
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 1.</strong> Archivo <a href="laboratorio_1/problema01_a.m"><code>problema01_a.m</code></a>. Generación y guardado de la matriz en un archivo.
               </div>
             </div>
           </div>
@@ -154,19 +154,8 @@
                   fprintf('Mayor elemento esta en la posicion (%d,%d) y es %d\n', r, c, maxA);
                 </pre>
               </div>
-              <div class="card-action s-pad-5 center-align">
-                <strong>Script 2.</strong> Archivo <code>problema01_b.m</code>. Lectura de archivo y ubicación del valor máximo.
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12">
-            <div class="card white">
-              <div class="card-image">
-                <img src="./laboratorio_1/problema01_screenshot01.png">
-              </div>
-              <div class="card-action s-pad-5 center-align">
-                <strong>Figura 1.</strong> Funcionamiento de los <i>scripts</i> 1 y 2.
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 2.</strong> Archivo <a href="laboratorio_1/problema01_b.m"><code>problema01_b.m</code></a>. Lectura de archivo y ubicación del valor máximo.
               </div>
             </div>
           </div>
@@ -193,34 +182,64 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                clear all
-                close all
-                clc
-                a = input('Ingrese valor del coeficiente a: ');
-                b = input('Ingrese valor del coeficiente b: ');
-                c = input('Ingrese valor del coeficiente c: ');
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  clear all
+                  close all
+                  clc
 
-                R = roots([a b c]);
+                  a = input('Ingrese valor del coeficiente a: ');
+                  b = input('Ingrese valor del coeficiente b: ');
+                  c = input('Ingrese valor del coeficiente c: ');
 
-                disp('Las raices de la ecuación a*x^2 + b*x + c = 0 son :');
+                  if(a == 0 && b ~= 0)
+                      fprintf('El coeficiente del termino cuadratico es nulo. La ecuacion es lineal.\n');
+                      disp('La raiz de la ecuacion b*x + c = 0 es :');
+                      fprintf('X[1] = %2.6f.\n', -c/b);
 
-                if(imag(R(1))<0)
-                    R(1) = conj(R(1));
-                    fprintf('X[1] = %2.6f - %2.6f*i\n',real(R(1)),imag(R(1)));
-                    fprintf('X[2] = %2.6f + %2.6f*i\n',real(R(2)),imag(R(2)));
-                else
-                    if (imag(R(1)) == 0)
-                        fprintf('X[1] = %2.6f\n',R(1));
-                        fprintf('X[2] = %2.6f\n',R(2));
-                    else
-                        R(2) = conj(R(2));
-                        fprintf('X[1] = %2.6f + %2.6f*i\n',real(R(1)),imag(R(1)));
-                        fprintf('X[2] = %2.6f - %2.6f*i\n',real(R(2)),imag(R(2)));
-                    end
-                end
-              </pre>
+                  elseif(a == 0 && b == 0)
+                      fprintf('Los coefcientes de los terminos cuadratico y lineal son nulos.\n');
+                      fprintf('La ecuacion no se puede resolver\n');
+
+                  else
+                      delta = b^2 - 4*a*c;
+
+                      disp('Las raices de la ecuacion a*x^2 + b*x + c = 0 son :');
+
+                      if(delta == 0)
+                          fprintf('X[1] = %2.6f\n', -b/(2*a));
+                          fprintf('X[2] = %2.6f\n', -b/(2*a));
+
+                      elseif(delta > 0)
+                          ra = -b/(2*a);
+                          ir = sqrt(delta)/(2*a);
+
+                          if(ra == 0)
+                              fprintf('X[1] = + %2.6f\n', ir);
+                              fprintf('X[2] = - %2.6f\n', ir);
+                          else
+                              fprintf('X[1] = %2.6f + %2.6f\n', ra, ir);
+                              fprintf('X[2] = %2.6f - %2.6f\n', ra, ir);
+                          end
+                      else
+                          re = -b/(2*a);
+                          im = sqrt(-delta)/(2*a);
+
+                          if(ra == 0)
+                              fprintf('X[1] = + %2.6f\n', im);
+                              fprintf('X[2] = - %2.6f\n', im);
+                          else
+                              fprintf('X[1] = %2.6f + %2.6f\n', re, im);
+                              fprintf('X[2] = %2.6f - %2.6f\n', re, im);
+                          end
+                      end
+                  end
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 3.</strong> Archivo <a href="laboratorio_1/problema02.m"><code>problema02.m</code></a>. Solución de la ecuación de segundo grado empleando la fórmula general.
+              </div>
             </div>
           </div>
         </div>

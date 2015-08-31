@@ -339,8 +339,10 @@
     margin: 0!important;
   }
 
-  .card .card-action a{
+  .card .card-action.caption a{
     color: #FFC107;
+    text-transform: none;
+    margin-right: 0;
   }
 
   code{
