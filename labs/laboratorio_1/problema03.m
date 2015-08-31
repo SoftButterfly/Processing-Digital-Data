@@ -1,6 +1,7 @@
 clear all
 close all
 clc
+
 Question = {'1. Numero de ecuaciones del sistema:'
             '2. Nombre del archivo entrada:'
             '3. Nombre del archivo salida:'};
@@ -19,7 +20,7 @@ if(DataFile == -1)
 else
     B = fscanf(DataFile,'%f');
     fclose(DataFile);
-    
+
     if(length(B) < Dim^2 + Dim)
         fprintf('Datos insuficientes en "%s"\n', InFile);
     else
@@ -44,26 +45,26 @@ else
         end
         disp(' ')
         disp('Y = ')
-        
+
         for i = 1:Dim
             fprintf('\t %10.4f \n', A(i,Dim));
         end
-        
+
         disp(' ')
-        
+
         if(det(A(:,1:Dim)) == 0)
             disp('La matriz del sistema es singular')
         else
             X = A(:,Dim+1)\A(:,1:Dim);
             disp('La solucion del sistema es:')
             disp('X = ')
-            
+
             SolutionFile = fopen(OutFile,'w');
             for i = 1:Dim
                 fprintf('\t %10.4f \n', X(i));
                 fprintf(SolutionFile, '%2.4f\n', X(i));
             end
-            
+
             if(~fclose(SolutionFile))
                 fprintf('\nLa solucion del problema sistema se guardo exitosamente en "%s"\n',...
                          OutFile);
