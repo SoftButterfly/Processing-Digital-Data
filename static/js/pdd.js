@@ -5,28 +5,6 @@ $(document).ready(function() {
 
     $(".scrollspy").scrollSpy();
     $(".button-collapse").sideNav();
-    $(".button-collapse").click(function(event) {
-        $(".button-collapse").toggleClass("active");
-    });
-
-    var oldLeft = $("#sidenav").css("left").replace("px", "");
-
-    $("#sidenav").attrchange({
-        trackValues: true,
-        callback: function (e) {
-            var newLeft = $("#sidenav").css("left").replace("px", "");
-
-            if(e.attributeName==="style"){
-                if(oldLeft < newLeft && oldLeft == -250){
-                    $(".button-collapse").addClass("active");
-                }
-                else if(oldLeft > newLeft  && oldLeft == 0){
-                    $(".button-collapse").removeClass("active");
-                }
-                oldLeft = newLeft;
-            }
-        }
-    })
 });
 
 $(document).scroll(function(event) {
