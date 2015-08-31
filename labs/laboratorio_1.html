@@ -100,30 +100,74 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                clear all
-                clc
-                Dim = input('Ingrese la dimension de la matriz: ');
-                FileName = sprintf('matriz_%d.dat',Dim);
-                A = magic(Dim);
-                MagicFile = fopen(FileName,'w');
-                fprintf(MagicFile,'%d\n',A);
-                fclose(MagicFile);
-                MagicFile = fopen(FileName,'r');
-                B = fscanf(MagicFile,'%d');
-                fclose(MagicFile);
-                disp('Matriz creada :');
-                disp(A);
-                MAX = max(B);
-                for i = 1:Dim
-                  for j = 1:Dim
-                    if(A(i,j) == MAX)
-                      fprintf('Mayor elemento está en la posición (%d,%d) y es %d\n', i, j, MAX);
-                    end
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  clear all
+                  close all
+                  clc
+
+                  Dim = input('Ingrese la dimension de la matriz: ');
+
+                  FileName = sprintf('magico_%d.dat',Dim);
+                  A = magic(Dim);
+
+                  fprintf('Escribiendo archivo %s\n', FileName);
+
+                  FileHandler = fopen(FileName,'w');
+
+                  for i=1:Dim
+                      for j=1:Dim
+                          fprintf(FileHandler,'%10d',A(i,j));
+                      end
+                      fprintf(FileHandler,'\n');
                   end
-                end
-              </pre>
+
+                  fclose(FileHandler);
+                  fprintf('Escritura completa.\n');
+                </pre>
+              </div>
+              <div class="card-action s-pad-5 center-align">
+                <strong>Script 1.</strong> Archivo <code>problema01_a.m</code>. Generación y guardado de la matriz en un archivo.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  clear all
+                  close all
+                  clc
+
+                  Dim = input('Ingrese la dimension de la matriz: ');
+
+                  FileName = sprintf('magico_%d.dat',Dim);
+
+                  fprintf('Leyedo archivo %s\n', FileName);
+
+                  A = load(FileName);
+                  maxA = max(max(A));
+                  [r, c] = find(A == maxA, 1, 'first');
+
+                  fprintf('Mayor elemento esta en la posicion (%d,%d) y es %d\n', r, c, maxA);
+                </pre>
+              </div>
+              <div class="card-action s-pad-5 center-align">
+                <strong>Script 2.</strong> Archivo <code>problema01_b.m</code>. Lectura de archivo y ubicación del valor máximo.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-image">
+                <img src="./laboratorio_1/problema01_screenshot01.png">
+              </div>
+              <div class="card-action s-pad-5 center-align">
+                <strong>Figura 1.</strong> Funcionamiento de los <i>scripts</i> 1 y 2.
+              </div>
             </div>
           </div>
         </div>
