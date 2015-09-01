@@ -73,7 +73,7 @@
         <div class="row">
           <div class="col s12">
             <blockquote>
-              <h1 class="h5 text300">Transformada de Fourier y filtros</h1>
+              <h1 class="h5 text300">Transformada de Fourier</h1>
             </blockquote>
           </div>
         </div>
@@ -243,7 +243,7 @@
 
           <div class="col s12">
             <p>
-              Descargue el archivo <a href=""><code>datos.txt</code></a> de la web, que representa una señal de audio.
+              Descargue el archivo <a href="./datos.txt"><code>datos.txt</code></a> de la web, que representa una señal de audio.
               La frecuencia de muestreo es de $F_s = 8000\ Hz$. Hacer un programa en Matlab para que realice
               lo siguiente:
             </p>
@@ -268,13 +268,13 @@
             <ol type="a">
               <li>
                 Calcule y grafique la transformada de Fourier de la función triángulo:
-                $$x\left(t\right) = \Delta\left(\frac{t}{2}\right)$$
+                $$x\left(t\right) = \Lambda\left(\frac{t}{2}\right)$$
               </li>
               <li>
                 <p>
                   La integral que define la transformada de Fourier puede calcularse numéricamente, para cada valor de frecuencia,
                   utilizando la suma de Riemman. Para subdominios de longitud T se tiene:
-                  $$X\left(f\right)=\sum_{N=-\infty}^{\infty}\Delta\left(\frac{n T}{2}\right)\exp(-2\pi j f N T )T$$
+                  $$X\left(f\right)=\sum_{N=-\infty}^{\infty}\Lambda\left(\frac{n T}{2}\right)\exp(-2\pi j f N T )T$$
                   Calcular para $T=0.8$ y para el rango de
                   frecuencia de $0$ a $2$ con intervalos de $0.125$
                   ejecutando las siguientes sentencias en Matlab:
@@ -298,7 +298,7 @@
               </li>
             </ol>
             <p>
-              <strong>Nota:</strong> La función $\Delta$ es la función triángulo $\Delta\left(t\right)$ que Ud. debe implementar en
+              <strong>Nota:</strong> La función $\Lambda$ es la función triángulo $\Lambda\left(t\right)$ que Ud. debe implementar en
               <span class="smallcaps">Matlab</span><sup>®</sup>.
             </p>
           </div>

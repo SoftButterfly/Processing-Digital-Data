@@ -1,0 +1,253 @@
+<!--[if lt IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>       <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>       <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="author" content="Martin Josemaria Vuelta Rojas">
+    <meta name="description" content="Web para el curso de procesamiento de datos digitales">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00000">
+    <meta name="msapplication-TileImage" content="../static/img/favicon.png">
+    <meta name="theme-color" content="#000000">
+
+
+    <title>Procesamiento de Datos Digitales</title>
+
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.png"/>
+
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/shCore.css">
+    <link rel="stylesheet" href="../static/css/shThemeDefault.css">
+    <link rel="stylesheet" href="../static/css/materialize.css">
+    <link rel="stylesheet" href="../static/css/extensions.css">
+    <link rel="stylesheet" href="../static/css/overrides.css">
+    <link rel="stylesheet" href="../static/css/helpers.css">
+    <link rel="stylesheet" href="../static/css/pdd.css">
+  </head>
+
+  <body>
+    <ul id="sidenav" class="waves-effect side-nav fixed light-color table-of-contents">
+      <li class="waves-effect waves-light dark-color s-mar-0 s-pad-0">
+        <a href="../" class=" s-mar-0 s-pad-0">
+          <h4 class="grey-text text-lighten-5 text700 s-mar-0 s-pad-0 center-align">PDD</h4>
+        </a>
+      </li>
+      <li><a href="../" class="active"><i class="fa fa-fw fa-home"></i>Inicio</a></li>
+      <li><a href="#problema1">Problema 1</a></li>
+      <li><a href="#problema2">Problema 2</a></li>
+      <li><a href="#problema3">Problema 3</a></li>
+      <li><a href="#problema4">Problema 4</a></li>
+      <li><a href="#problema5">Problema 5</a></li>
+      <li><a href="#materials">Materiales</a></li>
+    </ul>
+
+    <header class="dark-color navbar-fixed">
+      <nav class="transparent waves-effect waves-light">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="javascript:void(0);" data-activates="sidenav" class="button-collapse left s-pad-0">
+              <i class="material-icons">menu</i>
+            </a>
+
+            <a href="laboratorio_5.html" class="brand-logo">
+              <span class="text300">
+                Laboratorio 5
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="col s12">
+            <blockquote>
+              <h1 class="h5 text300">Filtros</h1>
+            </blockquote>
+          </div>
+        </div>
+
+        <div id="problema1" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 1</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Dada la señal en el dominio del tiempo:
+              $$y\left(t\right) = \sin\left(t\right) + 0.25\sin\left(10t\right)$$
+            </p>
+            <ol type="a">
+              <li>En la gráfica del espectro de potencias, hallar la amplitud, la frecuencia y el periodo correspondiente a cada pico.</li>
+              <li>Diseñe un filtro pasa-bajo y grafique la señal filtrada. ¿Cuál es la frecuencia de corte?</li>
+              <li>Diseñe un filtro pasa-alto y grafique la señal filtrada.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="problema2" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 2 <small>(Reconocimiento de locutor)</small></h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Con el programa de adquisición de datos <a href="./adqsonido.m"><code>adqsonido.m</code></a>, realice
+              la grabación durante $5\ s$ de las voces de $2$ personas diferentes.
+            </p>
+            <ol>
+              <li>Aplique un filtro pasa-alto con frecuencia de corte de 100 Hz, grabe el archivo obtenido.</li>
+              <li>Calcule la Transformada de Fourier discreta de las dos señales. Grafique.</li>
+              <li>Calcule el coeficiente de correlación entre las TRF de ambas señales. ¿Qué puede concluir?</li>
+            </ol>
+          </div>
+
+        </div>
+
+        <div id="problema3" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 3</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Baje el archivo <a href="./pardat.txt"><code>pardat.txt</code></a> que contiene una señal mareográfica
+              real medida en la bahía de Paracas con un sensor de nivel ultrasónico
+            </p>
+            <ol type="a">
+              <li>Aplique un filtro mediano para eliminar los picos impulsivos. Grafique la señal antes y después de aplicar dicho filtro.</li>
+              <li>Representar la señal en el dominio de la frecuencia. Identificar los picos principales y periodos de retorno.</li>
+              <li>Aplicar un filtro adecuado para estudiar las mareas: ¿cuál es el periodo y amplitud de la marea?</li>
+              <li>Aplicar un filtro adecuado para estudiar las olas: ¿cuál es el periodo y amplitud de las olas?</li>
+            </ol>
+            <p>
+              <strong>Sugerencia:</strong> Revisar el artículo <a href="http://www.rif-fisica.org/images/1/11/111402401.pdf" title="http://www.rif-fisica.org/" target="_blank">Estimación del nivel medio de bajamares de sicigias ordinarias en la bahía de Paracas <i class="fa fa-fw fa-external-link"></i></a>
+            </p>
+          </div>
+        </div>
+
+        <div id="problema4" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 4</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Se tiene una señal sísmica de 3 componentes para la estación de Ñaña (<a href="./nana.mat"><code>nana.mat</code></a>).
+            </p>
+            <ul>
+              La estación está ubicada en :
+              <li><span style="display:inline-block;width:70px;">Latitud </span>: $11.988^\circ\ S$</li>
+              <li><span style="display:inline-block;width:70px;">Longitud</span>: $76.842^\circ\ W$</li>
+              <li><span style="display:inline-block;width:70px;">Altitud </span>: $575\ m.s.n.m$.</li>
+            </ul>
+            <ul>
+              La ubicación del epicentro fue:
+              <li><span style="display:inline-block;width:90px;">Latitud    </span>: $15.36^\circ\ S$</li>
+              <li><span style="display:inline-block;width:90px;">Longitud   </span>: $70.90^\circ\ W$</li>
+              <li><span style="display:inline-block;width:90px;">Profundidad</span>: $180\ km$.</li>
+            </ul>
+            <ol type="a">
+              <li>Graficar la señal para las 3 componentes: Vertical (V), Norte (N), Este (E) en función del tiempo t.</li>
+              <li>Hallar la distancia epicentral y la diferencia de tiempo de arribo entre la fase P y S.</li>
+              <li>Hallar el contenido energético promedio de la señal.</li>
+              <li>Hallar la magnitud del sismo.</li>
+            </ol>
+            <p>
+              <strong>Sugerencia:</strong> Revisar el artículo <a href="www.rif-fisica.org/images/0/0b/101301755.pdf" title="http://www.rif-fisica.org/" target="_blank">Cálculo de la magnitud sísmica para la estación de Ñaña <i class="fa fa-fw fa-external-link"></i></a>
+            </p>
+          </div>
+
+        </div>
+
+        <div id="problema5" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 5</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Buscar los datos del precio del dólar desde el 1 de enero del 2013 hasta el 31 de diciembre del 2013.
+            </p>
+            <ol type="a">
+              <li>Completar la serie de tiempo para los sábados, domingos y feriados mediante interpolación. Graficar.</li>
+              <li>Representar la serie en el dominio de la frecuencia. Identificar los picos principales y periodos de retorno.</li>
+              <li>Filtre las fluctuaciones de alta frecuencia y grafique. ¿Cuál es la tendencia del precio del dólar?</li>
+              <li>Pronostique el precio del dólar para el 1 de enero del 2014, en base a interpolación polinomial.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="materials" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Materiales</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Soluciones</span>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_5.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_5.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Códigos</span>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_5.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_5.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="page-footer gray-gradient s-mar-t0">
+      <div class="footer-copyright transparent">
+        <div class="container center base-text">
+        © 2015 FENLAB - FCF - UNMSM
+        </div>
+      </div>
+    </footer>
+
+    <!-- script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script -->
+    <script type="text/javascript" charset="utf-8" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery.smoothState.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/attrchange.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushGNUPlot.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/pdd.js"></script>
+  </body>
+</html>
