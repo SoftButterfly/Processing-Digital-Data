@@ -223,8 +223,8 @@
       }
 
       /* wide contanier in big screens*/
-      header > nav > .container,
-      main > .container{
+      body > header > nav > .container,
+      body > main > .container{
         width: 90%;
       }
     }
