@@ -58,9 +58,9 @@
               <i class="material-icons">menu</i>
             </a>
 
-            <a href="laboratorio_1.html" class="brand-logo">
+            <a href="laboratorio_3.html" class="brand-logo">
               <span class="text300">
-                Laboratorio 1
+                Laboratorio 3
               </span>
             </a>
           </div>
@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col s12">
             <blockquote>
-              <h1 class="h5 text300">Introducción a <span class="smallcaps">Matlab</span><sup>®</sup></h1>
+              <h1 class="h5 text300">Convolución y respuesta en el tiempo</h1>
             </blockquote>
           </div>
         </div>
@@ -88,10 +88,18 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa que genere una matriz <strong>cuadrado mágico</strong> de $n \times n$ elementos y que la
-              guarde en un archivo de datos <code>magico_n.txt</code>. Modificar el programa para que lea dicho
-              archivo y calcule el valor máximo de la matriz y la posición correspondiente.
+              Sean
+              $$x\left(n\right) = \delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)$$
+              y
+              $$h\left(n\right) = 2\delta\left(n+1\right) + 2\delta\left(n-1\right)$$.
+              Calcule y haga la gráfica (usar el comando <code>stem</code>) de cada una de las siguientes
+              convoluciones:
             </p>
+            <ol>
+              <li>$y_1\left(n\right) = x\left(n\right)*h\left(n\right)$</li>
+              <li>$y_2\left(n\right) = x\left(n+2\right)*h\left(n\right)$</li>
+              <li>$y_3\left(n\right) = x\left(n\right)*h\left(n+2\right)$</li>
+            </ol>
           </div>
         </div>
 
@@ -104,11 +112,36 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa para resolver la ecuación de 2<sup>do</sup> grado: $ax^2+bx+c = 0$. Los parámetros $a$,
-              $b$ y $c$ serán introducidos desde el teclado. Debe tener en cuenta las raíces reales y complejas.
-              Las raíces deben aparecer en la pantalla con 6 decimales. No debe usar la sentencia
-              <code class="text700 accent-text">roots</code>.
+              Considere un sistema LIT cuya respuesta a la señal $x_1\left(t\right)$ es $y_1\left(t\right)$
             </p>
+          </div>
+
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card withe">
+              <div class="card-image s-pad-5">
+                <img src="./lab3prob2a.png" alt="Función h(t)">
+              </div>
+              <div class="card-action caption center-align s-pad-5">
+                <strong>Figura 1</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              Hallar las respuestas del sistema anterior a las siguientes excitaciones:
+            </p>
+          </div>
+
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card withe">
+              <div class="card-image s-pad-5">
+                <img src="./lab3prob2b.png" alt="Función h(t)">
+              </div>
+              <div class="card-action caption center-align s-pad-5">
+                <strong>Figura 2</strong>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -121,12 +154,16 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa para resolver un sistema de ecuaciones lineales:
-              $\mathbf{A} \cdot \mathbf{X} = \mathbf{B}$, donde $\mathbf{B}$ es una
-              matriz cuadrada y $\mathbf{B}$ y $\mathbf{X}$ son vectores columna.
-              Los datos serán leídos desde un archivo. Las incógnitas deben
-              aparecer en la pantalla con 4 decimales. Debe grabar las incógnitas
-              en un archivo <code>solucion.txt</code>.
+              Calcular la convolución entre el siguiente par de señales:
+            </p>
+            <ol>
+              <li>$x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$</li>
+              <li>$x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) – u\left(n-4\right)$</li>
+              <li>$x\left(n\right) = u\left(n\right)$ y $h\left(n\right) = \left(\frac{1}{2}\right)^{-n} u\left(-n\right)$</li>
+              <li>$x\left(t\right) = \exp\left(-at\right) u(t)$ y $h(t) = exp(-at) u(t)$</li>
+            </ol>
+            <p>
+              Verificar en <span class="smallcaps">Matlab</span><sup>®</sup> las convoluciones obtenidas en los incisos anteriores.
             </p>
           </div>
         </div>
@@ -139,18 +176,31 @@
           <div class="col s12 divider"></div>
 
           <div class="col s12">
-            <p>
-              Hacer un programa para calcular la distancia entre dos puntos
-              geográficos de latitud y longitud determinados. Considerar que
-              la Tierra tiene una forma esférica y que la distancia <strong>NO</strong>
-              es una línea recta, sino una longitud de arco esférica.
-              ¿Cuál es la distancia entre Lima y New York?
-              Verifique con Google Earth.
-            </p>
-            <p>
-              <strong>Sugerencia:</strong> $L = R\times\theta$, donde $\theta$ es el ángulo
-              formado por los vectores que van del centro a los puntos geográficos.
-            </p>
+            <ol>
+              <li>
+                Escribir la ecuación en diferencias que relaciona la entrada con la salida
+                para el sistema de la figura mostrada, donde:
+                <ul>
+                  <li>$h_1\left(n\right) = \beta\delta\left(n-1\right)$</li>
+                  <li>$h_2\left(n\right) = \exp\left(\alpha\right)\delta\left(n\right)$</li>
+                </ul>
+              </li>
+              <li>
+                Hallar $\alpha$ y $\beta$, de tal forma que la salida sea el promedio entre la entrada en el instante $n$ y
+                la entrada en el instante $n-1$.
+              </li>
+            <ol>
+          </div>
+
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card withe">
+              <div class="card-image s-pad-15">
+                <img src="./lab3prob4.png" alt="Función h(t)">
+              </div>
+              <div class="card-action caption center-align s-pad-5">
+                <strong>Figura 3</strong>
+              </div>
+            </div>
           </div>
         </div>
 
@@ -163,11 +213,9 @@
 
           <div class="col s12">
             <p>
-              El día <i>juliano</i> es el número de orden que le corresponde a una fecha dada; por ejemplo, el
-              01 de enero sería el día juliano 1 y el 31 de diciembre sería el día juliano 365. Hacer un
-              programa para convertir de día juliano a fecha. ¿A que fecha corresponde el día juliano 220?
-              Variar el programa para tener en cuenta los años bisiestos: múltiplos de 4, excepto los que
-              terminen en 00, como el año 2000.
+              Dada la siguiente ecuación en diferencias
+              $$y\left(n\right) = -a y\left(n-1\right) + b x\left(n\right) + c x\left(n-1\right),$$
+              realizar una representación en diagrama de bloques.
             </p>
           </div>
         </div>
@@ -181,13 +229,15 @@
 
           <div class="col s12">
             <p>
-              Se tiene un cuadrado de lado $L$ y una circunferencia inscrita en él.
-              Supongamos que lanzamos pequeños dardos a gran distancia. Muchos caerán dentro
-              y otros caerán fuera de la circunferencia. Sea: $n$ el número de dardos
-              que caen dentro del circulo y $N$ el número de dardos que caen dentro del cuadrado.
-              La razón de estas dos cantidades será proporcional a la razón de las áreas del cuadrado y de la
-              circunferencia. Hallar una aproximación de $\pi$ en función de $n$ y $N$. Hacer un programa para
-              hallar el valor de $\pi$ para un valor de $N$ introducido por el usuario.
+              Realizar en <span class="smallcaps">Matlab</span><sup>®</sup> la convolución del siguiente par de señales:
+            </p>
+            <ol>
+              <li>$x\left(n\right) = \left(-1\right)^n \left(u\left(n\right) – u\left(-n-8\right)\right)$</li>
+              <li>$h\left(n\right) = u\left(n\right) – u\left(n-8\right)$</li>
+            </ol>
+            <p>
+              Graficar la señal resultante, $y\left(n\right) = x\left(n\right) * h\left(n\right)$.
+              Usar el comando <code>stem</code>.
             </p>
           </div>
         </div>
@@ -201,16 +251,12 @@
 
           <div class="col s12">
             <p>
-              Hacer una gráfica en 3 dimensiones de la curva gaussiana:
-              $$z = A\cdot\mathrm{e}^\left(x^2 + y^2\right)$$
-              donde $A = 10$ es la amplitud de la curva. Utilice una grilla para el dominio:
-              $-10 < x < 10 \wedge -10 < y < 10$.
+              Considere un sistema lineal e invariante en el tiempo, causal, cuya entrada $x\left(n\right)$ y salida
+              $y\left(n\right)$ estén relacionadas por la ecuación de diferencias:
+              $$y\left(n\right) = 0.25 y\left(n-1\right) + x\left(n\right)$$
+              Determine $y\left(n\right)$ si $x\left(n\right) = \delta\left(n-1\right)$.
+              Grafique en <span class="smallcaps">Matlab</span><sup>®</sup> la salida $y\left(n\right)$, use el comando “stem”
             </p>
-            <ol>
-              <li>Considere que la dimensión de la grilla es unitaria.</li>
-              <li>Considere que la dimensión de la grilla es $0.2$</li>
-              <li>Modifique el programa para visualizar curvas de nivel</li>
-            </ol>
           </div>
         </div>
 
@@ -224,54 +270,9 @@
           <div class="col s12 m12 l6">
             <div class="card withe">
               <div class="card-action material base-text">
-                <span class="base-text">Fundamentos de <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/language-fundamentals.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Matemáticas en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/mathematics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Gráficos en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/plotting-basics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Scripting en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/programming-and-data-types.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">API de Google Maps</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="https://developers.google.com/maps/documentation/javascript/" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
                 <span class="base-text">Soluciones</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_1.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_1.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_3.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_3.html"><i class="fa fa-fw fa-file-word-o"></i></a>
               </div>
             </div>
           </div>
@@ -280,8 +281,8 @@
             <div class="card withe">
               <div class="card-action material base-text">
                 <span class="base-text">Códigos</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_1.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_1.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_3.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_3.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
               </div>
             </div>
           </div>

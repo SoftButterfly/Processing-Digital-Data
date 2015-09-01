@@ -58,9 +58,9 @@
               <i class="material-icons">menu</i>
             </a>
 
-            <a href="laboratorio_1.html" class="brand-logo">
+            <a href="laboratorio_2.html" class="brand-logo">
               <span class="text300">
-                Laboratorio 1
+                Laboratorio 2
               </span>
             </a>
           </div>
@@ -74,7 +74,7 @@
         <div class="row">
           <div class="col s12">
             <blockquote>
-              <h1 class="h5 text300">Introducción a <span class="smallcaps">Matlab</span><sup>®</sup></h1>
+              <h1 class="h5 text300">Señales</h1>
             </blockquote>
           </div>
         </div>
@@ -88,9 +88,15 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa que genere una matriz <strong>cuadrado mágico</strong> de $n \times n$ elementos y que la
-              guarde en un archivo de datos <code>magico_n.txt</code>. Modificar el programa para que lea dicho
-              archivo y calcule el valor máximo de la matriz y la posición correspondiente.
+              Utilizando <span class="smallcaps">Matlab</span><sup>®</sup>, haga un programa (function) que evalúe las funciones singulares:
+            </p>
+            <ol>
+              <li>Impulso unitario</li>
+              <li>Escalón unitario</li>
+              <li>Función rampa</li>
+            </ol>
+            <p>
+              Debe graficar cada función singular.
             </p>
           </div>
         </div>
@@ -104,11 +110,12 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa para resolver la ecuación de 2<sup>do</sup> grado: $ax^2+bx+c = 0$. Los parámetros $a$,
-              $b$ y $c$ serán introducidos desde el teclado. Debe tener en cuenta las raíces reales y complejas.
-              Las raíces deben aparecer en la pantalla con 6 decimales. No debe usar la sentencia
-              <code class="text700 accent-text">roots</code>.
+              Haga un programa para visualizar la función compuerta unitaria de ancho 1.
             </p>
+            <ol>
+              <li>Utilizar los comandos <code>zeros</code> y <code>ones</code>.</li>
+              <li>Utilizar la función desarrollada en el <a href="#problema1">problema 1</a>.</li>
+            </ol>
           </div>
         </div>
 
@@ -121,13 +128,13 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa para resolver un sistema de ecuaciones lineales:
-              $\mathbf{A} \cdot \mathbf{X} = \mathbf{B}$, donde $\mathbf{B}$ es una
-              matriz cuadrada y $\mathbf{B}$ y $\mathbf{X}$ son vectores columna.
-              Los datos serán leídos desde un archivo. Las incógnitas deben
-              aparecer en la pantalla con 4 decimales. Debe grabar las incógnitas
-              en un archivo <code>solucion.txt</code>.
+              Desarrollar un conjunto de comandos <span class="smallcaps">Matlab</span><sup>®</sup> para aproximar
+              las siguientes señales periódicas en tiempo continuo, dibujando 5 ciclos de cada una:
             </p>
+            <ol>
+              <li>Onda Cuadrada, de amplitud 5 Volts, frecuencia fundamental 20 Hz.</li>
+              <li>Señal diente de sierra, amplitud 5 Volts y frecuencia fundamental 20Hz.</li>
+            </ol>
           </div>
         </div>
 
@@ -140,16 +147,10 @@
 
           <div class="col s12">
             <p>
-              Hacer un programa para calcular la distancia entre dos puntos
-              geográficos de latitud y longitud determinados. Considerar que
-              la Tierra tiene una forma esférica y que la distancia <strong>NO</strong>
-              es una línea recta, sino una longitud de arco esférica.
-              ¿Cuál es la distancia entre Lima y New York?
-              Verifique con Google Earth.
-            </p>
-            <p>
-              <strong>Sugerencia:</strong> $L = R\times\theta$, donde $\theta$ es el ángulo
-              formado por los vectores que van del centro a los puntos geográficos.
+              La solución a una ecuación diferencial está dada por:
+              $$x\left(t\right)=10\mathrm{e}^{-t} - 5\mathrm{e}^{-0.5t}$$
+              Usando <span class="smallcaps">Matlab</span><sup>®</sup>, grafique la solución de la ecuación
+              en el siguiente intervalo [0,5] con una frecuencia de muestreo de 100 Hz.
             </p>
           </div>
         </div>
@@ -163,11 +164,8 @@
 
           <div class="col s12">
             <p>
-              El día <i>juliano</i> es el número de orden que le corresponde a una fecha dada; por ejemplo, el
-              01 de enero sería el día juliano 1 y el 31 de diciembre sería el día juliano 365. Hacer un
-              programa para convertir de día juliano a fecha. ¿A que fecha corresponde el día juliano 220?
-              Variar el programa para tener en cuenta los años bisiestos: múltiplos de 4, excepto los que
-              terminen en 00, como el año 2000.
+              Repita el <a href="#problema4">problema anterior</a> para la siguiente expresión:
+              $$x\left(t\right)=10\mathrm{e}^{-t} + 5\mathrm{e}^{-0.5t}$$
             </p>
           </div>
         </div>
@@ -181,13 +179,14 @@
 
           <div class="col s12">
             <p>
-              Se tiene un cuadrado de lado $L$ y una circunferencia inscrita en él.
-              Supongamos que lanzamos pequeños dardos a gran distancia. Muchos caerán dentro
-              y otros caerán fuera de la circunferencia. Sea: $n$ el número de dardos
-              que caen dentro del circulo y $N$ el número de dardos que caen dentro del cuadrado.
-              La razón de estas dos cantidades será proporcional a la razón de las áreas del cuadrado y de la
-              circunferencia. Hallar una aproximación de $\pi$ en función de $n$ y $N$. Hacer un programa para
-              hallar el valor de $\pi$ para un valor de $N$ introducido por el usuario.
+              Una señal sinusoidal con amortiguación exponencial está definida por la siguiente
+              expresión:
+              $$x\left(t\right) = \mathrm{e}^{-a t}\cos\left(2\pi f t\right)$$
+              donde $f = 1\ Hz$ y el parámetro $a$ es variable y toma valores sobre el siguiente conjunto: $1$, $5$,
+              $20$. Usando <span class="smallcaps">Matlab</span><sup>®</sup>, investigar el efecto de variar
+              dicho parámetro en la señal en el intervalo $\left[0, 5\right]$. Utilice una frecuencia de muestreo
+              de $20\ Hz$. Calcule el valor de $a$ para el caso de amortiguamiento crítico.
+              Haga una gráfica para cada caso.
             </p>
           </div>
         </div>
@@ -201,16 +200,28 @@
 
           <div class="col s12">
             <p>
-              Hacer una gráfica en 3 dimensiones de la curva gaussiana:
-              $$z = A\cdot\mathrm{e}^\left(x^2 + y^2\right)$$
-              donde $A = 10$ es la amplitud de la curva. Utilice una grilla para el dominio:
-              $-10 < x < 10 \wedge -10 < y < 10$.
+              Para la gráfica mostrada, haga una función en <span class="smallcaps">Matlab</span><sup>®</sup>
+              que visualize $h\left(t\right)$. Use el comando <code>function</code>. Graficar:
             </p>
             <ol>
-              <li>Considere que la dimensión de la grilla es unitaria.</li>
-              <li>Considere que la dimensión de la grilla es $0.2$</li>
-              <li>Modifique el programa para visualizar curvas de nivel</li>
+              <li>$h\left(t+1\right)$</li>
+              <li>$h\left(\frac{t}{2}-2\right)$</li>
+              <li>$h\left(1-2t\right)$</li>
+              <li>$4h\left(\frac{t}{4}\right)$</li>
+              <li>$\frac{1}{2}h\left(t\right)u\left(t\right) + h\left(-t\right)u\left(t\right)$</li>
+              <li>$h\left(\frac{t}{2}\right)\delta\left(t+1\right)$</li>
+              <li>$h\left(t\right)\left(u\left(t+1\right)-u\left(t-1\right)\right)$</li>
             </ol>
+          </div>
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card withe">
+              <div class="card-image s-pad-5">
+                <img src="./lab2prob7.png" alt="Función h(t)">
+              </div>
+              <div class="card-action caption center-align s-pad-5">
+                <strong>Figura 1.</strong> Función $h\left(t\right)$
+              </div>
+            </div>
           </div>
         </div>
 
@@ -224,44 +235,8 @@
           <div class="col s12 m12 l6">
             <div class="card withe">
               <div class="card-action material base-text">
-                <span class="base-text">Fundamentos de <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/language-fundamentals.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Matemáticas en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/mathematics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Gráficos en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/plotting-basics.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">Scripting en <span class="smallcaps">Matlab</span><sup>®</sup>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/programming-and-data-types.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m12 l6">
-            <div class="card withe">
-              <div class="card-action material base-text">
-                <span class="base-text">API de Google Maps</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="https://developers.google.com/maps/documentation/javascript/" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+                <span class="base-text">Declaración de funciones <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.mathworks.com/help/matlab/ref/function.html" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
               </div>
             </div>
           </div>
@@ -270,8 +245,8 @@
             <div class="card withe">
               <div class="card-action material base-text">
                 <span class="base-text">Soluciones</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_1.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_1.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_2.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_2.html"><i class="fa fa-fw fa-file-word-o"></i></a>
               </div>
             </div>
           </div>
@@ -280,8 +255,8 @@
             <div class="card withe">
               <div class="card-action material base-text">
                 <span class="base-text">Códigos</span>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_1.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
-                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_1.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_2.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_2.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
               </div>
             </div>
           </div>

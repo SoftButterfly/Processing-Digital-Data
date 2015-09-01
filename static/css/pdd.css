@@ -339,12 +339,33 @@
     margin: 0!important;
   }
 
-  .card .card-action.caption a{
+  .card .card-action a{
     color: #FFC107;
+    margin-right: 0;
+  }
+
+  .card .card-action a:hover{
+    background-color: #DDDDDD;
+    color: #212121;
+  }
+
+  .card .card-action a:hover{
+    background-color: #DDDDDD;
+  }
+
+  .card .card-action.caption{
+    font-size: 0.8rem;
+    line-height: 0.9rem;
+  }
+
+  .card .card-action.caption a{
     text-transform: none;
     margin-right: 0;
   }
 
+  .card .card-action.material{
+    line-height: 36px;
+  }
   code{
     font-size: 0.9rem;
   }
