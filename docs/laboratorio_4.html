@@ -1,0 +1,359 @@
+<!--[if lt IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>       <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>       <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="author" content="Martin Josemaria Vuelta Rojas">
+    <meta name="description" content="Web para el curso de procesamiento de datos digitales">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00000">
+    <meta name="msapplication-TileImage" content="../static/img/favicon.png">
+    <meta name="theme-color" content="#000000">
+
+
+    <title>Procesamiento de Datos Digitales</title>
+
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.png"/>
+
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/shCore.css">
+    <link rel="stylesheet" href="../static/css/shThemeDefault.css">
+    <link rel="stylesheet" href="../static/css/materialize.css">
+    <link rel="stylesheet" href="../static/css/extensions.css">
+    <link rel="stylesheet" href="../static/css/overrides.css">
+    <link rel="stylesheet" href="../static/css/helpers.css">
+    <link rel="stylesheet" href="../static/css/pdd.css">
+  </head>
+
+  <body>
+    <ul id="sidenav" class="waves-effect side-nav fixed light-color table-of-contents">
+      <li class="waves-effect waves-light dark-color s-mar-0 s-pad-0">
+        <a href="../" class=" s-mar-0 s-pad-0">
+          <h4 class="grey-text text-lighten-5 text700 s-mar-0 s-pad-0 center-align">PDD</h4>
+        </a>
+      </li>
+      <li><a href="../" class="active"><i class="fa fa-fw fa-home"></i>Inicio</a></li>
+      <li><a href="#problema1">Problema 1</a></li>
+      <li><a href="#problema2">Problema 2</a></li>
+      <li><a href="#problema3">Problema 3</a></li>
+      <li><a href="#problema4">Problema 4</a></li>
+      <li><a href="#problema5">Problema 5</a></li>
+      <li><a href="#problema6">Problema 6</a></li>
+      <li><a href="#materials">Materiales</a></li>
+    </ul>
+
+    <header class="dark-color navbar-fixed">
+      <nav class="transparent waves-effect waves-light">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="javascript:void(0);" data-activates="sidenav" class="button-collapse left s-pad-0">
+              <i class="material-icons">menu</i>
+            </a>
+
+            <a href="laboratorio_4.html" class="brand-logo">
+              <span class="text300">
+                Laboratorio 4
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="col s12">
+            <blockquote>
+              <h1 class="h5 text300">Transformada de Fourier y filtros</h1>
+            </blockquote>
+          </div>
+        </div>
+
+        <div id="problema1" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 1</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Graficar en <span class="smallcaps">Matlab</span><sup>®</sup> las señales a y b y hallar
+              la transformada de Fourier en forma analítica (usar propiedades):
+            </p>
+            <ol type="a">
+              <li><br/>$$f_1\left(t\right) = G\left(\frac{t}{2}\right) – G\left(t\right)$$</li>
+              <li><br/>$$f_2\left(t\right) = 5G\left(t-1\right) – G\left(t+1\right)$$</li>
+            </ol>
+            <p>
+              Utilizando <span class="smallcaps">Matlab</span><sup>®</sup> halle la transformada de
+              Fourier de las señales c y d
+            </p>
+            <ol type="a">
+              <li class="row s-mar-0">
+                <div class="col s12 m6 offset-m3 l4 offset-l4 s-pad-0">
+                  <div class="card withe">
+                    <div class="card-image s-pad-5">
+                      <img src="./lab4prob1c.png" alt="Función h(t)">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="row s-mar-0">
+                <div class="col s12 m6 offset-m3 l4 offset-l4 s-pad-0">
+                  <div class="card withe">
+                    <div class="card-image s-pad-5">
+                      <img src="./lab4prob1d.png" alt="Función h(t)">
+                    </div>
+                  </div>
+                </div>
+              </li>
+            </ol>
+            <p>
+              <strong>Nota: </strong>$G$ es la función compuerta unitaria
+            </p>
+
+          </div>
+        </div>
+
+        <div id="problema2" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 2</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Hallar la transformada de Fourier de $x\left(t\right)$ y graficar en Matlab:
+            </p>
+          </div>
+
+          <div class="col s12 m6 offset-m3 l4 offset-l4">
+            <div class="card withe">
+              <div class="card-image s-pad-5">
+                <img src="./lab4prob2a.png" alt="Función x(t)">
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+               Si $x\left(t\right)$ pasa a través del bloque de la figura,
+               calcule la transformada de Fourier de $y\left(t\right)$.
+            </p>
+          </div>
+
+          <div class="col s12 m6 offset-m3 l4 offset-l4">
+            <div class="card withe">
+              <div class="card-image s-pad-15">
+                <img src="./lab4prob2b.png" alt="Función x(t)">
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="problema3" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 3</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Halle y grafique la transformada de Fourier de las siguientes señales:
+            </p>
+            <ol type="a">
+              <li class="row s-mar-0">
+                <div class="col s12 m6 offset-m3 l4 offset-l4 s-pad-0">
+                  <div class="card withe">
+                    <div class="card-image s-pad-5">
+                      <img src="./lab4prob3a.png" alt="Función h(t)">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li class="row s-mar-0">
+                <p>
+                  La función periódica mostrada en la figura:
+                  $$
+                  x\left(n\right) = \left\{
+                  \begin{array}
+                  & 1 & ; & \mathrm{Si}\ n\ \mathrm{impar}\\
+                    2 & ; & \mathrm{Si}\ n\ \mathrm{par}\\
+                  \end{array}
+                  \right.
+                  $$
+                  con $n \in \mathbb{Z}$.
+                </p>
+                <div class="col s12 m6 offset-m3 l4 offset-l4 s-pad-0">
+                  <div class="card withe">
+                    <div class="card-image s-pad-5">
+                      <img src="./lab4prob3b.png" alt="Función h(t)">
+                    </div>
+                  </div>
+                </div>
+              </li>
+              <li><br/>$$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$</li>
+            </ol>
+            <p>
+              Verificar en <span class="smallcaps">Matlab</span><sup>®</sup> las convoluciones obtenidas en los incisos anteriores.
+            </p>
+          </div>
+        </div>
+
+        <div id="problema4" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 4</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+               Dada la señal en el dominio del tiempo:
+               $$y\left(t\right) = \sin\left(t\right) + 0.25\sin\left(10t\right)$$
+            </p>
+            <ol type="a">
+              <li>Hacer un programa para graficar la señal para $4$ periodos, con una frecuencia de muestreo de $100\ Hz$.</li>
+              <li>Hacer un programa para graficar el espectro de frecuencias de la señal.</li>
+              <li>¿Cuál es la amplitud y la frecuencia correspondiente a cada pico?</li>
+            <ol>
+          </div>
+
+        </div>
+
+        <div id="problema5" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 5</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Descargue el archivo <a href=""><code>datos.txt</code></a> de la web, que representa una señal de audio.
+              La frecuencia de muestreo es de $F_s = 8000\ Hz$. Hacer un programa en Matlab para que realice
+              lo siguiente:
+            </p>
+            <ol type="a">
+              <li>Hallar el número de datos N.</li>
+              <li>Hallar la duración de la señal.</li>
+              <li>Hallar el valor medio de la señal.</li>
+              <li>Graficar la señal $x\left(t\right)$.</li>
+              <li>Graficar el espectro de frecuencias.</li>
+            </ol>
+          </div>
+        </div>
+
+        <div id="problema6" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 6</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <ol type="a">
+              <li>
+                Calcule y grafique la transformada de Fourier de la función triángulo:
+                $$x\left(t\right) = \Delta\left(\frac{t}{2}\right)$$
+              </li>
+              <li>
+                <p>
+                  La integral que define la transformada de Fourier puede calcularse numéricamente, para cada valor de frecuencia,
+                  utilizando la suma de Riemman. Para subdominios de longitud T se tiene:
+                  $$X\left(f\right)=\sum_{N=-\infty}^{\infty}\Delta\left(\frac{n T}{2}\right)\exp(-2\pi j f N T )T$$
+                  Calcular para $T=0.8$ y para el rango de
+                  frecuencia de $0$ a $2$ con intervalos de $0.125$
+                  ejecutando las siguientes sentencias en Matlab:
+                </p>
+                <div class="card white">
+                  <div class="card-content s-pad-5">
+                    <pre class="brush: matlab">
+                      T = 0.8;
+                      n = [-2:2];
+                      f = [0:0.125:2];
+                      X = zeros(size(f)) ;
+                      for i = 1: length(f)
+                          X(i) = sum(T*triang(n*T/2).*exp(-j*2*pi*f(i)*n*T);
+                      end
+                    </pre>
+                  </div>
+                </div>
+              </li>
+              <li>
+                Repetir para $T$ $10$ veces menor.
+              </li>
+            </ol>
+            <p>
+              <strong>Nota:</strong> La función $\Delta$ es la función triángulo $\Delta\left(t\right)$ que Ud. debe implementar en
+              <span class="smallcaps">Matlab</span><sup>®</sup>.
+            </p>
+          </div>
+        </div>
+
+        <div id="materials" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Materiales</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Soluciones</span>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="../labs/laboratorio_4.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="../labs/laboratorio_4.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Códigos</span>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="../labs/code_4.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="right s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="../labs/latex_4.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </main>
+
+    <footer class="page-footer gray-gradient s-mar-t0">
+      <div class="footer-copyright transparent">
+        <div class="container center base-text">
+        © 2015 FENLAB - FCF - UNMSM
+        </div>
+      </div>
+    </footer>
+
+    <!-- script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script -->
+    <script type="text/javascript" charset="utf-8" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery.smoothState.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/attrchange.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushGNUPlot.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/pdd.js"></script>
+  </body>
+</html>
