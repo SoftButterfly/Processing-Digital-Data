@@ -1,0 +1,77 @@
+\documentclass[a4paper,12pt,twoside,final]{article}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{luximono}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{charter}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{color}
+\usepackage{esint}
+\usepackage{float}
+
+
+%%\usepackage{fnpct}
+
+
+\hypersetup{pdftitle={Procesamiento de datos digitales. Laboratorio 1},
+            pdfauthor={Martín Josemaría Vuelta Rojas},
+            pdfpagelayout=OneColumn,
+            pdfnewwindow=true,
+            pdfdisplaydoctitle=true,
+            pdfstartview=XYZ,
+            plainpages=false,
+            unicode=true,
+            bookmarksnumbered=true,
+            bookmarksopen=true,
+            bookmarksopenlevel=3,
+            breaklinks=true,
+            colorlinks=true,
+            linkcolor=blue,
+            pdfborder={0 0 0}}
+\makeatletter
+%% LaTeX commands.
+%% ----------------------------------------------------------------------------------------------------
+
+%% Redefinition of \maketitle command
+\def\@maketitle
+{
+    \newpage
+    \null
+    \vskip 2em%
+    \begin{flushleft}%
+        \let \footnote \thanks
+        {\LARGE \@title \par}%
+    \end{flushleft}%
+    \begin{flushright}%
+        \vskip 1.5em%
+        {\@author \par}
+    \end{flushright}
+    \noindent\rule{1\columnwidth}{1pt}
+    \par
+}
+
+\makeatother
+
+
+\begin{document}
+    \title{\textit{\Large Laboratorio Nº1}\linebreak{}\linebreak{}\textbf{\Huge Introducción a \textsc{Matlab}}}
+    \author{\emph{Martín Josemaría Vuelta Rojas}}
+    \maketitle
+    \section{holi!}
+    blablabla
+\end{document}
+
