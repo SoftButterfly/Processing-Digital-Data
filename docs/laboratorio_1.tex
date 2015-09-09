@@ -1,4 +1,5 @@
-\documentclass[a4paper,12pt,twoside,final]{article}
+\documentclass[a4paper,11pt,twoside,final]{article}
+\usepackage[scaled=0.85]{luximono}
 \usepackage[spanish]{babel}
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
@@ -6,7 +7,6 @@
 \usepackage{epstopdf}
 \usepackage{graphicx}
 \usepackage{hyperref}
-\usepackage{luximono}
 \usepackage{multicol}
 \usepackage{tabularx}
 \usepackage{textcomp}
@@ -45,16 +45,40 @@
 \makeatletter
 %% LaTeX commands.
 %% ----------------------------------------------------------------------------------------------------
-
 %% Redefinition of \maketitle command
+\def\@maketitle{%
+  \newpage
+  \null
+  \begin{center}%
+    \small{\uppercase{Univerisad Nacional Mayor de San Marcos}} \par%
+    \vskip 0.5em%
+    \small{\uppercase{Facultad de Ciencias Físicas}} \par%
+    \vskip 2em%
+    \let \footnote \thanks
+      \small{\textsc{Procesamiento de Datos Digitales}} \par%
+      \vskip 0.5em%
+      {\LARGE \@title \par}%
+      \vskip 1.5em%
+      {\normalsize
+        \lineskip .5em%
+        \begin{tabular}[t]{c}%
+        \@author
+        \end{tabular}\par%
+      }%
+      \vskip 1em%
+      {\normalsize \@date}%
+  \end{center}%
+  \par%
+  \vskip 1.5em%
+}
+
 \makeatother
 
 \begin{document}
-    \title{\textit{\Large Laboratorio Nº1}\linebreak{}\linebreak{}\textbf{\Huge Introducción a \textsc{Matlab}}}
-    \author{\emph{Lic. César Jiménez Tintaya}\footnote{\texttt{cjimenezt@unmsm.edu.pe}}}
+    \title{Laboratorio Nº1}
+    \author{Lic. César Jiménez Tintaya\\ \small{\texttt{cjimenezt@unmsm.edu.pe}}}
     \date{}
     \maketitle
-
 
     \begin{enumerate}
         \item Hacer un programa que genere una matriz cuadrado mágico de n×n elementos
