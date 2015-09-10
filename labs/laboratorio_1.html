@@ -111,21 +111,15 @@
                   Dim = input('Ingrese la dimension de la matriz: ');
 
                   FileName = sprintf('magico_%d.dat',Dim);
-                  A = magic(Dim);
+                  MagicMatrix = magic(Dim);
 
-                  fprintf('Escribiendo archivo %s\n', FileName);
+                  fprintf('Escribiendo archivo %s\n', FileName
 
-                  FileHandler = fopen(FileName,'w');
+                  save(FileName, 'MagicMatrix', '-ascii')
 
-                  for i=1:Dim
-                      for j=1:Dim
-                          fprintf(FileHandler,'%10d',A(i,j));
-                      end
-                      fprintf(FileHandler,'\n');
-                  end
-
-                  fclose(FileHandler);
-                  fprintf('Escritura completa.\n');
+                  fprintf('Escritura completa.\n')
+                  fprintf('La matriz guardada fue:\n')
+                  disp(MagicMatrix)
                 </pre>
               </div>
               <div class="card-action caption s-pad-5 center-align">
