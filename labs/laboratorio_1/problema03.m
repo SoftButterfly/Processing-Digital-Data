@@ -2,75 +2,82 @@ clear all
 close all
 clc
 
-Question = {'1. Numero de ecuaciones del sistema:'
-            '2. Nombre del archivo entrada:'
-            '3. Nombre del archivo salida:'};
-Title    = 'Sistema Lineal';
-Default  = {'10','Data_System.dat','Solution_System.dat'};
-UInData  = inputdlg(Question, Title, 1, Default);
+Dim      = input('1. Numero de ecuaciones del sistema: ');
+InFile   = input('2. Nombre del archivo entrada: ', 's');
+OutFile  = input('3. Nombre del archivo salida: ', 's');
 
-Dim      = str2double(UInData{1});
-InFile   = UInData{2};
-OutFile  = UInData{3};
+fprintf('\n')
 
-DataFile = fopen(InFile,'r');
+if(isempty(Dim))
+    Dim = 5;
+    fprintf('* Cargando valor por defecto: %d ecuaciones\n', Dim);
+end
 
-if(DataFile == -1)
+if(isempty(InFile))
+    InFile = 'problema03_data.dat';
+    fprintf('* Cargando valor por defecto: Archivo de entrada "%s".\n', InFile);
+end
+
+if(isempty(OutFile))
+    OutFile = 'solucion.txt';
+    fprintf('* Cargando valor por defecto: Archivo de salida "%s".\n', OutFile);
+end
+
+if(InFile == -1)
+    fprintf('\n')
     disp('Archivo no encontrado');
 else
-    B = fscanf(DataFile,'%f');
-    fclose(DataFile);
+    B = load(InFile);
 
-    if(length(B) < Dim^2 + Dim)
-        fprintf('Datos insuficientes en "%s"\n', InFile);
+    if(any(size(B) ~= [Dim, Dim+1]))
+        fprintf('\n')
+        fprintf('Los datos en el archivo "%s" no corresponden a un sistem de %d ecuaciones.\n', InFile, Dim);
     else
-        if(length(B) > Dim^2 + Dim)
-            fprintf('Exceso de datos en "%s", se tomaran solo los %d primeros datos.\n', InFile, Dim^2 + Dim);
-        end
-        A = zeros(Dim,Dim + 1);
-        for i = 1:Dim
-            for j = 1:Dim+1
-                A(i,j) = B(i+j+Dim*(i-1)-1);
-            end
-        end
-        disp('Matiz del sistema: A·X = Y')
-        disp('A = ')
+        A = B(:,1:Dim);
+
+        fprintf('\n')
+        fprintf('Matiz del sistema: A*X = Y\n')
+        fprintf('A = \n')
+
         for i = 1:Dim
             for j = 1:Dim
                 fprintf('\t %10.4f', A(i,j));
-                if j == Dim
-                    fprintf('\n');
-                end
             end
+            fprintf('\n');
         end
-        disp(' ')
-        disp('Y = ')
+
+        Y = B(:,Dim+1);
+
+        fprintf('\n')
+        fprintf('Y = \n')
 
         for i = 1:Dim
-            fprintf('\t %10.4f \n', A(i,Dim));
+            fprintf('\t %10.4f \n', Y(i));
         end
 
-        disp(' ')
-
-        if(det(A(:,1:Dim)) == 0)
-            disp('La matriz del sistema es singular')
+        if(det(A) == 0)
+            fprintf('\n');
+            fprintf('La matriz del sistema es singular.\n')
         else
-            X = A(:,Dim+1)\A(:,1:Dim);
-            disp('La solucion del sistema es:')
-            disp('X = ')
+            X = A\Y;
+
+            fprintf('\n');
+            fprintf('La solucion del sistema es:\n')
+            fprintf('X = \n')
 
             SolutionFile = fopen(OutFile,'w');
+
             for i = 1:Dim
                 fprintf('\t %10.4f \n', X(i));
                 fprintf(SolutionFile, '%2.4f\n', X(i));
             end
 
             if(~fclose(SolutionFile))
-                fprintf('\nLa solucion del problema sistema se guardo exitosamente en "%s"\n',...
-                         OutFile);
+                fprintf('\n');
+                fprintf('La solucion del problema sistema se guardo exitosamente en "%s"\n', OutFile);
             else
-                fprintf('\nError al guardar la solucion en "%s"\n',...
-                         OutFile);
+                fprintf('\n');
+                fprintf('Error al guardar la solucion en "%s"\n', OutFile);
             end
         end
     end

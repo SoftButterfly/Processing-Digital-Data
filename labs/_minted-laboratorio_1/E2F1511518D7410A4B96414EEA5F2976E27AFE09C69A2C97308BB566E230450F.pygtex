@@ -1,0 +1,13 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+          \PYG{n}{close} \PYG{n}{all}
+          \PYG{n}{clc}
+
+          \PYG{n}{Dim} \PYG{o}{=} \PYG{n}{input}\PYG{p}{(}\PYG{err}{\PYGZsq{}}\PYG{n}{Ingrese} \PYG{n}{la} \PYG{n}{dimension} \PYG{n}{de} \PYG{n}{la} \PYG{n+nl}{matriz}\PYG{p}{:} \PYG{err}{\PYGZsq{}}\PYG{p}{);}
+
+          \PYG{n}{FileName} \PYG{o}{=} \PYG{n}{sprintf}\PYG{p}{(}\PYG{err}{\PYGZsq{}}\PYG{n}{magico\PYGZus{}}\PYG{o}{\PYGZpc{}}\PYG{n}{d}\PYG{p}{.}\PYG{n}{dat}\PYG{err}{\PYGZsq{}}\PYG{p}{,}\PYG{n}{Dim}\PYG{p}{);}
+          \PYG{n}{A} \PYG{o}{=} \PYG{n}{magic}\PYG{p}{(}\PYG{n}{Dim}\PYG{p}{);}
+
+          \PYG{n}{fprintf}\PYG{p}{(}\PYG{err}{\PYGZsq{}}\PYG{n}{Escribiendo} \PYG{n}{archivo} \PYG{o}{\PYGZpc{}}\PYG{n}{s}\PYG{err}{\PYGZbs{}}\PYG{n}{n}\PYG{err}{\PYGZsq{}}\PYG{p}{,} \PYG{n}{FileName}\PYG{p}{);}
+
+          \PYG{n}{FileHandler} \PYG{o}{=} \PYG{n}{fopen}\PYG{p}{(}\PYG{n}{FileName}\PYG{p}{,}\PYG{l+s+sc}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{);}
+\end{Verbatim}

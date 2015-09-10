@@ -1,0 +1,29 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZgt{}\PYGZgt{} problema01\PYGZus{}a
+Ingrese la dimension de la matriz: 5
+Escribiendo archivo magico\PYGZus{}5.dat
+Escritura completa.
+\PYGZgt{}\PYGZgt{} problema01\PYGZus{}b
+Ingrese la dimension de la matriz: 5
+Leyendo archivo magico\PYGZus{}5.dat
+Mayor elemento esta en la posicion (5,3) y es 25
+\PYGZgt{}\PYGZgt{} whos
+  Name             Size            Bytes  Class     Attributes
+
+  Dim              1x1                 8  double
+  FileName         1x12               24  char
+  MagicMatrix      5x5               200  double
+  c                1x1                 8  double
+  maxValue         1x1                 8  double
+  r                1x1                 8  double
+
+\PYGZgt{}\PYGZgt{} MagicMatrix
+
+MagicMatrix =
+
+    17    24     1     8    15
+    23     5     7    14    16
+     4     6    13    20    22
+    10    12    19    21     3
+    11    18    25     2     9
+\end{Verbatim}

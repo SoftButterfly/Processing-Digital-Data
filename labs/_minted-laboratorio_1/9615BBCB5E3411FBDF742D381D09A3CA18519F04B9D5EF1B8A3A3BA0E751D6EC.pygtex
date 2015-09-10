@@ -1,0 +1,86 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYG{n}{clear} \PYG{n}{all}
+\PYG{n}{close} \PYG{n}{all}
+\PYG{n}{clc}
+
+\PYG{n}{Dim}      \PYG{p}{=} \PYG{n}{input}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}1. Numero de ecuaciones del sistema: \PYGZsq{}}\PYG{p}{);}
+\PYG{n}{InFile}   \PYG{p}{=} \PYG{n}{input}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}2. Nombre del archivo entrada: \PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{);}
+\PYG{n}{OutFile}  \PYG{p}{=} \PYG{n}{input}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}3. Nombre del archivo salida: \PYGZsq{}}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}s\PYGZsq{}}\PYG{p}{);}
+
+\PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+
+\PYG{k}{if}\PYG{p}{(}\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{Dim}\PYG{p}{))}
+    \PYG{n}{Dim} \PYG{p}{=} \PYG{l+m+mi}{5}\PYG{p}{;}
+    \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}* Cargando valor por defecto: \PYGZpc{}d ecuaciones\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{Dim}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{k}{if}\PYG{p}{(}\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{InFile}\PYG{p}{))}
+    \PYG{n}{InFile} \PYG{p}{=} \PYG{l+s}{\PYGZsq{}problema03\PYGZus{}data.dat\PYGZsq{}}\PYG{p}{;}
+    \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}* Cargando valor por defecto: Archivo de entrada \PYGZdq{}\PYGZpc{}s\PYGZdq{}.\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{InFile}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{k}{if}\PYG{p}{(}\PYG{n+nb}{isempty}\PYG{p}{(}\PYG{n}{OutFile}\PYG{p}{))}
+    \PYG{n}{OutFile} \PYG{p}{=} \PYG{l+s}{\PYGZsq{}solucion.txt\PYGZsq{}}\PYG{p}{;}
+    \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}* Cargando valor por defecto: Archivo de salida \PYGZdq{}\PYGZpc{}s\PYGZdq{}.\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{OutFile}\PYG{p}{);}
+\PYG{k}{end}
+
+\PYG{k}{if}\PYG{p}{(}\PYG{n}{InFile} \PYG{o}{==} \PYG{o}{\PYGZhy{}}\PYG{l+m+mi}{1}\PYG{p}{)}
+    \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+    \PYG{n+nb}{disp}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Archivo no encontrado\PYGZsq{}}\PYG{p}{);}
+\PYG{k}{else}
+    \PYG{n}{B} \PYG{p}{=} \PYG{n}{load}\PYG{p}{(}\PYG{n}{InFile}\PYG{p}{);}
+
+    \PYG{k}{if}\PYG{p}{(}\PYG{n}{any}\PYG{p}{(}\PYG{n+nb}{size}\PYG{p}{(}\PYG{n}{B}\PYG{p}{)} \PYG{o}{\PYGZti{}=} \PYG{p}{[}\PYG{n}{Dim}\PYG{p}{,} \PYG{n}{Dim}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{]))}
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Los datos en el archivo \PYGZdq{}\PYGZpc{}s\PYGZdq{} no corresponden a un sistem de \PYGZpc{}d ecuaciones.\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{InFile}\PYG{p}{,} \PYG{n}{Dim}\PYG{p}{);}
+    \PYG{k}{else}
+        \PYG{n}{A} \PYG{p}{=} \PYG{n}{B}\PYG{p}{(:,}\PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{Dim}\PYG{p}{);}
+
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Matiz del sistema: A*X = Y\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}A = \PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+
+        \PYG{k}{for} \PYG{n+nb}{i} \PYG{p}{=} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{Dim}
+            \PYG{k}{for} \PYG{n+nb}{j} \PYG{p}{=} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{Dim}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}t \PYGZpc{}10.4f\PYGZsq{}}\PYG{p}{,} \PYG{n}{A}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{,}\PYG{n+nb}{j}\PYG{p}{));}
+            \PYG{k}{end}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{);}
+        \PYG{k}{end}
+
+        \PYG{n}{Y} \PYG{p}{=} \PYG{n}{B}\PYG{p}{(:,}\PYG{n}{Dim}\PYG{o}{+}\PYG{l+m+mi}{1}\PYG{p}{);}
+
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+        \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Y = \PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+
+        \PYG{k}{for} \PYG{n+nb}{i} \PYG{p}{=} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{Dim}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}t \PYGZpc{}10.4f \PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{Y}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{));}
+        \PYG{k}{end}
+
+        \PYG{k}{if}\PYG{p}{(}\PYG{n}{det}\PYG{p}{(}\PYG{n}{A}\PYG{p}{)} \PYG{o}{==} \PYG{l+m+mi}{0}\PYG{p}{)}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{);}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}La matriz del sistema es singular.\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+        \PYG{k}{else}
+            \PYG{n}{X} \PYG{p}{=} \PYG{n}{A}\PYG{o}{\PYGZbs{}}\PYG{n}{Y}\PYG{p}{;}
+
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{);}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}La solucion del sistema es:\PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+            \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}X = \PYGZbs{}n\PYGZsq{}}\PYG{p}{)}
+
+            \PYG{n}{SolutionFile} \PYG{p}{=} \PYG{n}{fopen}\PYG{p}{(}\PYG{n}{OutFile}\PYG{p}{,}\PYG{l+s}{\PYGZsq{}w\PYGZsq{}}\PYG{p}{);}
+
+            \PYG{k}{for} \PYG{n+nb}{i} \PYG{p}{=} \PYG{l+m+mi}{1}\PYG{p}{:}\PYG{n}{Dim}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}t \PYGZpc{}10.4f \PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{X}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{));}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{n}{SolutionFile}\PYG{p}{,} \PYG{l+s}{\PYGZsq{}\PYGZpc{}2.4f\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{X}\PYG{p}{(}\PYG{n+nb}{i}\PYG{p}{));}
+            \PYG{k}{end}
+
+            \PYG{k}{if}\PYG{p}{(}\PYG{o}{\PYGZti{}}\PYG{n}{fclose}\PYG{p}{(}\PYG{n}{SolutionFile}\PYG{p}{))}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{);}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}La solucion del problema sistema se guardo exitosamente en \PYGZdq{}\PYGZpc{}s\PYGZdq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{OutFile}\PYG{p}{);}
+            \PYG{k}{else}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{);}
+                \PYG{n}{fprintf}\PYG{p}{(}\PYG{l+s}{\PYGZsq{}Error al guardar la solucion en \PYGZdq{}\PYGZpc{}s\PYGZdq{}\PYGZbs{}n\PYGZsq{}}\PYG{p}{,} \PYG{n}{OutFile}\PYG{p}{);}
+            \PYG{k}{end}
+        \PYG{k}{end}
+    \PYG{k}{end}
+\PYG{k}{end}
+\end{Verbatim}

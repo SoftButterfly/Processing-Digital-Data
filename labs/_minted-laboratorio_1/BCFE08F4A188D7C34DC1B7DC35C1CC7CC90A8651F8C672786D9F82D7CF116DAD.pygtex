@@ -1,0 +1,31 @@
+\begin{Verbatim}[commandchars=\\\{\}]
+\PYGZgt{}\PYGZgt{} problema03
+1. Numero de ecuaciones del sistema: 5
+2. Nombre del archivo entrada: problema03\PYGZus{}data.dat
+3. Nombre del archivo salida: solucion.txt
+
+Matiz del sistema: A*X = Y
+A =
+            21.5707          6.8034         42.6516          3.7983         20.8634
+            45.5324         43.4646         31.1028         11.9958          2.4827
+             9.0924         28.9852         17.5476          6.1659         45.1358
+            13.1901         27.4930         25.6625          9.1954         47.2394
+             7.2769          7.2477         20.0904         11.9976         24.5432
+
+Y =
+            24.4626
+            16.8860
+            45.0027
+            18.4623
+             5.5601
+
+La solucion del sistema es:
+X =
+           \PYGZhy{}40.0155
+            24.7443
+            24.8792
+             2.6207
+           \PYGZhy{}16.8627
+
+La solucion del problema sistema se guardo exitosamente en \PYGZdq{}solucion.txt\PYGZdq{}
+\end{Verbatim}

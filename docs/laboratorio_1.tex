@@ -23,12 +23,9 @@
 \usepackage{esint}
 \usepackage{float}
 
-
-%%\usepackage{fnpct}
-
-
+% Hyperref setup
 \hypersetup{pdftitle={Procesamiento de datos digitales. Laboratorio 1},
-            pdfauthor={Martín Josemaría Vuelta Rojas},
+            pdfauthor={César Jiménez Tintaya},
             pdfpagelayout=OneColumn,
             pdfnewwindow=true,
             pdfdisplaydoctitle=true,
@@ -42,9 +39,10 @@
             colorlinks=true,
             linkcolor=blue,
             pdfborder={0 0 0}}
-\makeatletter
+
 %% LaTeX commands.
-%% ----------------------------------------------------------------------------------------------------
+\makeatletter
+%% -----------------------------------------------------------------------------
 %% Redefinition of \maketitle command
 \def\@maketitle{%
   \newpage
@@ -74,6 +72,7 @@
 
 \makeatother
 
+%% -----------------------------------------------------------------------------
 \begin{document}
     \title{Laboratorio Nº1}
     \author{Lic. César Jiménez Tintaya\\ \small{\texttt{cjimenezt@unmsm.edu.pe}}}
@@ -93,8 +92,8 @@
         sentencia \texttt{roots}.
 
         \item Hacer un programa para resolver un sistema de ecuaciones
-        lineales: $\mathbf{A}\cdot\mathbf{X}=\mathbf{b}$, donde $\mathbf{A}$ es
-        una matriz cuadrada y $\mathbf{B}$ y $\mathbf{B}$ son vectores columna.
+        lineales: $\mathbf{A}\cdot\mathbf{X}=\mathbf{Y}$, donde $\mathbf{A}$ es
+        una matriz cuadrada y $\mathbf{B}$ e $\mathbf{Y}$ son vectores columna.
         Los datos serán leídos desde un archivo. Las incógnitas deben aparecer
         en la pantalla con 4 decimales. Debe grabar las incógnitas en un
         archivo \texttt{solucion.txt}.

@@ -1,19 +1,20 @@
 clear all
+close all
 clc
 
 Lat = 1;
 Lon = 2;
+R   = 3;
+
 Deg = 1;
 Min = 2;
 Sec = 3;
 
-R   = 3;
 X   = 1;
 Y   = 2;
 Z   = 3;
 
 Rt  = 6371.0;
-
 City1 = zeros(3:3);
 City2 = zeros(3:3);
 
@@ -31,7 +32,7 @@ City1(Lon,Deg) = input('  * Grados   : ');
 City1(Lon,Min) = input('  * Minutos  : ');
 City1(Lon,Sec) = input('  * Segundos : ');
 
-fprintf('Ciudad 1:\n')
+fprintf('Ciudad 2:\n')
 fprintf('* Latitud\n')
 City2(Lat,Deg) = input('  * Grados   : ');
 City2(Lat,Min) = input('  * Minutos  : ');
@@ -56,5 +57,5 @@ City2(R,Y) = Rt*cos(Rlat)*sin(Rlon);
 City2(R,Z) = Rt*sin(Rlat);
 
 D = Rt*acos((City1(R,:)*City2(R,:)')/(norm(City1(R,:))*norm(City2(R,:))));
-fprintf('La disancia entre ambos puntos es igual a %.4f km\n', D);
+fprintf('La distancia entre ambos puntos es igual a %.4f km\n', D);
 
