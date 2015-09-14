@@ -18,6 +18,7 @@
 \usepackage{amstext}
 \usepackage{caption}
 \usepackage{charter}
+\usepackage{wrapfig}
 \usepackage{amsbsy}
 \usepackage{amsthm}
 \usepackage{lipsum}
@@ -114,6 +115,11 @@
   style=ruled,
 }
 
+\floatsetup[wrapfigure]{
+  capposition=top,
+  style=plain,
+}
+
 \captionsetup[figure]{
   labelfont=bf,
   justification=centering
@@ -149,7 +155,7 @@
 
 %% -----------------------------------------------------------------------------
 \begin{document}
-  \title{\textit{\Large Laboratorio Nº1}\linebreak{}\linebreak{}\textbf{\Huge Introducción a \textsc{Matlab}}}
+  \title{\textit{\Large Laboratorio Nº2}\linebreak{}\linebreak{}\textbf{\Huge Señales}}
   \author{\emph{Martín Josemaría Vuelta Rojas}}
   \maketitle
 
@@ -177,245 +183,185 @@
         \inputminted{matlab}{./laboratorio_2/rampa.m}
       \end{listing}
 
-      \begin{listing}[H]
-        \caption{Programa de lectura de la matriz de cuadrado mágico y
-        determinación del máximo valor y su lugar dentro de la matriz.}
-        \label{script01B}
-        \inputminted[firstline=5]{matlab}{./laboratorio_1/problema01_b.m}
-      \end{listing}
-
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución de los programas mostrados en los
-        \emph{scripts} \ref{script01A} y \ref{script01B}}
-        \label{script01sample}
-        \inputminted{text}{./laboratorio_1/problema01_sample.txt}
-      \end{listing}
+      % \begin{listing}[H]
+      %   \caption{Ejemplo de ejecución de los programas mostrados en los
+      %   \emph{scripts} \ref{script01A} y \ref{script01B}}
+      %   \label{script01sample}
+      %   \inputminted{text}{./laboratorio_1/problema01_sample.txt}
+      % \end{listing}
       \vspace{\fill}
 
   \newpage
   \subsection*{Problema 2}
-    \noindent Hacer un programa para resolver la ecuación de segundo grado:
-    $ax^2+bx+c=0$. Los parámetros $a$, $b$ y $c$ serán introducidos desde
-    el teclado. Debe tener en cuenta las raíces reales y complejas. Las
-    raíces deben aparecer en la pantalla con 6 decimales. No debe usar la
-    sentencia \texttt{roots}.
-
-    \subsubsection*{Solución}
-      \begin{listing}[H]
-        \caption{Cálculo de soluciones para la ecuación de segundo grado.}
-        \label{script02}
-        \inputminted[firstline=5]{matlab}{./laboratorio_1/problema02.m}
-      \end{listing}
-
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script02}}
-        \label{script02sample}
-        \inputminted{text}{./laboratorio_1/problema02_sample.txt}
-      \end{listing}
-      \vspace{\fill}
-
-  \newpage
-  \subsection*{Problema 3}
-    \noindent Hacer un programa para resolver un sistema de ecuaciones
-    lineales: $\mathbf{A}\cdot\mathbf{X}=\mathbf{Y}$, donde $\mathbf{A}$ es
-    una matriz cuadrada y $\mathbf{X}$ e $\mathbf{Y}$ son vectores columna.
-    Los datos serán leídos desde un archivo. Las incógnitas deben aparecer
-    en la pantalla con 4 decimales. Debe grabar las incógnitas en un
-    archivo \texttt{solucion.txt}.
-
-    \subsubsection*{Solución}
-      \begin{listing}[H]
-        \caption{Programa para la solución de un sistema de ecuaciones lineales}
-        \label{script03}
-        \inputminted[firstline=5,lastline=49]{matlab}{./laboratorio_1/problema03.m}
-      \end{listing}
-      \vspace{-1em}
-      \noindent\small{Continúa en la página siguiente.}
-      \vspace{\fill}
-
-      \newpage
-      \noindent\small{Continuación del \emph{script} \ref{script03}}.
-      \vspace{-1em}
-      \begin{listing}[H]
-        \inputminted[firstline=51]{matlab}{./laboratorio_1/problema03.m}
-      \end{listing}
-      \vspace{\fill}
-
-      \newpage
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script03}}
-        \label{script03sample}
-        \inputminted{text}{./laboratorio_1/problema03_sample.txt}
-      \end{listing}
-      \vspace{\fill}
-
-  \newpage
-  \subsection*{Problema 4}
-    \noindent Hacer un programa para calcular la distancia entre dos puntos
-    geográficos de latitud y longitud determinados. Considerar que la
-    Tierra tiene una forma esférica y que la distancia \textbf{no} es una
-    línea recta, sino una longitud de arco esférica. ¿Cuál es la distancia
-    entre Lima y New York? Verifique con Google Earth.\\
-
-    \noindent\textbf{Sugerencia}: $L=R\times\theta$, donde $\theta$ es el ángulo
-    formado por los vectores que van del centro a los puntos geográficos.
-
-    \subsubsection*{Solución}
-      \begin{listing}[H]
-        \caption{Cálculo de distancias entre dos puntos geográficos sobre la
-        Tierra}
-        \label{script04}
-        \inputminted[firstline=5,lastline=43]{matlab}{./laboratorio_1/problema04.m}
-      \end{listing}
-      \vspace{-1em}
-      \noindent\small{Continúa en la página siguiente.}
-      \vspace{\fill}
-
-      \newpage
-      \noindent\small{Continuación del \emph{script} \ref{script04}.}
-      \vspace{-1em}
-      \begin{listing}[H]
-        \inputminted[firstline=45]{matlab}{./laboratorio_1/problema04.m}
-      \end{listing}
-
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script04}}
-        \label{script04sample}
-        \inputminted{text}{./laboratorio_1/problema04_sample.txt}
-      \end{listing}
-      \vspace{\fill}
-
-      \newpage
-      \begin{listing}[H]
-        \caption{Script de Javascript que emplea la api de Google Maps para el
-        cálculo de distancias entre dos puntos en el mapa}
-        \label{script04js}
-        \inputminted[lastline=55]{javascript}{./laboratorio_1/problema04.js}
-      \end{listing}
-      \vspace{-1em}
-      \noindent Continúa en la página siguiente.
-      \vspace{\fill}
-
-      \newpage
-      \noindent\small{Continuación del \emph{script} \ref{script04js}.}
-      \vspace{-1em}
-      \begin{listing}[H]
-        \inputminted[firstline=57]{javascript}{./laboratorio_1/problema04.js}
-      \end{listing}
-      \vspace{-1em}
-
-      \begin{figure}[H]
-        \caption{Implementación del \emph{script} \ref{script04js} y vista de
-        resultados en web.}
-        \label{script04figure}
-        \includegraphics[width=\textwidth]{./laboratorio_1/problema04js_sample.png}
-      \end{figure}
-
-      \noindent Para las pruebas de este programa se tomaron las coordenadas de
-      Central Park, Ney York, Estados Unidos y El Parque de las leyendas,
-      Lima, Perú.
-      \vspace{\fill}
-
-  \newpage
-  \subsection*{Problema 5}
-    \noindent El día juliano es el número de orden que le corresponde a una
-    fecha dada; por ejemplo, el 01 de enero sería el día juliano 1 y el 31
-    de diciembre sería el día juliano 365. Hacer un programa para
-    convertir de día juliano a fecha. ¿A que fecha corresponde el día
-    juliano 220? Variar el programa para tener en cuenta los años
-    bisiestos: múltiplos de 4, excepto los que terminen en 00, como el
-    año 2000.
-
-    \subsubsection*{Solución}
-      \begin{listing}[H]
-        \caption{Cálculo de la fecha juliana.}
-        \label{script05}
-        \inputminted[firstline=5,lastline=44]{matlab}{./laboratorio_1/problema05.m}
-      \end{listing}
-      \vspace{-1em}
-      \noindent Continúa en la página siguiente.
-      \vspace{\fill}
-
-      \newpage
-      \noindent Continuación del \emph{script} \ref{script05}.
-      \begin{listing}[H]
-        \inputminted[firstline=46]{javascript}{./laboratorio_1/problema05.m}
-      \end{listing}
-
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script05}}
-        \label{script05sample}
-        \inputminted{text}{./laboratorio_1/problema05_sample.txt}
-      \end{listing}
-
-      \noindent La solución se planteó, considerando el día juliano como el
-      número ordinal de la fecha correspondiente dentro de un año dado.
-      \vspace{\fill}
-
-  \newpage
-  \subsection*{Problema 6}
-    \noindent Se tiene un cuadrado de lado $L$ y una circunferencia inscrita
-    en él. Supongamos que lanzamos pequeños dardos a gran distancia.
-    Muchos caerán dentro y otros caerán fuera de la circunferencia. Sea
-    $n$ el número de dardos que caen dentro del circulo y $N$ el número
-    de dardos que caen dentro del cuadrado. La razón de estas dos
-    cantidades será proporcional a la razón de las áreas del cuadrado y de
-    la circunferencia. Hallar una aproximación de $\pi$ en función de $n$
-    y $N$. Hacer un programa para hallar el valor de $\pi$ para un valor
-    de $N$ introducido por el usuario.
-
-    \subsubsection*{Solución}
-      \begin{listing}[H]
-        \caption{Cálculo de aproximado de $\pi$}
-        \label{script06}
-        \inputminted[firstline=5]{matlab}{./laboratorio_1/problema06.m}
-      \end{listing}
-
-      \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script06}}
-        \label{script06sample}
-        \inputminted{text}{./laboratorio_1/problema06_sample.txt}
-      \end{listing}
-      \vspace{\fill}
-
-  \newpage
-  \subsection*{Problema 7}
-    \noindent Hacer una gráfica en 3 dimensiones de la curva gaussiana:
-    %$$z=A\cdot\mathrm{e}^{\right( x^2 + y^2 \left)}$$
-    $$z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$$
-    donde $A=10$ es la amplitud de la curva. Utilice una grilla para el
-    dominio: $-10 < x < 10\ \wedge\ -10 < y < 10$
-
+    \noindent Haga un programa para visualizar la función compuerta unitaria de
     \begin{enumerate}
-      \item Considere que la dimensión de la grilla es unitaria.
-      \item Considere que la dimensión de la grilla es 0.2.
-      \item Modifique el programa para visualizar curvas de nivel.
+      \item Utilizar los comandos \texttt{zeros} y \texttt{ones}.
+      \item Utilizar la función desarrollada en el problema 1.
     \end{enumerate}
 
     \subsubsection*{Solución}
       \begin{listing}[H]
-        \caption{Programa para graficar la función $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$}
-        \label{script07}
-        \inputminted[firstline=5]{matlab}{./laboratorio_1/problema07.m}
+        \caption{Compuerta unitaria empleando \texttt{zeros} y \texttt{ones}}
+        \label{script02A}
+        \inputminted[firstline=5]{matlab}{./laboratorio_2/problema02_a.m}
       \end{listing}
 
       \begin{listing}[H]
-        \caption{Ejemplo de ejecución del programa mostrado en el
-        \emph{script} \ref{script07}}
-        \label{script07sample}
-        \inputminted{text}{./laboratorio_1/problema07_sample.txt}
+        \caption{Compuerta unitaria empleando la función escalón desarrollada en el problema 1}
+        \label{script02B}
+        \inputminted[firstline=5]{matlab}{./laboratorio_2/problema02_b.m}
+      \end{listing}
+      % \begin{listing}[H]
+      %   \caption{Ejemplo de ejecución del programa mostrado en el
+      %   \emph{script} \ref{script02}}
+      %   \label{script02sample}
+      %   \inputminted{text}{./laboratorio_1/problema02_sample.txt}
+      % \end{listing}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 3}
+    \noindent Desarrollar un conjunto de comandos \textsc{Matlab} para
+    aproximar las siguientes señales periódicas en tiempo continuo, dibujando
+    5 ciclos de cada una:
+    \begin{enumerate}
+        \item Onda Cuadrada, de amplitud 5 Volts, frecuencia fundamental 20 Hz.
+        \item Señal diente de sierra, amplitud 5 Volts y frecuencia fundamental 20Hz
+    \end{enumerate}
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{Función de onda cuadrada}
+        \label{script03A}
+        \inputminted{matlab}{./laboratorio_2/squarew.m}
       \end{listing}
 
-      \begin{figure}[H]
-        \caption{Resultados de la ejecucion del \emph{script} \ref{script07}.}
-        \label{script07figure1}
-        \includegraphics[width=\textwidth]{./laboratorio_1/problema07_sample1.png}
-        \includegraphics[width=\textwidth]{./laboratorio_1/problema07_sample2.png}
-      \end{figure}
+      \begin{listing}[H]
+        \caption{Función de onda diente de sierra}
+        \label{script03B}
+        \inputminted{matlab}{./laboratorio_2/saww.m}
+      \end{listing}
+
+      % \begin{listing}[H]
+      %   \caption{Ejemplo de ejecución del programa mostrado en el
+      %   \emph{script} \ref{script03}}
+      %   \label{script03sample}
+      %   \inputminted{text}{./laboratorio_1/problema03_sample.txt}
+      % \end{listing}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 4}
+    \noindent La solución a una ecuación diferencial está dada por:
+    $$x\left(x\right) = 10\mathrm{e}^{-t} - 5\mathrm{e}^{-0.5t}$$
+    Usando \textsc{Matlab}, grafique la solución de la ecuación en el intervalo
+    $I=\left[0,5\right]$ con una frecuencia de muestreo de 100 Hz.
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{}
+        \label{script04}
+        \inputminted{matlab}{./laboratorio_2/problema04.m}
+      \end{listing}
+
+      % \begin{figure}[H]
+      %   \caption{Implementación del \emph{script} \ref{script04js} y vista de
+      %   resultados en web.}
+      %   \label{script04figure}
+      %   \includegraphics[width=\textwidth]{./laboratorio_1/problema04js_sample.png}
+      % \end{figure}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 5}
+    \noindent Repita el problema anterior para la siguiente expresión:
+    $$x\left(x\right) = 10\mathrm{e}^{-t} + 5\mathrm{e}^{-0.5t}$$
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{}
+        \label{script05}
+        \inputminted{matlab}{./laboratorio_2/problema05.m}
+      \end{listing}
+
+      % \begin{figure}[H]
+      %   \caption{Implementación del \emph{script} \ref{script04js} y vista de
+      %   resultados en web.}
+      %   \label{script04figure}
+      %   \includegraphics[width=\textwidth]{./laboratorio_1/problema04js_sample.png}
+      % \end{figure}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 6}
+    \noindent Una señal sinusoidal con amortiguación exponencial está definida
+    por la siguiente expresión:
+    $$x\left(x\right) = \mathrm{e}^{-at}\cos\left(2\pi f t\right)$$
+    donde $f = 1$ Hz y el parámetro a es variable y toma valores sobre el
+    siguiente conjunto: 1, 5, 20. Usando \textsc{Matlab}, investigar el
+    efecto de variar dicho parámetro en la señal en el intervalo $[0, 5]$.
+    Utilice una frecuencia de muestreo de 20 Hz. Calcule el valor de a
+    para el caso de amortiguamiento crítico. Haga una gráfica para cada
+    caso.
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{}
+        \label{script06}
+        \inputminted{matlab}{./laboratorio_2/problema06.m}
+      \end{listing}
+
+      % \begin{figure}[H]
+      %   \caption{Implementación del \emph{script} \ref{script04js} y vista de
+      %   resultados en web.}
+      %   \label{script04figure}
+      %   \includegraphics[width=\textwidth]{./laboratorio_1/problema04js_sample.png}
+      % \end{figure}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 7}
+    \noindent Para la gráfica mostrada, haga una función en Matlab que
+    visualice $h(t)$. Use el comando \texttt{function}.
+
+    \noindent Graficar:
+    \begin{wrapfigure}{r}{0.6\textwidth}
+      \centering
+        \includegraphics[width=0.85\textwidth]{./laboratorio_2/0_grafica_h(t).png}
+    \end{wrapfigure}
+
+    \begin{enumerate}
+        \item $h\left(t+1\right)$
+        \item $h\left(\frac{t}{2}-2\right)$
+        \item $h\left(1-2t\right)$
+        \item $4h\left(\frac{t}{4}\right)$
+        \item $\frac{1}{2}h\left(t\right)u\left(t\right) + h\left(-t\right)u\left(t\right)$
+        \item $h\left(\frac{t}{2}\right)\delta\left(t+1\right)$
+        \item $h\left(t\right)\left(u\left(t+1\right)-u\left(t-1\right)\right)$
+    \end{enumerate}
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{}
+        \label{script07}
+        \inputminted[firstline=5,lastline=33]{matlab}{./laboratorio_2/problema07.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent\small{Continúa en la página siguiente.}
+      \vspace{\fill}
+
+      \newpage
+      \noindent\small{Continúa en la página siguiente.}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \inputminted[firstline=35]{matlab}{./laboratorio_2/problema07.m}
+      \end{listing}
+
+      % \begin{figure}[H]
+      %   \caption{Resultados de la ejecucion del \emph{script} \ref{script07}.}
+      %   \label{script07figure1}
+      %   \includegraphics[width=\textwidth]{./laboratorio_1/problema07_sample1.png}
+      %   \includegraphics[width=\textwidth]{./laboratorio_1/problema07_sample2.png}
+      % \end{figure}
 
 \end{document}

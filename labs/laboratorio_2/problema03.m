@@ -10,8 +10,7 @@ xlim([0,0.25])
 grid on
 ylabel('Amplitud (V)');
 xlabel('Tiempo (s)');
-title(['Onda cuadrada',sprintf('\n\n'), ...
-       '(Frecuencia: 20 Hz; Amplitud:  5 V)'])
+title(sprintf('Onda cuadrada\n\n(Frecuencia: 20 Hz; Amplitud:  5 V)'))
 
 
 % Onda diente de sierra con amplitud de A = 5V y frecuencia de f = 20 Hz
@@ -22,6 +21,5 @@ xlim([0,0.25])
 grid on
 ylabel('Amplitud (V)');
 xlabel('Tiempo (s)');
-title(['Onda diente de sierra',sprintf('\n\n'), ...
-       '(Frecuencia: 20 Hz; Amplitud:  5 V)'])
+title(sprintf('Onda diente de sierra\n\n(Frecuencia: 20 Hz; Amplitud:  5 V)'))
 
