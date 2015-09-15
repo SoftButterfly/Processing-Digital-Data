@@ -104,10 +104,6 @@
             <div class="card white">
               <div class="card-content s-pad-5">
                 <pre class="brush: matlab">
-                  clear all
-                  close all
-                  clc
-
                   Dim = input('Ingrese la dimension de la matriz: ');
 
                   FileName = sprintf('magico_%d.dat',Dim);
@@ -123,7 +119,8 @@
                 </pre>
               </div>
               <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 1.a.</strong> Archivo <a href="laboratorio_1/problema01_a.m"><code>problema01_a.m</code></a>. Generación y guardado de la matriz en un archivo.
+                <strong>Script 1.</strong> Cálculo y escritura de la matriz de
+                cuadrado mágico según la dimensión ingresada por el usuario.
               </div>
             </div>
           </div>
@@ -132,10 +129,6 @@
             <div class="card white">
               <div class="card-content s-pad-5">
                 <pre class="brush: matlab">
-                  clear all
-                  close all
-                  clc
-
                   Dim = input('Ingrese la dimension de la matriz: ');
 
                   FileName = sprintf('magico_%d.dat',Dim);
@@ -150,7 +143,45 @@
                 </pre>
               </div>
               <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 2.b.</strong> Archivo <a href="laboratorio_1/problema01_b.m"><code>problema01_b.m</code></a>. Lectura de archivo y ubicación del valor máximo.
+                <strong>Script 2.</strong> Programa de lectura de la matriz de
+                cuadrado mágico y determinación del máximo valor y su lugar
+                dentro de la matriz.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >> problema01_a
+                  Ingrese la dimension de la matriz: 6
+                  Escribiendo archivo magico_6.dat
+                  Escritura completa.
+                  La matriz guardada fue:
+                      35     1     6    26    19    24
+                       3    32     7    21    23    25
+                      31     9     2    22    27    20
+                       8    28    33    17    10    15
+                      30     5    34    12    14    16
+                       4    36    29    13    18    11
+
+                  >> problema01_b
+                  Ingrese la dimension de la matriz: 6
+                  Leyendo archivo magico_6.dat
+                  Mayor elemento esta en la posicion (6,2) y es 36
+                  La matriz cargada fue:
+                      35     1     6    26    19    24
+                       3    32     7    21    23    25
+                      31     9     2    22    27    20
+                       8    28    33    17    10    15
+                      30     5    34    12    14    16
+                       4    36    29    13    18    11
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 3.</strong> Ejemplo de ejecución de los
+                programas mostrados en los <b>scripts 1</b> y <b>2</b>
               </div>
             </div>
           </div>
@@ -180,10 +211,6 @@
             <div class="card white">
               <div class="card-content s-pad-5">
                 <pre class="brush: matlab">
-                  clear all
-                  close all
-                  clc
-
                   a = input('Ingrese valor del coeficiente a: ');
                   b = input('Ingrese valor del coeficiente b: ');
                   c = input('Ingrese valor del coeficiente c: ');
@@ -233,7 +260,51 @@
                 </pre>
               </div>
               <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 2.</strong> Archivo <a href="laboratorio_1/problema02.m"><code>problema02.m</code></a>. Solución de la ecuación de segundo grado empleando la fórmula general.
+                <strong>Script 4.</strong> Cálculo de soluciones para la
+                ecuación de segundo grado.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >> problema02
+                  Ingrese valor del coeficiente a: 1
+                  Ingrese valor del coeficiente b: 5
+                  Ingrese valor del coeficiente c: 3
+                  Las raices de la ecuacion a*x^2 + b*x + c = 0 son :
+                  X[1] = -2.500000 + 1.802776
+                  X[2] = -2.500000 - 1.802776
+
+                  >> problema02
+                  Ingrese valor del coeficiente a: -8
+                  Ingrese valor del coeficiente b: 3
+                  Ingrese valor del coeficiente c: -20
+                  Las raices de la ecuacion a*x^2 + b*x + c = 0 son :
+                  X[1] = 0.187500 + -1.569982
+                  X[2] = 0.187500 - -1.569982
+
+                  >> problema02
+                  Ingrese valor del coeficiente a: 0
+                  Ingrese valor del coeficiente b: 1
+                  Ingrese valor del coeficiente c: 1
+                  El coeficiente del termino cuadratico es nulo. La ecuacion es lineal.
+                  La raiz de la ecuacion b*x + c = 0 es :
+                  X[1] = -1.000000.
+
+                  >> problema02
+                  Ingrese valor del coeficiente a: 0
+                  Ingrese valor del coeficiente b: 0
+                  Ingrese valor del coeficiente c: 5
+                  Los coefcientes de los terminos cuadratico y lineal son nulos.
+                  La ecuacion no se puede resolver
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 5.</strong> Ejemplo de ejecución del programa
+                mostrado en el <b>script 4</b>
               </div>
             </div>
           </div>
@@ -265,79 +336,82 @@
             <div class="card white">
               <div class="card-content s-pad-5">
                 <pre class="brush: matlab">
-                  clear all
-                  close all
-                  clc
+                  Dim      = input('1. Numero de ecuaciones del sistema: ');
+                  InFile   = input('2. Nombre del archivo entrada: ', 's');
+                  OutFile  = input('3. Nombre del archivo salida: ', 's');
 
-                  Question = {'1. Numero de ecuaciones del sistema:'
-                              '2. Nombre del archivo entrada:'
-                              '3. Nombre del archivo salida:'};
-                  Title    = 'Sistema Lineal';
-                  Default  = {'10','Data_System.dat','Solution_System.dat'};
-                  UInData  = inputdlg(Question, Title, 1, Default);
+                  fprintf('\n')
 
-                  Dim      = str2double(UInData{1});
-                  InFile   = UInData{2};
-                  OutFile  = UInData{3};
+                  if(isempty(Dim))
+                      Dim = 5;
+                      fprintf('* Cargando valor por defecto: %d ecuaciones\n', Dim);
+                  end
 
-                  DataFile = fopen(InFile,'r');
+                  if(isempty(InFile))
+                      InFile = 'problema03_data.dat';
+                      fprintf('* Cargando valor por defecto: Archivo de entrada "%s".\n', InFile);
+                  end
 
-                  if(DataFile == -1)
+                  if(isempty(OutFile))
+                      OutFile = 'solucion.txt';
+                      fprintf('* Cargando valor por defecto: Archivo de salida "%s".\n', OutFile);
+                  end
+
+                  if(InFile == -1)
+                      fprintf('\n')
                       disp('Archivo no encontrado');
                   else
-                      B = fscanf(DataFile,'%f');
-                      fclose(DataFile);
+                      B = load(InFile);
 
-                      if(length(B) < Dim^2 + Dim)
-                          fprintf('Datos insuficientes en "%s"\n', InFile);
+                      if(any(size(B) ~= [Dim, Dim+1]))
+                          fprintf('\n')
+                          fprintf('Los datos en el archivo "%s" no corresponden a un sistem de %d ecuaciones.\n', InFile, Dim);
                       else
-                          if(length(B) > Dim^2 + Dim)
-                              fprintf('Exceso de datos en "%s", se tomaran solo los %d primeros datos.\n', InFile, Dim^2 + Dim);
-                          end
-                          A = zeros(Dim,Dim + 1);
-                          for i = 1:Dim
-                              for j = 1:Dim+1
-                                  A(i,j) = B(i+j+Dim*(i-1)-1);
-                              end
-                          end
-                          disp('Matiz del sistema: A·X = Y')
-                          disp('A = ')
+                          A = B(:,1:Dim);
+
+                          fprintf('\n')
+                          fprintf('Matiz del sistema: A*X = Y\n')
+                          fprintf('A = \n')
+
                           for i = 1:Dim
                               for j = 1:Dim
                                   fprintf('\t %10.4f', A(i,j));
-                                  if j == Dim
-                                      fprintf('\n');
-                                  end
                               end
+                              fprintf('\n');
                           end
-                          disp(' ')
-                          disp('Y = ')
+
+                          Y = B(:,Dim+1);
+
+                          fprintf('\n')
+                          fprintf('Y = \n')
 
                           for i = 1:Dim
-                              fprintf('\t %10.4f \n', A(i,Dim));
+                              fprintf('\t %10.4f \n', Y(i));
                           end
 
-                          disp(' ')
-
-                          if(det(A(:,1:Dim)) == 0)
-                              disp('La matriz del sistema es singular')
+                          if(det(A) == 0)
+                              fprintf('\n');
+                              fprintf('La matriz del sistema es singular.\n')
                           else
-                              X = A(:,Dim+1)\A(:,1:Dim);
-                              disp('La solucion del sistema es:')
-                              disp('X = ')
+                              X = A\Y;
+
+                              fprintf('\n');
+                              fprintf('La solucion del sistema es:\n')
+                              fprintf('X = \n')
 
                               SolutionFile = fopen(OutFile,'w');
+
                               for i = 1:Dim
                                   fprintf('\t %10.4f \n', X(i));
                                   fprintf(SolutionFile, '%2.4f\n', X(i));
                               end
 
                               if(~fclose(SolutionFile))
-                                  fprintf('\nLa solucion del problema sistema se guardo exitosamente en "%s"\n',...
-                                           OutFile);
+                                  fprintf('\n');
+                                  fprintf('La solucion del problema sistema se guardo exitosamente en "%s"\n', OutFile);
                               else
-                                  fprintf('\nError al guardar la solucion en "%s"\n',...
-                                           OutFile);
+                                  fprintf('\n');
+                                  fprintf('Error al guardar la solucion en "%s"\n', OutFile);
                               end
                           end
                       end
@@ -345,10 +419,54 @@
                 </pre>
               </div>
               <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 3.</strong> Archivo <a href="laboratorio_1/problema03.m"><code>problema03.m</code></a>. Solucion de un sistema lineal cargando los datos desde un archivo.
+                <strong>Script 6.</strong> Programa para la solución de un
+                sistema de ecuaciones lineales.
               </div>
             </div>
           </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >> problema03
+                  1. Numero de ecuaciones del sistema: 5
+                  2. Nombre del archivo entrada: problema03_data.dat
+                  3. Nombre del archivo salida: solucion.txt
+
+                  Matiz del sistema: A*X = Y
+                  A =
+                              21.5707          6.8034         42.6516          3.7983         20.8634
+                              45.5324         43.4646         31.1028         11.9958          2.4827
+                               9.0924         28.9852         17.5476          6.1659         45.1358
+                              13.1901         27.4930         25.6625          9.1954         47.2394
+                               7.2769          7.2477         20.0904         11.9976         24.5432
+
+                  Y =
+                              24.4626
+                              16.8860
+                              45.0027
+                              18.4623
+                               5.5601
+
+                  La solucion del sistema es:
+                  X =
+                             -40.0155
+                              24.7443
+                              24.8792
+                               2.6207
+                             -16.8627
+
+                  La solucion del problema sistema se guardo exitosamente en "solucion.txt"
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 7.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 6</strong>.
+              </div>
+            </div>
+          </div>
+
         </div>
 
         <div id="problema4" class="row scrollspy">
@@ -378,69 +496,120 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                clear all
-                clc
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  Lat = 1;
+                  Lon = 2;
+                  R   = 3;
 
-                Lat = 1;
-                Lon = 2;
-                Deg = 1;
-                Min = 2;
-                Sec = 3;
+                  Deg = 1;
+                  Min = 2;
+                  Sec = 3;
 
-                R   = 3;
-                X   = 1;
-                Y   = 2;
-                Z   = 3;
+                  X   = 1;
+                  Y   = 2;
+                  Z   = 3;
 
-                Rt  = 6371.0;
+                  Rt  = 6371.0;
+                  City1 = zeros(3:3);
+                  City2 = zeros(3:3);
 
-                City1 = zeros(3:3);
-                City2 = zeros(3:3);
+                  fprintf('Ingrese las coordenadas geograficas de las ciudades\n');
+                  fprintf('Las latitudes hacia el norte y longitudes hacia el este se ingresan con numeros positivos\n');
+                  fprintf('Las latitudes hacia el sur y longitudes hacia el oeste se ingresan con numeros negativos\n');
 
-                fprintf('Ingrese las coordenadas geograficas de las ciudades\n');
-                fprintf('Las latitudes hacia el norte y longitudes hacia el este se ingresan con numeros positivos\n');
-                fprintf('Las latitudes hacia el sur y longitudes hacia el oeste se ingresan con numeros negativos\n');
+                  fprintf('Ciudad 1:\n')
+                  fprintf('* Latitud\n')
+                  City1(Lat,Deg) = input('  * Grados   : ');
+                  City1(Lat,Min) = input('  * Minutos  : ');
+                  City1(Lat,Sec) = input('  * Segundos : ');
+                  fprintf('* Longitud\n')
+                  City1(Lon,Deg) = input('  * Grados   : ');
+                  City1(Lon,Min) = input('  * Minutos  : ');
+                  City1(Lon,Sec) = input('  * Segundos : ');
 
-                fprintf('Ciudad 1:\n')
-                fprintf('* Latitud\n')
-                City1(Lat,Deg) = input('  * Grados   : ');
-                City1(Lat,Min) = input('  * Minutos  : ');
-                City1(Lat,Sec) = input('  * Segundos : ');
-                fprintf('* Longitud\n')
-                City1(Lon,Deg) = input('  * Grados   : ');
-                City1(Lon,Min) = input('  * Minutos  : ');
-                City1(Lon,Sec) = input('  * Segundos : ');
+                  fprintf('Ciudad 2:\n')
+                  fprintf('* Latitud\n')
+                  City2(Lat,Deg) = input('  * Grados   : ');
+                  City2(Lat,Min) = input('  * Minutos  : ');
+                  City2(Lat,Sec) = input('  * Segundos : ');
+                  fprintf('* Longitud\n')
+                  City2(Lon,Deg) = input('  * Grados   : ');
+                  City2(Lon,Min) = input('  * Minutos  : ');
+                  City2(Lon,Sec) = input('  * Segundos : ');
 
-                fprintf('Ciudad 1:\n')
-                fprintf('* Latitud\n')
-                City2(Lat,Deg) = input('  * Grados   : ');
-                City2(Lat,Min) = input('  * Minutos  : ');
-                City2(Lat,Sec) = input('  * Segundos : ');
-                fprintf('* Longitud\n')
-                City2(Lon,Deg) = input('  * Grados   : ');
-                City2(Lon,Min) = input('  * Minutos  : ');
-                City2(Lon,Sec) = input('  * Segundos : ');
+                  Rlat = (City1(Lat,Deg) + City1(Lat,Min)/60 + City1(Lat,Sec)/3600)*pi/180;
+                  Rlon = (City1(Lon,Deg) + City1(Lon,Min)/60 + City1(Lon,Sec)/3600)*pi/180;
 
-                Rlat = (City1(Lat,Deg) + City1(Lat,Min)/60 + City1(Lat,Sec)/3600)*pi/180;
-                Rlon = (City1(Lon,Deg) + City1(Lon,Min)/60 + City1(Lon,Sec)/3600)*pi/180;
+                  City1(R,X) = Rt*cos(Rlat)*cos(Rlon);
+                  City1(R,Y) = Rt*cos(Rlat)*sin(Rlon);
+                  City1(R,Z) = Rt*sin(Rlat);
 
-                City1(R,X) = Rt*cos(Rlat)*cos(Rlon);
-                City1(R,Y) = Rt*cos(Rlat)*sin(Rlon);
-                City1(R,Z) = Rt*sin(Rlat);
+                  Rlat = (City2(Lat,Deg) + City2(Lat,Min)/60 + City2(Lat,Sec)/3600)*pi/180;
+                  Rlon = (City2(Lon,Deg) + City2(Lon,Min)/60 + City2(Lon,Sec)/3600)*pi/180;
 
-                Rlat = (City2(Lat,Deg) + City2(Lat,Min)/60 + City2(Lat,Sec)/3600)*pi/180;
-                Rlon = (City2(Lon,Deg) + City2(Lon,Min)/60 + City2(Lon,Sec)/3600)*pi/180;
+                  City2(R,X) = Rt*cos(Rlat)*cos(Rlon);
+                  City2(R,Y) = Rt*cos(Rlat)*sin(Rlon);
+                  City2(R,Z) = Rt*sin(Rlat);
 
-                City2(R,X) = Rt*cos(Rlat)*cos(Rlon);
-                City2(R,Y) = Rt*cos(Rlat)*sin(Rlon);
-                City2(R,Z) = Rt*sin(Rlat);
-
-                D = Rt*acos((City1(R,:)*City2(R,:)')/(norm(City1(R,:))*norm(City2(R,:))));
-                fprintf('La disancia entre ambos puntos es igual a %.4f km\n', D);
-              </pre>
+                  D = Rt*acos((City1(R,:)*City2(R,:)')/(norm(City1(R,:))*norm(City2(R,:))));
+                  fprintf('La distancia entre ambos puntos es igual a %.4f km\n', D);
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 8.</strong> Cálculo de distancias entre dos
+                puntos geográficos sobre la Tierra.
+              </div>
             </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >> problema04
+                  Ingrese las coordenadas geograficas de las ciudades
+                  Las latitudes hacia el norte y longitudes hacia el este se ingresan con numeros positivos
+                  Las latitudes hacia el sur y longitudes hacia el oeste se ingresan con numeros negativos
+                  Ciudad 1:
+                  * Latitud
+                    * Grados   : 40.78139796148296
+                    * Minutos  : 0
+                    * Segundos : 0
+                  * Longitud
+                    * Grados   : -73.96668954467765
+                    * Minutos  : 0
+                    * Segundos : 0
+                  Ciudad 2:
+                  * Latitud
+                    * Grados   : -12.067156558830048
+                    * Minutos  : 0
+                    * Segundos : 0
+                  * Longitud
+                    * Grados   : -77.0886956434249
+                    * Minutos  : 0
+                    * Segundos : 0
+                  La distancia entre ambos puntos es igual a 5885.2712 km
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 9.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 8</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              Para las pruebas de este programa se tomaron las coordenadas de
+              Central Park, Ney York, Estados Unidos y El Parque de las leyendas,
+              Lima, Perú.
+            </p>
+            <p>
+              La comprobación en Google Maps puede verse
+              <a href="./laboratorio_1_prob_4.html">aquí</a>
+            </p>
           </div>
         </div>
 
@@ -468,9 +637,6 @@
           <div class="col s12">
             <div class="card white s-pad-5">
               <pre class="brush: matlab">
-                clear all
-                clc
-
                 i   = 1;
                 J   = 0;
                 D   = 0;
@@ -479,19 +645,19 @@
                 Lim = 355;
                 DpM = [31 28 31 30 31 30 31 31 30 31 30 31];
 
-                fprintf('Cálculo del dia Juliano y Fecha\n');
-                fprintf('1. conversion de Fecha a Día Juliano\n');
-                fprintf('2. conversion de Día Juliano a Fecha\n');
+                fprintf('Calculo del dia Juliano y Fecha\n');
+                fprintf('1. Conversion de Fecha a Dia Juliano\n');
+                fprintf('2. Conversion de Dia Juliano a Fecha\n');
                 Opt = input('Elija una opcion: ');
 
-
-
                 if(Opt ~= 1 && Opt ~= 2)
-                    fprintf('Error: Opción no disponible');
+                    fprintf('Error: Opcion no disponible');
+
                 else
-                    clc
-                    fprintf('Cálculo del dia Juliano y Fecha\n');
-                    Y = input('Ingrese año: ');
+                    fprintf('\n');
+                    fprintf('Calculo del dia Juliano y Fecha\n');
+                    Y = input('ingrese ano: ');
+
                     if rem(Y,4)==0 && (rem(Y,100)~=0 || rem(Y,400)==0)
                         DpM(2) = 29;
                         B = 1;
@@ -500,10 +666,7 @@
 
                     if(Opt == 2)
                         while (J > Lim || 1 > J)
-                            clc
-                            fprintf('Cálculo del dia Juliano y Fecha\n');
-                            fprintf('Ingrese año: %d\n',Y);
-                            J = input('Introduzca la fecha juliana: ');
+                            J = input('introduzca la fecha juliana: ');
                             D = J;
                         end
 
@@ -512,22 +675,16 @@
                             i = i + 1;
                         end
 
-                        fprintf('La Fecha correspondie al dia juliano %d del año %d es el %d/%d/%d\n',...
-                                 J, Y, D + DpM(i-1), i-1, Y);
+                        fprintf('\n');
+                        fprintf('La Fecha corresponde al dia juliano %d del ano %d es el %d/%d/%d\n', J, Y, D + DpM(i-1), i-1, Y);
+
                     else
                         while(M > 12 || 1 > M)
-                            clc
-                            fprintf('Cálculo del dia Juliano y Fecha\n');
-                            fprintf('Ingrese año: %d\n',Y);
-                            M = input('Ingrese mes: ');
+                            M = input('ingrese mes: ');
                         end
 
                         while(D > DpM(M) || 1 > D)
-                            clc
-                            fprintf('Cálculo del dia Juliano y Fecha\n');
-                            fprintf('Ingrese año: %d\n',Y);
-                            fprintf('Ingrese mes: %d\n',M);
-                            D = input('Ingrese dia: ');
+                            D = input('ingrese dia: ');
                         end
 
                         while i < M
@@ -535,7 +692,9 @@
                             i = i + 1;
                         end
                         J = J + D;
-                        fprintf('El dia juliano corrspondiente a la fecha %d/%d/%d es %d\n',D,M,Y,J);
+
+                        fprintf('\n');
+                        fprintf('El dia juliano correspondiente a la fecha %d/%d/%d es %d\n',D,M,Y,J);
                     end
                 end
               </pre>
@@ -569,11 +728,8 @@
           <div class="col s12">
             <div class="card white s-pad-5">
               <pre class="brush: matlab">
-                clear all
-                clc
-
-                fprintf('metodo de montecarlo para calcular pi\n');
-                N = input ('Ingrese el número de dardos : ');
+                fprintf('Metodo de montecarlo para calcular pi\n');
+                N = input ('Ingrese el numero de dardos : ');
 
                 n = 0;
                 x = 0;
@@ -593,7 +749,7 @@
                     count = count + 1;
                 end
 
-                fprintf('Dardos dentro del Círculo   : %d\n', n);
+                fprintf('Dardos dentro del circulo   : %d\n', n);
                 fprintf('Valor aproximado de Pi      : %.5f\n', 4*n/N);
               </pre>
             </div>
@@ -628,12 +784,8 @@
           <div class="col s12">
             <div class="card white s-pad-5">
               <pre class="brush: matlab">
-                clear all
-                close all
-                clc
-
-                fprintf('Gráfica de Funciones\n');
-                fprintf('Función Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]\n');
+                fprintf('Grafica de Funciones\n');
+                fprintf('Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]\n');
                 A = input('Ingrese la amplitud         : ');
                 N = input('Ingrese el numero de puntos : ');
                 fprintf(  'Amplitud de la malla        : %.5f\n', 20/(N-1));
@@ -647,7 +799,7 @@
                 surf(X,Y,Z,'EdgeColor','none');
                 title (str1);
 
-                C = input('Desea graficar curvas de nivel (Y/N)? ');
+                C = input('Desea graficar curvas de nivel (Y/N)? ', 's');
 
                 if(C == 'Y' || C == 'y')
                     close all
@@ -683,8 +835,8 @@
     <script type="text/javascript" charset="utf-8" src="../static/js/materialize.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/shCore.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/shBrushJScript.js"></script>
-    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushGNUPlot.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushPlain.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/pdd.js"></script>
   </body>
 </html>

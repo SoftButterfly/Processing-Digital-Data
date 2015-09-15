@@ -1,6 +1,6 @@
-% clear all
-% close all
-% clc
+clear all
+close all
+clc
 
 i   = 1;
 J   = 0;

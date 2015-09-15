@@ -29,6 +29,3 @@ if(C == 'Y' || C == 'y')
     contourf(X,Y,Z,floor(N/3));
     title (str2);
 end
-
-
-

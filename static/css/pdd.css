@@ -229,6 +229,7 @@
       }
     }
 
+    /* To fix container margins in navbar */
     .navbar-fixed nav{
       position: relative;
     }
