@@ -31,6 +31,12 @@
     <link rel="stylesheet" href="../static/css/overrides.css">
     <link rel="stylesheet" href="../static/css/helpers.css">
     <link rel="stylesheet" href="../static/css/pdd.css">
+    <style type="text/css" media="screen">
+      #map {
+        height: 450px;
+        pointer-events: none;
+      }
+    </style>
   </head>
 
   <body>
@@ -602,6 +608,53 @@
           </div>
 
           <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-0">
+                <div id="map">
+                </div>
+              </div>
+              <div class="card-content">
+                <div class="row s-mar-0 s-pad-0">
+                  <div class="col s12">
+                    <strong><i class="fa fa-fw fa-map-marker prefix"></i>Origen</strong>
+                  </div>
+                  <div class="input-field deep-purple-focus col s6">
+                    <input id="latitude1" type="number" readonly class="deep-purple-focus">
+                    <label class="active" for="latitude1">Latitud [°]</label>
+                  </div>
+                  <div class="input-field deep-purple-focus col s6">
+                    <input id="longitude1" type="number" readonly class="deep-purple-focus">
+                    <label class="active" for="longitude1">Longitud [°]</label>
+                  </div>
+
+                  <div class="col s12">
+                    <strong><i class="fa fa-fw fa-map-marker prefix"></i>Destino</strong>
+                  </div>
+                  <div class="input-field deep-purple-focus col s6">
+                    <input id="latitude2" type="number" readonly class="deep-purple-focus">
+                    <label class="active" for="latitude2">Latitud [°]</label>
+                  </div>
+                  <div class="input-field deep-purple-focus col s6">
+                    <input id="longitude2" type="number" readonly class="deep-purple-focus">
+                    <label class="active" for="longitude2">Longitud [°]</label>
+                  </div>
+
+                  <div class="col s12">
+                    <strong><i class="fa fa-fw fa-expand prefix"></i>Distancia [km]</strong>
+                  </div>
+                  <div class="input-field deep-purple-focus col s12 s-mar-0">
+                    <input id="distance" type="number" readonly class="s-mar-0 deep-purple-focus">
+                  </div>
+                </div>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Figura 1.</strong> Uso de la API de Google Maps para
+                contrastar los resultados del <strong>script 8</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
             <p>
               Para las pruebas de este programa se tomaron las coordenadas de
               Central Park, Ney York, Estados Unidos y El Parque de las leyendas,
@@ -939,9 +992,9 @@
                 <strong>b) </strong>Grilla de 0.2 unidades de ancho.
               </div>
               <div class="card-action caption s-pad-5 center-align">
-                <strong>Figura 1.</strong> Imágenes resultantes de graficar la
+                <strong>Figura 2.</strong> Imágenes resultantes de graficar la
                 $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$ empleando el
-                <strong>Script 14</strong>.
+                <strong>script 14</strong>.
               </div>
             </div>
           </div>
@@ -957,7 +1010,90 @@
       </div>
     </footer>
 
-    <!-- script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script -->
+    <script>
+      var marker1, marker2;
+      var poly, geodesicPoly;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 3,
+          center: {
+            lat: 34,
+            lng: -40.605
+          }
+        });
+
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+          document.getElementById('info'));
+
+        marker1 = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          position: {
+            lat: 40.78139796148296,
+            lng: -73.96668954467765
+          }
+        });
+
+        marker2 = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          position: {
+            lat: -12.067156558830048,
+            lng: -77.0886956434249
+          }
+        });
+
+        var bounds = new google.maps.LatLngBounds(
+          marker1.getPosition(), marker2.getPosition());
+
+        map.setCenter({
+          lat: (marker1.position.lat() + marker2.position.lat())*0.5,
+          lng: (marker1.position.lng() + marker2.position.lng())*0.5
+        })
+
+
+        google.maps.event.addListener(marker1, 'position_changed', update);
+        google.maps.event.addListener(marker2, 'position_changed', update);
+
+        poly = new google.maps.Polyline({
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 3,
+          map: map,
+        });
+
+        geodesicPoly = new google.maps.Polyline({
+          strokeColor: '#CC0099',
+          strokeOpacity: 1.0,
+          strokeWeight: 3,
+          geodesic: true,
+          map: map
+        });
+
+        var labels = document.getElementsByTagName('label')
+        for(var i = 0; i < labels.length; i++){
+          if(labels[i].parentElement.classList.contains('input-field')){
+            labels[i].classList.add('active')
+          }
+        }
+
+        update();
+      }
+
+      function update() {
+        var path = [marker1.getPosition(), marker2.getPosition()];
+        poly.setPath(path);
+        geodesicPoly.setPath(path);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]);
+        document.getElementById('distance').value = (distance/1000).toString();
+        document.getElementById('latitude1').value = path[0].lat();
+        document.getElementById('longitude1').value = path[0].lng();
+        document.getElementById('latitude2').value = path[1].lat();
+        document.getElementById('longitude2').value = path[1].lng();
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=geometry&callback=initMap" async defer></script>
     <script type="text/javascript" charset="utf-8" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/modernizr.min.js"></script>
     <script type="text/javascript" charset="utf-8" src="../static/js/jquery-2.1.4.min.js"></script>
