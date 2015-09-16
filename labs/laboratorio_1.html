@@ -181,7 +181,8 @@
               </div>
               <div class="card-action caption s-pad-5 center-align">
                 <strong>Script 3.</strong> Ejemplo de ejecución de los
-                programas mostrados en los <b>scripts 1</b> y <b>2</b>
+                programas mostrados en los <strong>scripts 1</strong>
+                y <strong>2</strong>.
               </div>
             </div>
           </div>
@@ -304,7 +305,7 @@
               </div>
               <div class="card-action caption s-pad-5 center-align">
                 <strong>Script 5.</strong> Ejemplo de ejecución del programa
-                mostrado en el <b>script 4</b>
+                mostrado en el <strong>script 4</strong>.
               </div>
             </div>
           </div>
@@ -595,7 +596,7 @@
               </div>
               <div class="card-action caption s-pad-5 center-align">
                 <strong>Script 9.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 8</strong>
+                mostrado en el <strong>script 8</strong>.
               </div>
             </div>
           </div>
@@ -635,69 +636,110 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                i   = 1;
-                J   = 0;
-                D   = 0;
-                M   = 0;
-                B   = 0;
-                Lim = 355;
-                DpM = [31 28 31 30 31 30 31 31 30 31 30 31];
+            <div class="card white">
+              <div class="card-cotent s-pad-5">
+                <pre class="brush: matlab">
+                  i   = 1;
+                  J   = 0;
+                  D   = 0;
+                  M   = 0;
+                  B   = 0;
+                  Lim = 355;
+                  DpM = [31 28 31 30 31 30 31 31 30 31 30 31];
 
-                fprintf('Calculo del dia Juliano y Fecha\n');
-                fprintf('1. Conversion de Fecha a Dia Juliano\n');
-                fprintf('2. Conversion de Dia Juliano a Fecha\n');
-                Opt = input('Elija una opcion: ');
+                  fprintf('Calculo del dia Juliano y Fecha\n');
+                  fprintf('1. Conversion de Fecha a Dia Juliano\n');
+                  fprintf('2. Conversion de Dia Juliano a Fecha\n');
+                  Opt = input('Elija una opcion: ');
 
-                if(Opt ~= 1 && Opt ~= 2)
-                    fprintf('Error: Opcion no disponible');
+                  if(Opt ~= 1 && Opt ~= 2)
+                      fprintf('Error: Opcion no disponible');
 
-                else
-                    fprintf('\n');
-                    fprintf('Calculo del dia Juliano y Fecha\n');
-                    Y = input('ingrese ano: ');
+                  else
+                      fprintf('\n');
+                      fprintf('Calculo del dia Juliano y Fecha\n');
+                      Y = input('ingrese ano: ');
 
-                    if rem(Y,4)==0 && (rem(Y,100)~=0 || rem(Y,400)==0)
-                        DpM(2) = 29;
-                        B = 1;
-                        Lim = 356;
-                    end
+                      if rem(Y,4)==0 && (rem(Y,100)~=0 || rem(Y,400)==0)
+                          DpM(2) = 29;
+                          B = 1;
+                          Lim = 356;
+                      end
 
-                    if(Opt == 2)
-                        while (J > Lim || 1 > J)
-                            J = input('introduzca la fecha juliana: ');
-                            D = J;
-                        end
+                      if(Opt == 2)
+                          while (J > Lim || 1 > J)
+                              J = input('introduzca la fecha juliana: ');
+                              D = J;
+                          end
 
-                        while D > 0
-                            D = D - DpM(i);
-                            i = i + 1;
-                        end
+                          while D > 0
+                              D = D - DpM(i);
+                              i = i + 1;
+                          end
 
-                        fprintf('\n');
-                        fprintf('La Fecha corresponde al dia juliano %d del ano %d es el %d/%d/%d\n', J, Y, D + DpM(i-1), i-1, Y);
+                          fprintf('\n');
+                          fprintf('La Fecha corresponde al dia juliano %d del ano %d es el %d/%d/%d\n', J, Y, D + DpM(i-1), i-1, Y);
 
-                    else
-                        while(M > 12 || 1 > M)
-                            M = input('ingrese mes: ');
-                        end
+                      else
+                          while(M > 12 || 1 > M)
+                              M = input('ingrese mes: ');
+                          end
 
-                        while(D > DpM(M) || 1 > D)
-                            D = input('ingrese dia: ');
-                        end
+                          while(D > DpM(M) || 1 > D)
+                              D = input('ingrese dia: ');
+                          end
 
-                        while i < M
-                            J = J + DpM(i);
-                            i = i + 1;
-                        end
-                        J = J + D;
+                          while i < M
+                              J = J + DpM(i);
+                              i = i + 1;
+                          end
+                          J = J + D;
 
-                        fprintf('\n');
-                        fprintf('El dia juliano correspondiente a la fecha %d/%d/%d es %d\n',D,M,Y,J);
-                    end
-                end
-              </pre>
+                          fprintf('\n');
+                          fprintf('El dia juliano correspondiente a la fecha %d/%d/%d es %d\n',D,M,Y,J);
+                      end
+                  end
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 10.</strong> Cálculo de la fecha juliana.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-cotent s-pad-5">
+                <pre class="brush: plain">
+                  >> problema05
+                  Calculo del dia Juliano y Fecha
+                  1. Conversion de Fecha a Dia Juliano
+                  2. Conversion de Dia Juliano a Fecha
+                  Elija una opcion: 1
+
+                  Calculo del dia Juliano y Fecha
+                  Ingrese ano: 1900
+                  Ingrese mes: 3
+                  Ingrese dia: 1
+
+                  El dia juliano correspondiente a la fecha 1/3/1900 es 60
+                  >> problema05
+                  Calculo del dia Juliano y Fecha
+                  1. Conversion de Fecha a Dia Juliano
+                  2. Conversion de Dia Juliano a Fecha
+                  Elija una opcion: 2
+
+                  Calculo del dia Juliano y Fecha
+                  Ingrese ano: 2000
+                  Introduzca la fecha juliana: 60
+
+                  La fecha correspondiente al dia juliano 60 del ano 2000 es el 29/2/2000
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 11.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 10</strong>.
+              </div>
             </div>
           </div>
         </div>
@@ -726,32 +768,65 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                fprintf('Metodo de montecarlo para calcular pi\n');
-                N = input ('Ingrese el numero de dardos : ');
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  fprintf('Metodo de montecarlo para calcular pi\n');
+                  N = input ('Ingrese el numero de dardos : ');
 
-                n = 0;
-                x = 0;
-                y = 0;
-                count = 1;
+                  n = 0;
+                  x = 0;
+                  y = 0;
+                  count = 1;
 
-                rng(0,'twister');
+                  rng(0,'twister');
 
-                while count < N;
-                    x = rand;
-                    y = rand;
+                  while count < N;
+                      x = rand;
+                      y = rand;
 
-                    if sqrt (x^2 + y^2) <= 1
-                        n = n + 1;
-                    end
+                      if sqrt (x^2 + y^2) <= 1
+                          n = n + 1;
+                      end
 
-                    count = count + 1;
-                end
+                      count = count + 1;
+                  end
 
-                fprintf('Dardos dentro del circulo   : %d\n', n);
-                fprintf('Valor aproximado de Pi      : %.5f\n', 4*n/N);
-              </pre>
+                  fprintf('Dardos dentro del circulo   : %d\n', n);
+                  fprintf('Valor aproximado de Pi      : %.5f\n', 4*n/N);
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 12.</strong> Cálculo de aproximado de $\pi$.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >> problema06
+                  Metodo de montecarlo para calcular pi
+                  Ingrese el numero de dardos : 1000000
+                  Dardos dentro del circulo   : 784987
+                  Valor aproximado de Pi      : 3.13995
+                  >> problema06
+                  Metodo de montecarlo para calcular pi
+                  Ingrese el numero de dardos : 500000
+                  Dardos dentro del circulo   : 392566
+                  Valor aproximado de Pi      : 3.14053
+                  >> problema06
+                  Metodo de montecarlo para calcular pi
+                  Ingrese el numero de dardos : 9000000
+                  Dardos dentro del cuadrado  : 9000000
+                  Valor aproximado de Pi      : 3.14172
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 13.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 12</strong>.
+              </div>
             </div>
           </div>
         </div>
@@ -782,36 +857,92 @@
           </div>
 
           <div class="col s12">
-            <div class="card white s-pad-5">
-              <pre class="brush: matlab">
-                fprintf('Grafica de Funciones\n');
-                fprintf('Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]\n');
-                A = input('Ingrese la amplitud         : ');
-                N = input('Ingrese el numero de puntos : ');
-                fprintf(  'Amplitud de la malla        : %.5f\n', 20/(N-1));
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: matlab">
+                  fprintf('Grafica de Funciones\n');
+                  fprintf('Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]\n');
+                  A = input('Ingrese la amplitud         : ');
+                  N = input('Ingrese el numero de puntos : ');
+                  fprintf(  'Amplitud de la malla        : %.5f\n', 20/(N-1));
 
-                X = linspace(-10,10,N);
-                Y = linspace(-10,10,N);
-                [X,Y] = meshgrid(X,Y);
-                Z = A*exp(-(X.^2 + Y.^2));
-                str1 = sprintf('Superficie z(x,y)  = %.3f*exp(-(x^2 + y^2))',A);
+                  X = linspace(-10,10,N);
+                  Y = linspace(-10,10,N);
+                  [X,Y] = meshgrid(X,Y);
+                  Z = A*exp(-(X.^2 + Y.^2));
+                  str1 = sprintf('Superficie z(x,y)  = %.3f*exp(-(x^2 + y^2))',A);
 
-                surf(X,Y,Z,'EdgeColor','none');
-                title (str1);
+                  surf(X,Y,Z,'EdgeColor','none');
+                  title (str1);
 
-                C = input('Desea graficar curvas de nivel (Y/N)? ', 's');
+                  C = input('Desea graficar curvas de nivel (Y/N)? ', 's');
 
-                if(C == 'Y' || C == 'y')
-                    close all
-                    str2 = sprintf('%d Curvas de Nivel ', floor(N/3));
-                    subplot(1,2,1);
-                    surf(X,Y,Z,'EdgeColor','none');
-                    title (str1);
-                    subplot(1,2,2);
-                    contourf(X,Y,Z,floor(N/3));
-                    title (str2);
-                end
-              </pre>
+                  if(C == 'Y' || C == 'y')
+                      close all
+                      str2 = sprintf('%d Curvas de Nivel ', floor(N/3));
+                      subplot(1,2,1);
+                      surf(X,Y,Z,'EdgeColor','none');
+                      title (str1);
+                      subplot(1,2,2);
+                      contourf(X,Y,Z,floor(N/3));
+                      title (str2);
+                  end
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 14.</strong> Programa para graficar la función
+                $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-content s-pad-5">
+                <pre class="brush: plain">
+                  >>problema07.m
+                  Grafica de Funciones
+                  Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]
+                  Ingrese la amplitud         : 5
+                  Ingrese el numero de puntos : 21
+                  Amplitud de la malla        : 1.00000
+                  Desea graficar curvas de nivel (Y/N)? y
+                  >>problema07.m
+                  Grafica de Funciones
+                  Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]
+                  Ingrese la amplitud         : 5
+                  Ingrese el numero de puntos : 101
+                  Amplitud de la malla        : 0.20000
+                  Desea graficar curvas de nivel (Y/N)? y
+                </pre>
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Script 15.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 14</strong>.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-image">
+                <img src="./laboratorio_1/problema07_sample1.png">
+              </div>
+              <div class="card-action borderless caption s-pad-5 center-align">
+                <strong>a) </strong>Grilla de 1 unidad de ancho.
+              </div>
+              <div class="divider"></div>
+              <div class="card-image">
+                <img src="./laboratorio_1/problema07_sample2.png">
+              </div>
+              <div class="card-action borderless caption s-pad-5 center-align">
+                <strong>b) </strong>Grilla de 0.2 unidades de ancho.
+              </div>
+              <div class="card-action caption s-pad-5 center-align">
+                <strong>Figura 1.</strong> Imágenes resultantes de graficar la
+                $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$ empleando el
+                <strong>Script 14</strong>.
+              </div>
             </div>
           </div>
         </div>
