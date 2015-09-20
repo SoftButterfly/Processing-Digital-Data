@@ -5,7 +5,7 @@ Procesamiento de Datos Digitales
 
 Respositorio para las tareas realizadas por Martín Josemaría Vuelta Rojas.
 
-# Detalles del curso
+## Detalles del curso
 * **Asignatura** : Procesamiento de datos digitales.
 * **Carácter** : Electivo.
 * **Pre-requisito** : Física matemática II, Programación e infromática..
@@ -15,6 +15,6 @@ Respositorio para las tareas realizadas por Martín Josemaría Vuelta Rojas.
 * **Duración** : 17 Semanas.
 * **Profesor** : Lic. César Jiménez (cjimenezt@unmsm.edu.pe).
 
-# Contribuyentes
+## Contribuyentes
 * Martin Vuelta
 * Alejandro Condori
