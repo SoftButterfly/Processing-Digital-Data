@@ -11,5 +11,5 @@ plot(X,Y)
 ylim([-0.5, 1.5])
 xlabel('X');
 ylabel('Y');
-title(sprintf('Funcion compuerta unitaria\n\nUsando comandos "zeros" y "ones"'));
+title(sprintf('Funcion compuerta unitaria\n(Usando comandos "zeros" y "ones")'));
 grid on

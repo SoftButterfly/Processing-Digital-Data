@@ -10,4 +10,4 @@ xlim([0,0.25])
 grid on
 ylabel('Amplitud (V)');
 xlabel('Tiempo (s)');
-title(sprintf('Onda diente de sierra\n\n(Frecuencia: 20 Hz; Amplitud:  5 V)'))
+title(sprintf('Onda diente de sierra\n(Frecuencia: 20 Hz; Amplitud:  5 V)'))

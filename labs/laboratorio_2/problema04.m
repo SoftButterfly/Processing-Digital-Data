@@ -1,7 +1,7 @@
 Fs = 100;
 
 t  = linspace(0,5,5*Fs);
-X  = 10*exp(1*A) - 5*exp(-0.5*A);
+X  = 10*exp(1*t) - 5*exp(-0.5*t);
 
 plot(t,X);
 xlabel('Tiempo (s)')

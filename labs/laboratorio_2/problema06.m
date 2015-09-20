@@ -13,7 +13,7 @@ plot(t,X(1,:),'r','DisplayName','a =  1')
 plot(t,X(2,:),'g','DisplayName','a =  5')
 plot(t,X(3,:),'b','DisplayName','a = 20')
 xlabel('Tiempo (s)')
-ylabel('Intensidad')
+ylabel('Amplitud')
 title('X(t)=e^{-at} cos(2\pi t)')
 legend('show')
 grid on
