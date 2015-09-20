@@ -1,0 +1,14 @@
+>>problema07.m
+Grafica de Funciones
+Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]
+Ingrese la amplitud         : 5
+Ingrese el numero de puntos : 21
+Amplitud de la malla        : 1.00000
+Desea graficar curvas de nivel (Y/N)? y
+>>problema07.m
+Grafica de Funciones
+Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]
+Ingrese la amplitud         : 5
+Ingrese el numero de puntos : 101
+Amplitud de la malla        : 0.20000
+Desea graficar curvas de nivel (Y/N)? y

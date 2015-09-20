@@ -1,0 +1,30 @@
+>> problema02
+Ingrese valor del coeficiente a: 1
+Ingrese valor del coeficiente b: 5
+Ingrese valor del coeficiente c: 3
+Las raices de la ecuacion a*x^2 + b*x + c = 0 son :
+X[1] = -2.500000 + 1.802776
+X[2] = -2.500000 - 1.802776
+
+>> problema02
+Ingrese valor del coeficiente a: -8
+Ingrese valor del coeficiente b: 3
+Ingrese valor del coeficiente c: -20
+Las raices de la ecuacion a*x^2 + b*x + c = 0 son :
+X[1] = 0.187500 + -1.569982
+X[2] = 0.187500 - -1.569982
+
+>> problema02
+Ingrese valor del coeficiente a: 0
+Ingrese valor del coeficiente b: 1
+Ingrese valor del coeficiente c: 1
+El coeficiente del termino cuadratico es nulo. La ecuacion es lineal.
+La raiz de la ecuacion b*x + c = 0 es :
+X[1] = -1.000000.
+
+>> problema02
+Ingrese valor del coeficiente a: 0
+Ingrese valor del coeficiente b: 0
+Ingrese valor del coeficiente c: 5
+Los coefcientes de los terminos cuadratico y lineal son nulos.
+La ecuacion no se puede resolver
