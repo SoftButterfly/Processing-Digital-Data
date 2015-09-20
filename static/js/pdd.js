@@ -1,4 +1,6 @@
 $(document).ready(function() {
+    SyntaxHighlighter.defaults['gutter'] = false;
+    SyntaxHighlighter.defaults['toolbar'] = false;
     SyntaxHighlighter.all()
 
     MathJax.Hub.Config({tex2jax: {inlineMath: [["$","$"], ["\\(","\\)"]]}});

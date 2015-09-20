@@ -24,7 +24,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="../static/css/font-awesome.min.css">
     <link rel="stylesheet" href="../static/css/shCore.css">
-    <link rel="stylesheet" href="../static/css/shThemeDefault.css">
+    <link rel="stylesheet" href="../static/css/shThemeFadeToGrey.css">
     <link rel="stylesheet" href="../static/css/materialize.css">
     <link rel="stylesheet" href="../static/css/extensions.css">
     <link rel="stylesheet" href="../static/css/overrides.css">
@@ -101,13 +101,17 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
-                <pre class="brush: matlab">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 1.</strong> Cálculo y escritura de la matriz de
+                cuadrado mágico según la dimensión ingresada por el usuario.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab;">
                   Dim = input('Ingrese la dimension de la matriz: ');
 
                   FileName = sprintf('magico_%d.dat',Dim);
@@ -122,16 +126,17 @@
                   disp(MagicMatrix)
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 1.</strong> Cálculo y escritura de la matriz de
-                cuadrado mágico según la dimensión ingresada por el usuario.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 2.</strong> Programa de lectura de la matriz de
+                cuadrado mágico y determinación del máximo valor y su lugar
+                dentro de la matriz.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   Dim = input('Ingrese la dimension de la matriz: ');
 
@@ -146,17 +151,17 @@
                   fprintf('Mayor elemento esta en la posicion (%d,%d) y es %d\n', r, c, maxA);
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 2.</strong> Programa de lectura de la matriz de
-                cuadrado mágico y determinación del máximo valor y su lugar
-                dentro de la matriz.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 3.</strong> Ejemplo de ejecución de los
+                programas mostrados en los <strong>scripts 1</strong>
+                y <strong>2</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema01_a
                   Ingrese la dimension de la matriz: 6
@@ -183,11 +188,6 @@
                        4    36    29    13    18    11
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 3.</strong> Ejemplo de ejecución de los
-                programas mostrados en los <strong>scripts 1</strong>
-                y <strong>2</strong>.
-              </div>
             </div>
           </div>
         </div>
@@ -209,12 +209,16 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 4.</strong> Cálculo de soluciones para la
+                ecuación de segundo grado.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   a = input('Ingrese valor del coeficiente a: ');
                   b = input('Ingrese valor del coeficiente b: ');
@@ -264,16 +268,16 @@
                   end
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 4.</strong> Cálculo de soluciones para la
-                ecuación de segundo grado.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 5.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 4</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema02
                   Ingrese valor del coeficiente a: 1
@@ -307,10 +311,6 @@
                   La ecuacion no se puede resolver
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 5.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 4</strong>.
-              </div>
             </div>
           </div>
         </div>
@@ -334,12 +334,16 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 6.</strong> Programa para la solución de un
+                sistema de ecuaciones lineales.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   Dim      = input('1. Numero de ecuaciones del sistema: ');
                   InFile   = input('2. Nombre del archivo entrada: ', 's');
@@ -423,16 +427,16 @@
                   end
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 6.</strong> Programa para la solución de un
-                sistema de ecuaciones lineales.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 7.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 6</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema03
                   1. Numero de ecuaciones del sistema: 5
@@ -465,10 +469,6 @@
                   La solucion del problema sistema se guardo exitosamente en "solucion.txt"
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 7.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 6</strong>.
-              </div>
             </div>
           </div>
 
@@ -497,12 +497,16 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 8.</strong> Cálculo de distancias entre dos
+                puntos geográficos sobre la Tierra.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   Lat = 1;
                   Lon = 2;
@@ -562,16 +566,16 @@
                   fprintf('La distancia entre ambos puntos es igual a %.4f km\n', D);
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 8.</strong> Cálculo de distancias entre dos
-                puntos geográficos sobre la Tierra.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 9.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 8</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema04
                   Ingrese las coordenadas geograficas de las ciudades
@@ -598,16 +602,12 @@
                   La distancia entre ambos puntos es igual a 5885.2712 km
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 9.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 8</strong>.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-0">
+              <div class="card-content s-pad-0 code">
                 <div id="map">
                 </div>
               </div>
@@ -645,7 +645,7 @@
                   </div>
                 </div>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
+              <div class="card-action caption s-pad-10 center-align">
                 <strong>Figura 1.</strong> Uso de la API de Google Maps para
                 contrastar los resultados del <strong>script 8</strong>.
               </div>
@@ -657,10 +657,6 @@
               Para las pruebas de este programa se tomaron las coordenadas de
               Central Park, Ney York, Estados Unidos y El Parque de las leyendas,
               Lima, Perú.
-            </p>
-            <p>
-              La comprobación en Google Maps puede verse
-              <a href="./laboratorio_1_prob_4.html">aquí</a>
             </p>
           </div>
         </div>
@@ -683,12 +679,15 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-cotent s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 10.</strong> Cálculo de la fecha juliana.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   i   = 1;
                   J   = 0;
@@ -752,15 +751,16 @@
                   end
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 10.</strong> Cálculo de la fecha juliana.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-cotent s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 11.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 10</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema05
                   Calculo del dia Juliano y Fecha
@@ -787,10 +787,6 @@
                   La fecha correspondiente al dia juliano 60 del ano 2000 es el 29/2/2000
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 11.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 10</strong>.
-              </div>
             </div>
           </div>
         </div>
@@ -815,12 +811,15 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 12.</strong> Cálculo de aproximado de $\pi$.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   fprintf('Metodo de montecarlo para calcular pi\n');
                   N = input ('Ingrese el numero de dardos : ');
@@ -847,15 +846,16 @@
                   fprintf('Valor aproximado de Pi      : %.5f\n', 4*n/N);
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 12.</strong> Cálculo de aproximado de $\pi$.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 13.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 12</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >> problema06
                   Metodo de montecarlo para calcular pi
@@ -873,10 +873,6 @@
                   Dardos dentro del cuadrado  : 9000000
                   Valor aproximado de Pi      : 3.14172
                 </pre>
-              </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 13.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 12</strong>.
               </div>
             </div>
           </div>
@@ -904,12 +900,16 @@
           </div>
 
           <div class="col s12">
-            <h6 class="base-text text900 center-align">Solución</h6>
+            <h2 class="base-text text900 h6">Solución</h6>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 14.</strong> Programa para graficar la función
+                $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: matlab">
                   fprintf('Grafica de Funciones\n');
                   fprintf('Funcion Grausiana z(x,y) = Aexp(- (x^2 + y^2)) en [-10,10]x[-10,10]\n');
@@ -940,16 +940,16 @@
                   end
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 14.</strong> Programa para graficar la función
-                $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$.
-              </div>
             </div>
           </div>
 
           <div class="col s12">
             <div class="card white">
-              <div class="card-content s-pad-5">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 15.</strong> Ejemplo de ejecución del programa
+                mostrado en el <strong>script 14</strong>.
+              </div>
+              <div class="card-content s-pad-0 code">
                 <pre class="brush: plain">
                   >>problema07.m
                   Grafica de Funciones
@@ -967,10 +967,6 @@
                   Desea graficar curvas de nivel (Y/N)? y
                 </pre>
               </div>
-              <div class="card-action caption s-pad-5 center-align">
-                <strong>Script 15.</strong> Ejemplo de ejecución del programa
-                mostrado en el <strong>script 14</strong>.
-              </div>
             </div>
           </div>
 
@@ -979,17 +975,17 @@
               <div class="card-image">
                 <img src="./laboratorio_1/problema07_sample1.png">
               </div>
-              <div class="card-action borderless caption s-pad-5 center-align">
+              <div class="card-action borderless caption s-pad-10 center-align">
                 <strong>a) </strong>Grilla de 1 unidad de ancho.
               </div>
               <div class="divider"></div>
               <div class="card-image">
                 <img src="./laboratorio_1/problema07_sample2.png">
               </div>
-              <div class="card-action borderless caption s-pad-5 center-align">
+              <div class="card-action borderless caption s-pad-10 center-align">
                 <strong>b) </strong>Grilla de 0.2 unidades de ancho.
               </div>
-              <div class="card-action caption s-pad-5 center-align">
+              <div class="card-action caption s-pad-10 center-align">
                 <strong>Figura 2.</strong> Imágenes resultantes de graficar la
                 $z = A \cdot \mathrm{e}^{\left(x^2 + y^2\right)}$ empleando el
                 <strong>script 14</strong>.
@@ -1014,6 +1010,7 @@
 
       function initMap() {
         map = new google.maps.Map(document.getElementById('map'), {
+          scrollwheel: false,
           zoom: 3,
           center: {
             lat: 34,

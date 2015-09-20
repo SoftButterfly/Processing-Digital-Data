@@ -340,8 +340,10 @@
     margin: 0.82rem 0 0.656rem 0;
   }
 
-  .card .syntaxhighlighter{
-    margin: 0!important;
+  .h6 {
+    font-size: 1.16rem;
+    line-height: 110%;
+    margin: 0.41rem 0 0.328rem 0;
   }
 
   .card .card-action a{
@@ -359,8 +361,8 @@
   }
 
   .card .card-action.caption{
-    font-size: 0.8rem;
-    line-height: 0.9rem;
+    font-size: 0.9rem;
+    line-height: 1.0rem;
   }
 
   .card .card-action.caption a{
@@ -371,6 +373,19 @@
   .card .card-action.material{
     line-height: 36px;
   }
+
   code{
     font-size: 0.9rem;
+  }
+
+  .card .syntaxhighlighter{
+    margin: 0!important;
+    padding: 10px!important;
+    background-color: #212121!important;
+  }
+
+  .card .syntaxhighlighter table td.code .container,
+  .card .syntaxhighlighter .line.alt1,
+  .card .syntaxhighlighter .line.alt2{
+    background-color: #212121!important;
   }
