@@ -16,5 +16,6 @@ Desarollo del curso de «Procesamiento de Datos Digitales» para el periodo lect
 * **Profesor** : Lic. César Jiménez (cjimenezt@unmsm.edu.pe).
 
 ## Contribuyentes
-* Martin Vuelta
-* Alejandro Condori
+* Martin Vuelta ([@ZodiacFireworks](https://github.com/ZodiacFireworks))
+* Alejandro Condori ([@Cochitoge](https://github.com/Cochitoge))
+* Sebastian Cisneros ([@Sebasc23](https://github.com/Sebasc23))
