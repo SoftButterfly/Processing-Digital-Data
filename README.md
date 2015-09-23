@@ -30,7 +30,6 @@ distribuido "TAL COMO ESTÁ", SIN GARANTÍAS O CONDICIONES DE NINGÚN TIPO, sean
 implícitas o expresas.
 
 Lea la licencia en su respectivo idioma para conocer los permisos y
-limitaciones de las de la licencia.
+limitaciones de la licencia.
 
 Copyright 2015 Martín Josemaría Vuelta Rojas
-
