@@ -19,3 +19,23 @@ Desarollo del curso de «Procesamiento de Datos Digitales» para el periodo lect
 * Martin Vuelta ([@ZodiacFireworks](https://github.com/ZodiacFireworks))
 * Alejandro Condori ([@Cochitoge](https://github.com/Cochitoge))
 * Sebastian Cisneros ([@Sebasc23](https://github.com/Sebasc23))
+
+## Legal:
+
+Todo el contenido de este repositorio está licenciado bajo la "Apache License",
+versión 2.0 ("la licencia"); cualquier uso realizado del contenido de este
+repositorio deberá ser usado con dentro de las condiciones establecidas por
+la licencia. Puedes obtener una copia de la licencia en
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+A menos que la ley aplicable lo requiera o se llegue a un acuerdo por escrito,
+el contenido distribuido bajo las condiciones indicadas por la licencia es
+distribuido "TAL COMO ESTÄ", SIN GARANTIAS O CONDICIONES DE NINGUN TIPO, sean
+implicitas o expresas.
+
+Lea la licencia en su respectivo idioma para conocer los permisos y
+limitaciones de las de la licencia.
+
+Copyright 2015 Martin Josemaría Vuelta Rojas
+
