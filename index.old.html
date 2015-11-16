@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>       <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>       <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="author" content="Martín Josemaría Vuelta Rojas">
+    <meta name="description" content="Curso de Processamiento de Datos Digitales de la Universidad Nacional Mayor de San Marcos">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00000">
+    <meta name="msapplication-TileImage" content="./static/img/favicon.png">
+    <meta name="theme-color" content="#000000">
+
+    <title>Procesamiento de Datos Digitales</title>
+
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="./static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="./static/img/favicon.png"/>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="./static/css/materialize.min.css">
+    <link rel="stylesheet" href="./static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/css/syntaxhighligther/shCore.css">
+    <link rel="stylesheet" href="./static/css/syntaxhighligther/shThemeDefault.css">
+    <link rel="stylesheet" href="./static/css/extensions.css">
+    <link rel="stylesheet" href="./static/css/overrides.css">
+    <link rel="stylesheet" href="./static/css/helpers.css">
+    <link rel="stylesheet" href="./static/css/pdd.css">
+  </head>
+
+  <body>
+    <div class="page-preloader dark-color stop-animation">
+      <div class="spining-button z-depth-3 stop-animation">
+        <i style="background-image: url(./static/img/spin.png)"></i>
+      </div>
+    </div>
+
+    <ul id="sidenav" class="waves-effect side-nav fixed light-color table-of-contents">
+      <li class="waves-effect waves-light dark-color s-mar-0 s-pad-0">
+        <a href="./" class="s-mar-0 s-pad-0">
+          <h4 class="grey-text text-lighten-5 text700 s-mar-0 s-pad-0 center-align">PDD</h4>
+        </a>
+      </li>
+      <li><a href="#general-information">Información general</a></li>
+      <li><a href="#materials">Materiales</a></li>
+      <li><a href="#labs">Laboratorios</a></li>
+      <!-- li><a href="#sandbox">Sandbox</a></li -->
+    </ul>
+
+    <header class="dark-color navbar-fixed">
+      <nav class="transparent waves-effect waves-light">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="javascript:void(0);" data-activates="sidenav" class="button-collapse left s-pad-0">
+              <i class="material-icons">menu</i>
+            </a>
+
+            <a href="./" class="brand-logo hide-on-small-only">
+              <span class="text300">Procesamiento de Datos Digitales</span>
+            </a>
+
+            <a href="./" class="brand-logo hide-on-med-and-up">
+              <span class="text300">PDD</span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="col s12">
+            <blockquote>
+              Curso de <strong>Procesamiento de datos digitales</strong> de la
+              Facultad de Ciencias Físicas de la Universidad Nacional Mayor de
+              San Marcos, Lima - Perú.
+            </blockquote>
+          </div>
+        </div>
+
+        <div id="general-information" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Información general del curso</h1>
+          </div>
+          <div class="col s12 divider">
+          </div>
+          <div class="col s12">
+            <ul>
+              <li><strong style="display:inline-block;width:125px;">Asignatura </strong>: Procesamiento de datos digitales</li>
+              <li><strong style="display:inline-block;width:125px;">Carácter </strong>: Electivo</li>
+              <li><strong style="display:inline-block;width:125px;">Pre-requisito </strong>: Física matemática II, Programación e infromática.</li>
+              <li><strong style="display:inline-block;width:125px;">Créditos </strong>: 04</li>
+              <li><strong style="display:inline-block;width:125px;">Horas semanales </strong>: 03 Teoría / 02 Laboratorio</li>
+              <li><strong style="display:inline-block;width:125px;">Ciclo académico </strong>: 2015-II</li>
+              <li><strong style="display:inline-block;width:125px;">Duración </strong>: 17 Semanas</li>
+              <li><strong style="display:inline-block;width:125px;">Profesor </strong>: Lic. César Jiménez (cjimenezt@unmsm.edu.pe)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div id="materials" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Materiales del curso</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              <strong>Documentos Administrativos</strong>
+            </p>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Silabo del curso</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/silabo.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <!--
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/silabo.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+                -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              <strong>Material de clase</strong>
+            </p>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Notas de clase</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/apuntes_del_curso.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <!--
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/apuntes_del_curso.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+                -->
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Guía de laboratorio N° 1</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/laboratorio_1.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/laboratorio_1.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Guía de laboratorio N° 2</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/laboratorio_2.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/laboratorio_2.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Guía de laboratorio N° 3</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/laboratorio_3.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/laboratorio_3.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Guía de laboratorio N° 4</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/laboratorio_4.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/laboratorio_4.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Guía de laboratorio N° 5</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/laboratorio_5.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="docs/laboratorio_5.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              <strong>Material bibliográfico</strong>
+            </p>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Manual básico de</span> <span class="smallcaps">Matlab</span><sup>®</sup>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/manual_basico_de_matlab.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Una descripción de $\mathrm{\LaTeX}\ 2\varepsilon$</span>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="docs/una_descripcion_de_latex_2e.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              <strong>Programas</strong>
+            </p>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-action material base-text">
+                <span class="base-text">Ghost view</span><sup>®</sup> [<i class="fa fa-fw fa-windows" title="Para Microsoft® Windows®"></i>]
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Sitio web" href="http://www.gsview.com/" target="_blank"><i class="fa fa-fw fa-external-link"></i></a>
+                <a class="right btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="RAR" href="docs/ghostview.rar"><i class="fa fa-fw fa-file-archive-o"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="labs" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Laboratorios</h1>
+          </div>
+          <div class="col s12 divider">
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-content">
+                <span class="base-text">Solución al laboratorio N° 1</span>
+              </div>
+              <div class="card-action base-text right-align">
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="labs/laboratorio_1_codes.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="labs/laboratorio_1_latex.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="labs/laboratorio_1.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="labs/laboratorio_1.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-content">
+                <span class="base-text">Solución al laboratorio N° 2</span>
+              </div>
+              <div class="card-action base-text right-align">
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="labs/laboratorio_2_codes.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="labs/laboratorio_2_latex.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="labs/laboratorio_2.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="labs/laboratorio_2.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <!-- div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-content">
+                <span class="base-text">Solución al laboratorio N° 3</span>
+              </div>
+              <div class="card-action base-text right-align">
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="labs/code_3.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="labs/latex_3.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="labs/laboratorio_3.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="labs/laboratorio_3.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-content">
+                <span class="base-text">Solución al laboratorio N° 4</span>
+              </div>
+              <div class="card-action base-text right-align">
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="labs/code_4.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="labs/latex_4.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="labs/laboratorio_4.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="labs/laboratorio_4.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12 m12 l6">
+            <div class="card withe">
+              <div class="card-content">
+                <span class="base-text">Solución al laboratorio N° 5</span>
+              </div>
+              <div class="card-action base-text right-align">
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Códigos" href="labs/code_5.zip"><i class="fa fa-fw fa-file-code-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="Latex" href="labs/latex_5.zip"><i class="fa fa-fw fa-file-archive-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="PDF" href="labs/laboratorio_5.pdf"><i class="fa fa-fw fa-file-pdf-o"></i></a>
+                <a class="btn-flat s-mar-l10 s-pad-r5 s-pad-l5 tooltipped" data-position="left" data-delay="15" data-tooltip="WEB" href="labs/laboratorio_5.html"><i class="fa fa-fw fa-file-word-o"></i></a>
+              </div>
+            </div>
+          </div>
+        </div -->
+
+        <!-- div id="sandbox" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Sandbox</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <div class="card">
+              <div class="card-content s-pad-5" style="background-color:#f3f3f3">
+                <iframe src="http://www.tutorialspoint.com/execute_matlab_online.php"
+                      sandbox="allow-forms
+                               allow-pointer-lock
+                               allow-popups
+                               allow-same-origin
+                               allow-scripts
+                               allow-top-navigation"
+                      height="600"
+                      class="full-width"
+                      frameborder="0"></iframe>
+              </div>
+            </div>
+          </div>
+        </div -->
+      </div>
+    </main>
+
+    <footer class="page-footer gray-gradient s-mar-t0">
+      <div class="footer-copyright transparent">
+        <div class="container center base-text">
+        © 2015 Martín Josemaría Vuelta Rojas
+        </div>
+      </div>
+    </footer>
+
+    <!-- script src='https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML'></script -->
+    <script type="text/javascript" charset="utf-8" src="./static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/jquery.smoothState.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/attrchange.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/shBrushGNUPlot.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/pdd.js"></script>
+  </body>
+</html>

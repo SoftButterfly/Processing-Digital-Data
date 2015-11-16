@@ -1,0 +1,680 @@
+\documentclass[a4paper,12pt,final]{article}
+\usepackage[scaled=0.9]{luximono}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{enumitem}
+\usepackage{epstopdf}
+\usepackage{floatrow}
+\usepackage{geometry}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{listings}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{caption}
+\usepackage{charter}
+\usepackage{wrapfig}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{minted}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{color}
+\usepackage{esint}
+\usepackage{float}
+
+% Hyperref setup
+\hypersetup{
+  pdftitle={Procesamiento de datos digitales. Laboratorio 3},
+  pdfauthor={Martín Josemaría Vuelta Rojas},
+  pdfpagelayout=OneColumn,
+  pdfnewwindow=true,
+  pdfdisplaydoctitle=true,
+  pdfstartview=XYZ,
+  plainpages=false,
+  unicode=true,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  bookmarksopenlevel=3,
+  breaklinks=true,
+  colorlinks=true,
+  linkcolor=blue,
+  pdfborder={0 0 0}
+}
+
+% Minted settings
+\setminted[matlab]{
+  autogobble=true,
+  linenos=false,
+  bgcolor=grey_lighten_4,
+  fontfamily=\ttdefault,
+  resetmargins=true,
+  stripnl=true,
+  breaklines=true
+  breakautoindent=true,
+  breaksymbolleft=\tiny\ensuremath{\hookrightarrow},
+  breaksymbolright=\tiny\ensuremath{\hookleftarrow},
+  fontsize=\footnotesize
+}
+
+\setminted[javascript]{
+  autogobble=true,
+  linenos=false,
+  bgcolor=grey_lighten_4,
+  fontfamily=\ttdefault,
+  resetmargins=true,
+  stripnl=true,
+  breaklines=true
+  breakautoindent=true,
+  breaksymbolleft=\tiny\ensuremath{\hookrightarrow},
+  breaksymbolright=\tiny\ensuremath{\hookleftarrow},
+  fontsize=\footnotesize
+}
+
+\setminted[text]{
+  autogobble=true,
+  linenos=false,
+  bgcolor=grey_lighten_4,
+  fontfamily=\ttdefault,
+  resetmargins=true,
+  stripnl=true,
+  breaklines=true
+  breakautoindent=true,
+  breaksymbolleft=\tiny\ensuremath{\hookrightarrow},
+  breaksymbolright=\tiny\ensuremath{\hookleftarrow},
+  fontsize=\footnotesize
+}
+
+\geometry{
+  a4paper,
+  total={210mm,297mm},
+  left=20mm,
+  right=20mm,
+  top=20mm,
+  bottom=20mm,
+}
+
+\floatsetup[listing]{
+  capposition=top,
+  style=ruled,
+}
+
+\captionsetup[listing]{
+  labelfont=bf,
+  justification=centering
+}
+
+\floatsetup[figure]{
+  capposition=top,
+  style=ruled,
+}
+
+\floatsetup[wrapfigure]{
+  capposition=top,
+  style=plain,
+}
+
+\captionsetup[figure]{
+  labelfont=bf,
+  justification=centering
+}
+
+%% LaTeX commands.
+\makeatletter
+%% -----------------------------------------------------------------------------
+\definecolor{grey_lighten_4}{rgb}{0.9804, 0.9804, 0.9804}
+%% Caption name for minted environments
+% \SetupFloatingEnvironment{listing}{name=Script}
+% \SetupFloatingEnvironment{listing}{listname=Lista de scripts}
+\renewcommand{\listingscaption}{Script}
+\renewcommand{\listoflistingscaption}{Lista de scripts}
+%% Redefinition of \maketitle command
+\def\@maketitle{%
+  \newpage%
+  \null%
+  \vskip 0em%
+  \begin{flushleft}%
+      \let \footnote \thanks%
+      {\LARGE \@title \par}%
+  \end{flushleft}%
+  \begin{flushright}%
+      \vskip 1em%
+      {\@author \par}%
+  \end{flushright}%
+  \noindent\rule{1\columnwidth}{1pt}%
+  \par%
+}
+
+\makeatother
+
+%% -----------------------------------------------------------------------------
+\begin{document}
+  \title{\textit{\Large Laboratorio Nº3}\linebreak{}\linebreak{}\textbf{\Huge Convolución y respuesta en el tiempo}}
+  \author{\emph{Martín Josemaría Vuelta Rojas}}
+  \maketitle
+
+  \subsection*{Problema 1}
+    \noindent Sean
+    $$x\left(n\right) = \delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)$$
+    \noindent y
+    $$h\left(n\right) = 2\delta\left(n+1\right) + 2\delta\left(n-1\right).$$
+    Calcule y haga la gráfica (usar el comando \texttt{stem}) de cada una de las siguientes
+    convoluciones:
+
+    \begin{enumerate}[label=\alph*)]
+      \item $y_1\left(n\right) = x\left(n\right)*h\left(n\right)$
+      \item $y_2\left(n\right) = x\left(n+2\right)*h\left(n\right)$
+      \item $y_3\left(n\right) = x\left(n\right)*h\left(n+2\right)$
+    \end{enumerate}
+
+    \subsubsection*{Solución}
+      \begin{listing}[H]
+        \caption{Función impulso unitario}
+        \label{script01A}
+        \inputminted{matlab}{./laboratorio_3/impulso.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $x\left(n\right)$}
+        \label{script01B}
+        \inputminted{matlab}{./laboratorio_3/p1_X.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $h\left(n\right)$}
+        \label{script01C}
+        \inputminted{matlab}{./laboratorio_3/p1_H.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Convoluciones $x\left(n\right)*h\left(n\right)$, $x\left(n+2\right)*h\left(n\right)$ y $x\left(n\right)*h\left(n+2\right)$ en \textsc{Matlab} }
+        \label{script01D}
+        \inputminted{matlab}{./laboratorio_3/problema01.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Resultados de ejecutar el \emph{script \ref{script01D}}}
+        \label{script01E}
+        \begin{minted}{matlab}
+          >> problema01
+          x(n)*h(n)  :  0  0  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0
+          x(n+2)*h(n):  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0  0  0
+          x(n)*h(n+2):  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0  0  0
+        \end{minted}
+      \end{listing}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función impulso unitario del \emph{script \ref{script01A}}.}
+        \label{script01Afigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_impulso.png}
+      \end{figure}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función $x\left(n\right)$ del \emph{script \ref{script01B}}.}
+        \label{script01Bfigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_x.png}
+      \end{figure}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función $h\left(n\right)$ del \emph{script \ref{script01C}}.}
+        \label{script01Cfigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_h.png}
+      \end{figure}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función $y_1\left(n\right)=x\left(n\right)*h\left(n\right)$ calculada \emph{script \ref{script01D}}.}
+        \label{script01Dfigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y1.png}
+      \end{figure}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función $y_2\left(n\right)=x\left(n+2\right)*h\left(n\right)$ calculada \emph{script \ref{script01D}}.}
+        \label{script01Efigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y2.png}
+      \end{figure}
+
+      \begin{figure}[H]
+        \caption{Gráfico de la función $y_3\left(n\right)=x\left(n\right)*h\left(n+2\right)$ calculada \emph{script \ref{script01D}}.}
+        \label{script01Ffigure}
+        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y3.png}
+      \end{figure}
+
+      \noindent De forma analítica, obtenemos las convoluciones solicitadas empleando la definición:
+      $$y\left(m\right) = x\left(n\right)*h\left(n\right) = \sum_n x\left(n\right)h\left(m-n\right)$$
+      \noindent Así obtenemos
+
+      \begin{equation*}
+        \begin{split}
+          y_1\left(m\right) & = x\left(n\right)*h\left(n\right) \\
+                            & = \sum_n \left[\delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)\right]
+                                       \left[2\delta\left(m-n+1\right) + 2\delta\left(m-n-1\right)\right] \\
+                            & = 2\delta\left(m+1\right) + 4\delta\left(m\right) + 2\delta\left(m-1\right) + 2\delta\left(m-2\right) - 2\delta\left(m-4\right) \\
+        \end{split}
+      \end{equation*}
+
+      \begin{equation*}
+        \begin{split}
+          y_2\left(m\right) & = x\left(n+2\right)*h\left(n\right) \\
+                            & = \sum_n \left[\delta\left(n+2\right) + 2\delta\left(n+1\right) - \delta\left(n-1\right)\right]
+                                       \left[2\delta\left(m-n+1\right) + 2\delta\left(m-n-1\right)\right] \\
+                            & = 2\delta\left(m+3\right) + 4\delta\left(m+2\right) + 2\delta\left(m+1\right) + 2\delta\left(m\right) - 2\delta\left(m-2\right) \\
+        \end{split}
+      \end{equation*}
+
+      \begin{equation*}
+        \begin{split}
+          y_3\left(n\right) & = x\left(n\right)*h\left(n+2\right) \\
+                            & = \sum_n \left[\delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)\right]
+                                       \left[2\delta\left(m-n+3\right) + 2\delta\left(m-n+1\right)\right] \\
+                            & = 2\delta\left(m+3\right) + 4\delta\left(m+2\right) + 2\delta\left(m+1\right) + 2\delta\left(m\right) - 2\delta\left(m-2\right) \\
+        \end{split}
+      \end{equation*}
+
+  \newpage
+  \subsection*{Problema 2}
+    \noindent Considere un sistema LIT cuya respuesta a la señal $x_1\left(t\right)$ es $y_1\left(t\right)$
+
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X1.png}
+        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y1.png}
+      \end{center}
+    \end{figure}
+
+    \noindent Hallar las respuestas del sistema anterior a las siguientes excitaciones:
+
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X2.png}
+        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X3.png}
+      \end{center}
+    \end{figure}
+
+    \subsubsection*{Solución}
+      \noindent Las funciones $x_2\left(t\right)$ y $x_3\left(t\right)$ se pueden representar en función de $x_1\left(t\right)$ como
+      $$x_2\left(t\right) = x_1\left(t\right) + x_1\left(t - 1\right)$$
+      \noindent y
+      $$x_3\left(t\right) = x_1\left(t\right) - x_1\left(t - 2\right).$$
+
+      De forma que si consideramos la función de transferencia del sistema como $h\left(t\right)$ y
+      $$y_1\left(t\right) = x_1\left(t\right) * h\left(t\right),$$
+      \noindent entonces
+      $$y_2\left(t\right) = x_1\left(t\right) * h\left(t\right) + x_1\left(t - 1\right) * h\left(t\right) = y_1\left(t\right) + y_1\left(t - 1\right)$$
+      \noindent y
+      $$y_3\left(t\right) = x_1\left(t\right) * h\left(t\right) - x_1\left(t - 2\right) * h\left(t\right) = y_1\left(t\right) - y_1\left(t - 2\right).$$
+      \noindent Con estas observaciones escribimos las soluciones a este problema en \textsc{MatLab}
+
+      \begin{listing}[H]
+        \caption{Función $x_1\left(t\right)$}
+        \label{script02A}
+        \inputminted{matlab}{./laboratorio_3/p2_X1.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $y_1\left(t\right)$}
+        \label{script02B}
+        \inputminted{matlab}{./laboratorio_3/p2_Y1.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $x_2\left(t\right)$}
+        \label{script02C}
+        \inputminted{matlab}{./laboratorio_3/p2_X2.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $y_2\left(t\right)$}
+        \label{script02D}
+        \inputminted{matlab}{./laboratorio_3/p2_Y2.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $x_3\left(t\right)$}
+        \label{script02E}
+        \inputminted{matlab}{./laboratorio_3/p2_X3.m}
+      \end{listing}
+
+      \begin{listing}[H]
+        \caption{Función $y_3\left(t\right)$}
+        \label{script02F}
+        \inputminted{matlab}{./laboratorio_3/p2_Y3.m}
+      \end{listing}
+
+      \begin{figure}[H]
+          \caption{Función $x_2\left(t\right)$ y respuesta $y_2\left(t\right)$ empleando los \emph{scripts \ref{script02C}} y \emph{\ref{script02D}}.}
+          \label{script02Afigure}
+          \begin{center}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X2.png}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y2.png}
+          \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+          \caption{Función $x_3\left(t\right)$ y respuesta $y_3\left(t\right)$ empleando los \emph{scripts \ref{script02E}} y \emph{\ref{script02F}}.}
+          \label{script02Bfigure}
+          \begin{center}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X3.png}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y3.png}
+          \end{center}
+      \end{figure}
+      \vspace{\fill}
+
+  \newpage
+  \subsection*{Problema 3}
+    \noindent Calcular la convolución entre los siguientes pares de señales:
+    \begin{enumerate}[label=\alph*)]
+      \item $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
+      \item $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
+      \item $x\left(n\right) = u\left(n\right)$ y $h\left(n\right) = \left(\frac{1}{2}\right)^{-n} u\left(-n\right)$
+      \item $x\left(t\right) = \exp\left(-at\right) u(t)$ y $h(t) = exp(-at) u(t)$
+    \end{enumerate}
+
+    \noindent Donde $u\left(n\right)$ es la función escalón unitario.
+
+    \subsubsection*{Solución}
+      \begin{enumerate}[label=\alph*)]
+        \item $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^n u\left(n-4\right)4^{m-n} u\left(2-m+n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $m<6$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
+                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) \\
+                              & = \sum_{n=4}^{\infty} 2^{2m-3n} \\
+                              & = \sum_{n=0}^{\infty} 2^{2m-3\left(n+4\right)} \\
+                              & = \sum_{n=0}^{\infty} 2^{2m-3n-12} \\
+                              & = 2^{2m-12} \sum_{n=0}^{\infty} \left(2^{-3}\right)^{n} \\
+                              & = 2^{2m-12} \sum_{n=0}^{\infty} \left(\frac{1}{8}\right)^{n} \\
+                              & = 2^{2m-12} \left(\frac{1}{1-\frac{1}{8}}\right) \\
+                              & = \frac{2^{2m-9}}{7}
+            \end{split}
+          \end{equation*}
+          \vfill
+          \newpage
+
+          \noindent Cuando $m \geq 6$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
+                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n+2-m\right) \\
+                              & = \sum_{n=m-2}^{\infty} 2^{2m-3n} \\
+                              & = \sum_{n=0}^{\infty} 2^{2m-3\left(n+m-2\right)} \\
+                              & = \sum_{n=0}^{\infty} 2^{6-m-3n} \\
+                              & = 2^{6-m} \sum_{n=0}^{\infty} \left(2^{-3}\right)^{n} \\
+                              & = 2^{6-m} \sum_{n=0}^{\infty} \left(\frac{1}{8}\right)^{n} \\
+                              & = 2^{6-m} \left(\frac{1}{1-\frac{1}{8}}\right) \\
+                              & = \frac{2^{9-m}}{7}
+            \end{split}
+          \end{equation*}
+
+          \noindent Finalmente
+
+          \begin{equation*}
+            y\left(m\right) = \left\{
+              \begin{array}{lcl}
+                \displaystyle{\frac{2^{2m-9}}{7}} &;& n < 6 \\ [1em]
+                \displaystyle{\frac{2^{9-m}}{7}}  &;& n \geq 6
+              \end{array}
+            \right.
+          \end{equation*}
+
+        \item $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} \left[u\left(-n\right) - u\left(-n-2\right)\right]
+                                                            \left[u\left(m-n-1\right) - u\left(m-n-4\right)\right] \\
+                              & = \sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-1\right) - \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-1\right) - \\
+                              & \phantom{=}\ \,\sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-4\right) + \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-4\right)
+            \end{split}
+          \end{equation*}
+          \vfill
+          \newpage
+
+          \noindent Cuando $m<0$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{m-1} 1 -
+                                  \sum_{n=-\infty}^{m-1} 1 -
+                                  \sum_{n=-\infty}^{m-4} 1 +
+                                  \sum_{n=-\infty}^{m-4} 1 \\
+                              & = 0
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $m=0$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{-1} 1 -
+                                  \sum_{n=-\infty}^{-2} 1 -
+                                  \sum_{n=-\infty}^{-3} 1 +
+                                  \sum_{n=-\infty}^{-3} 1 \\
+                              & = 1
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $0<m \wedge m<3$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
+                                  \sum_{n=-\infty}^{-2} 1 -
+                                  \sum_{n=-\infty}^{-2} 1 +
+                                  \sum_{n=-\infty}^{-2} 1 \\
+                              & = 2
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $m=3$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
+                                  \sum_{n=-\infty}^{-2} 1 -
+                                  \sum_{n=-\infty}^{-1} 1 +
+                                  \sum_{n=-\infty}^{-2} 1 \\
+                              & = 1
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $m>3$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
+                                  \sum_{n=-\infty}^{-1} 1 -
+                                  \sum_{n=-\infty}^{0} 1 +
+                                  \sum_{n=-\infty}^{-1} 1 \\
+                              & = 0
+            \end{split}
+          \end{equation*}
+
+          \noindent Finalmente
+
+          \begin{equation*}
+            y\left(m\right) = \left\{
+              \begin{array}{lcl}
+                0 &;& m < 0  \vee  3 < m \\ [1em]
+                1 &;& m = 0  \vee  m = 3 \\ [1em]
+                2 &;& 0 < m \wedge m < 3
+              \end{array}
+            \right.
+          \end{equation*}
+          \vfill
+          \newpage
+
+        \item $x\left(n\right) = u\left(n\right)$ y $h\left(n\right) = \left(\frac{1}{2}\right)^{-n} u\left(-n\right)$
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
+                              & = \sum_{n=-\infty}^{\infty} u\left(n\right) \left(\frac{1}{2}\right)^{n-m} u\left(n-m\right) \\
+                              & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right)
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $m < 0$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right) \\
+                              & = \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n-m} \\
+                              & = 2^{m} \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n} \\
+                              & = 2^{1+m}
+            \end{split}
+          \end{equation*}
+
+          \noindent Cuando $0 \leq m$:
+
+          \begin{equation*}
+            \begin{split}
+              y\left(m\right) & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right) \\
+                              & = \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n-m} \\
+                              & = 2^{m} \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n} \\
+                              & = 2^{1+m}
+            \end{split}
+          \end{equation*}
+
+        \item $x\left(t\right) = \exp\left(-at\right) u(t)$ y $h(t) = \exp\left(-at\right) u(t)$
+
+          \begin{equation*}
+            \begin{split}
+              y\left(\tau\right) & = x\left(t\right) * h\left(t\right) \\
+                                 & = \int_{-\infty}^{\infty} x\left(t\right)h\left(\tau-t\right)dt \\
+                                 & = \int_{-\infty}^{\infty} \exp\left(-at\right) u(t) \exp\left(-a\tau + at\right) u(t-\tau) dt\\
+                                 & = \int_{0}^{\tau} \exp\left(-a\tau\right) dt \\
+                                 & = \exp\left(-a\tau\right) \tau
+            \end{split}
+          \end{equation*}
+
+      \end{enumerate}
+
+  \newpage
+  \subsection*{Problema 4}
+    \noindent Para el diagrama de bloques mostrado
+    \begin{figure}[H]
+      \begin{center}
+        \includegraphics[width=0.7\textwidth]{./laboratorio_3/problema04_diagram.png}
+      \end{center}
+    \end{figure}
+
+    \noindent Donde
+
+    $$h_1\left(n\right) = \beta\delta\left(n-1\right)$$
+
+    \noindent y
+
+    $$h_2\left(n\right) = \exp\left(\alpha\right)\delta\left(n\right)$$
+
+    \begin{enumerate}[label=\alph*)]
+      \item Escribir la ecuación en diferencias que relaciona la entrada con la salida
+      \item Hallar $\alpha$ y $\beta$, de tal forma que la salida sea el promedio entre la entrada en el instante $n$ y
+      la entrada en el instante $n-1$.
+    \end{enumerate}
+
+    \subsubsection*{Solución}
+      \begin{enumerate}[label=\alph*)]
+        \item La ecuación en diferencias se obtiene de calcular
+          $$ y\left(n\right) = \left[\left(x + x*h_1\right)*h_2\right]\left(n\right) $$
+
+          \noindent Resolviendo $\left[x*h_1\right]\left(n\right)$, tenemos
+
+          \begin{equation*}
+            \begin{split}
+              y_1\left(n\right) & = x(m)*h_1(m) \\
+                                & = \sum_{m=-\infty}^{\infty} x\left(m\right)h_1\left(n-m\right) \\
+                                & = \sum_{m=-\infty}^{\infty} x\left(m\right)\beta\delta\left(n-m-1\right) \\
+                                & = \beta x\left(n-1\right)
+            \end{split}
+          \end{equation*}
+
+          \noindent Haciendo $y_2\left(n\right)=y_1\left(n\right) + x\left(n\right)$, calculamos $\left[y_2*h_2\right]\left(n\right)$ como
+
+          \begin{equation*}
+            \begin{split}
+              y\left(n\right) & = y_2(m)*h_2(m) \\
+                              & = \sum_{m=-\infty}^{\infty} y_2(m)h_2\left(n-m\right) \\
+                              & = \sum_{m=-\infty}^{\infty} \left[y_1\left(m\right) + x\left(m\right)\right]\exp\left(\alpha\right)\delta\left(n-m\right) \\
+                              & = \sum_{m=-\infty}^{\infty} \left[\beta x\left(m-1\right) + x\left(m\right)\right]\exp\left(\alpha\right)\delta\left(n-m\right) \\
+                              & = \left[\beta x\left(n-1\right) + x\left(n\right)\right]\exp\left(\alpha\right)
+            \end{split}
+          \end{equation*}
+
+          \noindent De modo que la ecuación en diferencias del sistema queda expresada como
+
+          $$y\left(n\right) = \left[\beta x\left(n-1\right) + x\left(n\right)\right]\exp\left(\alpha\right)$$
+
+        \item Para que la señal de salida sea igual al promedio de los valores de la señal de entrada en el instante $n$
+          y en el instante $n-1$ se debe resolver el sistema
+
+          \begin{equation}
+            \left\{
+              \begin{array}{ccc}
+                \exp\left(\alpha\right)      &=&  \displaystyle{\frac{1}{2}} \\[1em]
+                \exp\left(\alpha\right)\beta &=&  \displaystyle{\frac{1}{2}}
+              \end{array}
+            \right.
+          \end{equation}
+
+          \noindent De donde resulta
+
+          $$ \alpha = \ln\left(\frac{1}{2}\right) \wedge \beta = 1$$
+      \end{enumerate}
+
+  \newpage
+  \subsection*{Problema 5}
+    \noindent Dada la siguiente ecuación en diferencias
+    $$y\left(n\right) = -a y\left(n-1\right) + b x\left(n\right) + c x\left(n-1\right),$$
+    realizar una representación en diagrama de bloques.
+
+    \subsubsection*{Solución}
+
+  \newpage
+  \subsection*{Problema 6}
+    \noindent Realizar en \textsc{Matlab} la convolución del siguiente par de
+    señales:
+
+    \begin{enumerate}
+        \item $x\left(n\right) = \left(-1\right)^n \left(u\left(n\right) - u\left(-n-8\right)\right)$
+        \item $h\left(n\right) = u\left(n\right) - u\left(n-8\right)$
+    \end{enumerate}
+
+    Graficar la señal resultante, $y\left(n\right) = x\left(n\right) * h\left(n\right)$.
+    Usar el comando \texttt{stem}.
+
+    \subsubsection*{Solución}
+
+  \newpage
+  \subsection*{Problema 7}
+    \noindent Considere un sistema lineal e invariante en el tiempo, causal,
+    cuya entrada $x\left(n\right)$ y salida $y\left(n\right)$ estén
+    relacionadas por la ecuación de diferencias:
+    $$y\left(n\right) = 0.25 y\left(n-1\right) + x\left(n\right)$$
+    Determine $y\left(n\right)$ si $x\left(n\right) = \delta\left(n-1\right)$.
+    Grafique en \textsc{Matlab} la salida $y\left(n\right)$, use el comando \texttt{stem}.
+
+    \subsubsection*{Solución}
+
+\end{document}
