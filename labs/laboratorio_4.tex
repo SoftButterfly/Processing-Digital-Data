@@ -38,7 +38,7 @@
 
 % Hyperref setup
 \hypersetup{
-  pdftitle={Procesamiento de datos digitales. Laboratorio 3},
+  pdftitle={Procesamiento de datos digitales. Laboratorio 4},
   pdfauthor={Martín Josemaría Vuelta Rojas},
   pdfpagelayout=OneColumn,
   pdfnewwindow=true,
@@ -167,29 +167,72 @@
 
 %% -----------------------------------------------------------------------------
 \begin{document}
-  \title{\textit{\Large Laboratorio Nº3}\linebreak{}\linebreak{}\textbf{\Huge Convolución y respuesta en el tiempo}}
+  \title{\textit{\Large Laboratorio Nº4}\linebreak{}\linebreak{}
+  \textbf{\Huge Transformada de Fourier y filtros}}
   \author{\emph{Martín Josemaría Vuelta Rojas}}
   \maketitle
 
   \subsection*{Problema 1}
-    \noindent Sean
-    $$x\left(n\right) = \delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)$$
-    \noindent y
-    $$h\left(n\right) = 2\delta\left(n+1\right) + 2\delta\left(n-1\right).$$
-    Calcule y haga la gráfica (usar el comando \texttt{stem}) de cada una de las siguientes
-    convoluciones:
+    \noindent Graficar en \textsc{Matlab} las señales a y b, y hallar
+      la transformada de Fourier en forma analítica (usar propiedades):
 
-    \begin{enumerate}[label=\alph*)]
-      \item $y_1\left(n\right) = x\left(n\right)*h\left(n\right)$
-      \item $y_2\left(n\right) = x\left(n+2\right)*h\left(n\right)$
-      \item $y_3\left(n\right) = x\left(n\right)*h\left(n+2\right)$
-    \end{enumerate}
+      \floatsetup[figure]{
+        capposition=top,
+        style=plain,
+      }
+
+      \begin{enumerate}[label=\alph*)]
+        \item $f_1\left(t\right) = G\left(\frac{t}{2}\right) - G\left(t\right)$
+        \item $f_2\left(t\right) = 5G\left(t-1\right) - G\left(t+1\right)$
+      \end{enumerate}\vspace{-1.35em}
+      \noindent\begin{minipage}[t]{0.5\textwidth}
+        \begin{enumerate}[label=\alph*)]
+          \setcounter{enumi}{2}
+          \item $f_3\left(t\right)$
+          \vspace{-1.0em}
+            \begin{figure}[H]
+              \begin{flushright}
+                \includegraphics[width=\textwidth-30pt]{./laboratorio_4/problema01_f3.png}
+              \end{flushright}
+            \end{figure}\vspace{-1.0em}
+        \end{enumerate}
+      \end{minipage}%
+      \begin{minipage}[t]{0.5\textwidth}
+        \begin{enumerate}[label=\alph*)]
+          \setcounter{enumi}{3}
+          \item $f_4\left(t\right)$
+            \vspace{-1.0em}
+            \begin{figure}[H]
+              \begin{flushright}
+                \includegraphics[width=\textwidth-30pt]{./laboratorio_4/problema01_f4.png}
+              \end{flushright}
+            \end{figure}\vspace{-1.0em}
+        \end{enumerate}
+      \end{minipage}%
+
+      \noindent \emph{Nota}: $G$ es la función compuerta unitaria.
 
     \subsubsection*{Solución}
+      \noindent Definimos la función compuerta unitaria, $G$, empleando la función
+      $\Theta$ de Heaviside de la siguiente manera
+
+      \begin{equation*}
+         G\left(t\right) = \Theta\left(t + \frac{1}{2}\right) -
+                           \Theta\left(t - \frac{1}{2}\right).
+      \end{equation*}
+
+      \noindent Empleando la función $G$ podemos definir la función triangulo,
+      $\Lambda$, como
+
+      \begin{equation*}
+         \Lambda\left(t\right) = \left(1 - 2\left|t\right|\right)G\left(t\right)
+      \end{equation*}
+
+
       \begin{listing}[H]
-        \caption{Función impulso unitario}
+        \caption{Función compuerta unitaria}
         \label{script01A}
-        \inputminted{matlab}{./laboratorio_3/impulso.m}
+        \inputminted{matlab}{./laboratorio_4/gate.m}
       \end{listing}
 
       \begin{listing}[H]

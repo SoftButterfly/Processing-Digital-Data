@@ -129,7 +129,7 @@ figure(5)
            'FontSize',20);
     title('$$\it|F_{[f_2]}(\omega)|$$','interpreter','latex',...
           'FontSize',25);
-  
+
   f = 2*exp(-1i.*w).*(cos(w)-cos(2*w)).*(w.^(-2));
   subplot(1,3,2)
     plot(w,abs(f),'g','LineWidth',2);
