@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       157,          7]
-NotebookDataLength[     76700,       2004]
-NotebookOptionsPosition[     71905,       1860]
-NotebookOutlinePosition[     72415,       1879]
-CellTagsIndexPosition[     72372,       1876]
+NotebookDataLength[     77448,       2029]
+NotebookOptionsPosition[     72573,       1883]
+NotebookOutlinePosition[     73085,       1902]
+CellTagsIndexPosition[     73042,       1899]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -103,7 +103,8 @@ Cell[BoxData[
  CellChangeTimes->{{3.5610569157326775`*^9, 3.561056938848999*^9}}],
 
 Cell["para la convolucion de se\[NTilde]ales discretas, y", "Text",
- CellChangeTimes->{{3.5610569479475193`*^9, 3.561056989428892*^9}}],
+ CellChangeTimes->{{3.5610569479475193`*^9, 3.561056989428892*^9}, 
+   3.656675657880178*^9}],
 
 Cell[BoxData[
  RowBox[{"CConv", ":=", 
@@ -248,6 +249,28 @@ Cell["Definimos:", "Text",
  CellChangeTimes->{{3.5610574689363184`*^9, 3.5610574704564056`*^9}, {
   3.561057529823801*^9, 3.5610575341670494`*^9}, {3.561173448493806*^9, 
   3.561173455295418*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"x1", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox[
+    RowBox[{"(", 
+     RowBox[{"-", "1"}], ")"}], "n"], 
+   RowBox[{"u", "[", 
+    RowBox[{"n", "-", "4"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.561057543565587*^9, 3.5610575567033386`*^9}, 
+   3.561060211963211*^9, {3.6566756928688374`*^9, 3.656675693288019*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"h1", "[", "n_", "]"}], ":=", 
+  RowBox[{
+   SuperscriptBox["4", "n"], 
+   RowBox[{"u", "[", 
+    RowBox[{"2", "-", "n"}], "]"}]}]}]], "Input",
+ CellChangeTimes->{{3.561057543565587*^9, 3.5610575567033386`*^9}, 
+   3.561060216901493*^9}],
 
 Cell[BoxData[
  RowBox[{
@@ -1858,8 +1881,8 @@ Cell[" ", "Text",
 }, Open  ]]
 }, Open  ]]
 },
-WindowSize->{1366, 717},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowSize->{1364, 716},
+WindowMargins->{{-9, Automatic}, {Automatic, -8}},
 PrintingCopies->1,
 PrintingPageRange->{Automatic, Automatic},
 FrontEndVersion->"10.0 for Linux x86 (64-bit) (June 27, 2014)",
@@ -1889,120 +1912,122 @@ Cell[1803, 59, 452, 14, 58, "EquationNumbered"],
 Cell[2258, 75, 104, 1, 23, "Text"],
 Cell[2365, 78, 166, 2, 23, "Text"],
 Cell[2534, 82, 682, 20, 30, "Input"],
-Cell[3219, 104, 135, 1, 23, "Text"],
-Cell[3357, 107, 781, 21, 30, "Input"],
-Cell[4141, 130, 332, 6, 23, "Text"],
-Cell[4476, 138, 1818, 49, 50, "EquationNumbered"],
-Cell[6297, 189, 90, 1, 23, "Text"],
-Cell[6390, 192, 382, 11, 32, "Input"],
-Cell[6775, 205, 166, 3, 23, "Text"],
+Cell[3219, 104, 161, 2, 23, "Text"],
+Cell[3383, 108, 781, 21, 30, "Input"],
+Cell[4167, 131, 332, 6, 23, "Text"],
+Cell[4502, 139, 1818, 49, 50, "EquationNumbered"],
+Cell[6323, 190, 90, 1, 23, "Text"],
+Cell[6416, 193, 382, 11, 32, "Input"],
+Cell[6801, 206, 166, 3, 23, "Text"],
 Cell[CellGroupData[{
-Cell[6966, 212, 105, 1, 22, "Subsubsection"],
-Cell[7074, 215, 122, 1, 23, "Text"],
-Cell[7199, 218, 371, 12, 57, "EquationNumbered"],
-Cell[7573, 232, 367, 12, 29, "EquationNumbered"],
-Cell[7943, 246, 196, 3, 23, "Text"],
-Cell[8142, 251, 320, 10, 55, "Input"],
-Cell[8465, 263, 271, 8, 32, "Input"],
-Cell[8739, 273, 280, 7, 23, "Text"],
+Cell[6992, 213, 105, 1, 22, "Subsubsection"],
+Cell[7100, 216, 122, 1, 23, "Text"],
+Cell[7225, 219, 371, 12, 57, "EquationNumbered"],
+Cell[7599, 233, 367, 12, 29, "EquationNumbered"],
+Cell[7969, 247, 196, 3, 23, "Text"],
+Cell[8168, 252, 365, 10, 32, "Input"],
+Cell[8536, 264, 271, 8, 32, "Input"],
+Cell[8810, 274, 320, 10, 55, "Input"],
+Cell[9133, 286, 271, 8, 32, "Input"],
+Cell[9407, 296, 280, 7, 23, "Text"],
 Cell[CellGroupData[{
-Cell[9044, 284, 171, 3, 30, "Input"],
-Cell[9218, 289, 1976, 57, 72, "Output"]
+Cell[9712, 307, 171, 3, 30, "Input"],
+Cell[9886, 312, 1976, 57, 72, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[11231, 351, 1089, 28, 36, "Input"],
-Cell[12323, 381, 2264, 61, 72, "Output"]
+Cell[11899, 374, 1089, 28, 36, "Input"],
+Cell[12991, 404, 2264, 61, 72, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[14624, 447, 559, 19, 59, "Input"],
-Cell[15186, 468, 767, 23, 48, "Output"]
+Cell[15292, 470, 559, 19, 59, "Input"],
+Cell[15854, 491, 767, 23, 48, "Output"]
 }, Open  ]],
-Cell[15968, 494, 90, 1, 23, "Text"],
-Cell[16061, 497, 2058, 57, 78, "EquationNumbered"],
-Cell[18122, 556, 143, 2, 23, "Text"],
-Cell[18268, 560, 969, 24, 32, "Input"],
+Cell[16636, 517, 90, 1, 23, "Text"],
+Cell[16729, 520, 2058, 57, 78, "EquationNumbered"],
+Cell[18790, 579, 143, 2, 23, "Text"],
+Cell[18936, 583, 969, 24, 32, "Input"],
 Cell[CellGroupData[{
-Cell[19262, 588, 371, 9, 30, "Input"],
-Cell[19636, 599, 1505, 35, 382, "Output"]
+Cell[19930, 611, 371, 9, 30, "Input"],
+Cell[20304, 622, 1505, 35, 382, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[21190, 640, 154, 2, 22, "Subsubsection"],
-Cell[21347, 644, 122, 1, 23, "Text"],
-Cell[21472, 647, 452, 13, 29, "EquationNumbered"],
-Cell[21927, 662, 501, 14, 29, "EquationNumbered"],
-Cell[22431, 678, 172, 2, 23, "Text"],
-Cell[22606, 682, 371, 10, 32, "Input"],
-Cell[22980, 694, 357, 9, 32, "Input"],
-Cell[23340, 705, 300, 7, 23, "Text"],
+Cell[21858, 663, 154, 2, 22, "Subsubsection"],
+Cell[22015, 667, 122, 1, 23, "Text"],
+Cell[22140, 670, 452, 13, 29, "EquationNumbered"],
+Cell[22595, 685, 501, 14, 29, "EquationNumbered"],
+Cell[23099, 701, 172, 2, 23, "Text"],
+Cell[23274, 705, 371, 10, 32, "Input"],
+Cell[23648, 717, 357, 9, 32, "Input"],
+Cell[24008, 728, 300, 7, 23, "Text"],
 Cell[CellGroupData[{
-Cell[23665, 716, 341, 6, 30, "Input"],
-Cell[24009, 724, 1899, 53, 60, "Output"]
+Cell[24333, 739, 341, 6, 30, "Input"],
+Cell[24677, 747, 1899, 53, 60, "Output"]
 }, Open  ]],
-Cell[25923, 780, 90, 1, 23, "Text"],
-Cell[26016, 783, 2105, 55, 68, "EquationNumbered"],
-Cell[28124, 840, 145, 2, 23, "Text"],
-Cell[28272, 844, 1001, 23, 32, "Input"],
+Cell[26591, 803, 90, 1, 23, "Text"],
+Cell[26684, 806, 2105, 55, 68, "EquationNumbered"],
+Cell[28792, 863, 145, 2, 23, "Text"],
+Cell[28940, 867, 1001, 23, 32, "Input"],
 Cell[CellGroupData[{
-Cell[29298, 871, 397, 10, 30, "Input"],
-Cell[29698, 883, 1937, 39, 382, "Output"]
+Cell[29966, 894, 397, 10, 30, "Input"],
+Cell[30366, 906, 1937, 39, 382, "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[31684, 928, 202, 3, 22, "Subsubsection"],
-Cell[31889, 933, 122, 1, 23, "Text"],
-Cell[32014, 936, 345, 8, 29, "EquationNumbered"],
-Cell[32362, 946, 534, 15, 57, "EquationNumbered"],
-Cell[32899, 963, 170, 2, 23, "Text"],
-Cell[33072, 967, 305, 6, 32, "Input"],
-Cell[33380, 975, 436, 12, 55, "Input"],
-Cell[33819, 989, 277, 7, 23, "Text"],
+Cell[32352, 951, 202, 3, 22, "Subsubsection"],
+Cell[32557, 956, 122, 1, 23, "Text"],
+Cell[32682, 959, 345, 8, 29, "EquationNumbered"],
+Cell[33030, 969, 534, 15, 57, "EquationNumbered"],
+Cell[33567, 986, 170, 2, 23, "Text"],
+Cell[33740, 990, 305, 6, 32, "Input"],
+Cell[34048, 998, 436, 12, 55, "Input"],
+Cell[34487, 1012, 277, 7, 23, "Text"],
 Cell[CellGroupData[{
-Cell[34121, 1000, 271, 5, 30, "Input"],
-Cell[34395, 1007, 1738, 49, 48, "Output"]
+Cell[34789, 1023, 271, 5, 30, "Input"],
+Cell[35063, 1030, 1738, 49, 48, "Output"]
 }, Open  ]],
-Cell[36148, 1059, 90, 1, 23, "Text"],
-Cell[36241, 1062, 2014, 52, 52, "EquationNumbered"],
-Cell[38258, 1116, 144, 2, 23, "Text"],
-Cell[38405, 1120, 820, 18, 32, "Input"],
+Cell[36816, 1082, 90, 1, 23, "Text"],
+Cell[36909, 1085, 2014, 52, 52, "EquationNumbered"],
+Cell[38926, 1139, 144, 2, 23, "Text"],
+Cell[39073, 1143, 820, 18, 32, "Input"],
 Cell[CellGroupData[{
-Cell[39250, 1142, 419, 10, 30, "Input"],
-Cell[39672, 1154, 6314, 114, 382, 1246, 30, "CachedBoxData", "BoxData", \
+Cell[39918, 1165, 419, 10, 30, "Input"],
+Cell[40340, 1177, 6314, 114, 382, 1246, 30, "CachedBoxData", "BoxData", \
 "Output"]
 }, Open  ]]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[46035, 1274, 250, 3, 22, "Subsubsection"],
-Cell[46288, 1279, 171, 2, 23, "Text"],
-Cell[46462, 1283, 502, 13, 32, "EquationNumbered"],
-Cell[46967, 1298, 551, 14, 32, "EquationNumbered"],
-Cell[47521, 1314, 172, 2, 23, "Text"],
-Cell[47696, 1318, 453, 11, 32, "Input"],
-Cell[48152, 1331, 287, 8, 32, "Input"],
-Cell[48442, 1341, 389, 9, 23, "Text"],
+Cell[46703, 1297, 250, 3, 22, "Subsubsection"],
+Cell[46956, 1302, 171, 2, 23, "Text"],
+Cell[47130, 1306, 502, 13, 32, "EquationNumbered"],
+Cell[47635, 1321, 551, 14, 32, "EquationNumbered"],
+Cell[48189, 1337, 172, 2, 23, "Text"],
+Cell[48364, 1341, 453, 11, 32, "Input"],
+Cell[48820, 1354, 287, 8, 32, "Input"],
+Cell[49110, 1364, 389, 9, 23, "Text"],
 Cell[CellGroupData[{
-Cell[48856, 1354, 319, 5, 30, "Input"],
-Cell[49178, 1361, 1862, 52, 46, "Output"]
+Cell[49524, 1377, 319, 5, 30, "Input"],
+Cell[49846, 1384, 1862, 52, 46, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[51077, 1418, 453, 13, 30, "Input"],
-Cell[51533, 1433, 5068, 96, 252, 2494, 52, "CachedBoxData", "BoxData", \
+Cell[51745, 1441, 453, 13, 30, "Input"],
+Cell[52201, 1456, 5068, 96, 252, 2494, 52, "CachedBoxData", "BoxData", \
 "Output"]
 }, Open  ]],
-Cell[56616, 1532, 90, 1, 23, "Text"],
-Cell[56709, 1535, 2140, 55, 52, "EquationNumbered"],
-Cell[58852, 1592, 146, 2, 23, "Text"],
-Cell[59001, 1596, 961, 21, 32, "Input"],
+Cell[57284, 1555, 90, 1, 23, "Text"],
+Cell[57377, 1558, 2140, 55, 52, "EquationNumbered"],
+Cell[59520, 1615, 146, 2, 23, "Text"],
+Cell[59669, 1619, 961, 21, 32, "Input"],
 Cell[CellGroupData[{
-Cell[59987, 1621, 486, 12, 30, "Input"],
-Cell[60476, 1635, 8578, 148, 382, "Output"]
+Cell[60655, 1644, 486, 12, 30, "Input"],
+Cell[61144, 1658, 8578, 148, 382, "Output"]
 }, Open  ]],
-Cell[69069, 1786, 330, 8, 23, "Text"],
+Cell[69737, 1809, 330, 8, 23, "Text"],
 Cell[CellGroupData[{
-Cell[69424, 1798, 659, 17, 30, "Input"],
-Cell[70086, 1817, 1705, 34, 462, "Output"]
+Cell[70092, 1821, 659, 17, 30, "Input"],
+Cell[70754, 1840, 1705, 34, 462, "Output"]
 }, Open  ]],
-Cell[71806, 1854, 59, 1, 23, "Text"]
+Cell[72474, 1877, 59, 1, 23, "Text"]
 }, Open  ]]
 }, Open  ]]
 }, Open  ]]

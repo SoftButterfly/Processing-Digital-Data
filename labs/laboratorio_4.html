@@ -1,0 +1,851 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>    <html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>       <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>       <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="es" class="no-js"> <!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport">
+    <meta name="author" content="Martín Josemaría Vuelta Rojas">
+    <meta name="description" content="Web para el curso de procesamiento de datos digitales">
+
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-TileColor" content="#00000">
+    <meta name="msapplication-TileImage" content="../static/img/favicon.png">
+    <meta name="theme-color" content="#000000">
+
+    <title>Procesamiento de Datos Digitales</title>
+
+    <link rel="apple-touch-icon-precomposed" type="image/x-icon" href="../static/img/favicon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="../static/img/favicon.png"/>
+
+    <link rel="stylesheet" href="../static/css/normalize.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="../static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../static/css/shCore.css">
+    <link rel="stylesheet" href="../static/css/shThemeFadeToGrey.css">
+    <link rel="stylesheet" href="../static/css/materialize.css">
+    <link rel="stylesheet" href="../static/css/extensions.css">
+    <link rel="stylesheet" href="../static/css/overrides.css">
+    <link rel="stylesheet" href="../static/css/helpers.css">
+    <link rel="stylesheet" href="../static/css/pdd.css">
+    <style type="text/css" media="screen">
+      #map {
+        height: 500px;
+      }
+    </style>
+  </head>
+
+  <body>
+    <ul id="sidenav" class="waves-effect side-nav fixed light-color table-of-contents">
+      <li class="waves-effect waves-light dark-color s-mar-0 s-pad-0">
+        <a href="../" class=" s-mar-0 s-pad-0">
+          <h4 class="grey-text text-lighten-5 text700 s-mar-0 s-pad-0 center-align">PDD</h4>
+        </a>
+      </li>
+      <li><a href="../" class="active"><i class="fa fa-fw fa-home"></i>Inicio</a></li>
+      <li><a href="#problema1">Problema 1</a></li>
+      <li><a href="#problema2">Problema 2</a></li>
+      <li><a href="#problema3">Problema 3</a></li>
+      <li><a href="#problema4">Problema 4</a></li>
+      <li><a href="#problema5">Problema 5</a></li>
+      <li><a href="#problema6">Problema 6</a></li>
+      <li><a href="#problema7">Problema 7</a></li>
+    </ul>
+
+    <header class="dark-color navbar-fixed">
+      <nav class="transparent waves-effect waves-light">
+        <div class="container">
+          <div class="nav-wrapper">
+            <a href="javascript:void(0);" data-activates="sidenav" class="button-collapse left s-pad-0">
+              <i class="material-icons">menu</i>
+            </a>
+
+            <a href="laboratorio_2.html" class="brand-logo">
+              <span class="text300">
+                Laboratorio 2
+                <small class="hide-on-small-only"><small>(Solución)</small></small>
+                <small class="hide-on-med-and-up"><small>(Sol.)</small></small>
+              </span>
+            </a>
+          </div>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="row"></div>
+        <div class="row">
+          <div class="col s12">
+            <blockquote>
+              <h1 class="h5 text300">Señales</h1>
+            </blockquote>
+          </div>
+        </div>
+
+        <div id="problema1" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 1</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Utilizando <span class="smallcaps">Matlab</span><sup>®</sup>, haga un programa (function) que evalúe las funciones singulares:
+            </p>
+            <ol type="a">
+              <li>Impulso unitario</li>
+              <li>Escalón unitario</li>
+              <li>Función rampa</li>
+            </ol>
+            <p>
+              Debe graficar cada función singular.
+            </p>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 1.</strong> Función impulso unitario.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab;">
+                  function f = impulso(x,y,z)
+                      switch (nargin)
+                          case 1, f = 1.*(x==0);
+                          case 2, f = 1.*(x==y);
+                          case 3, f = z.*(x==y);
+                          otherwise
+                              fprintf('Error: Revise los argumentos de entrada')
+                  end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema01_a.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 1.</strong> Gŕafica de la función impulso unitario.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 2.</strong> Función escalón unitario.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab;">
+                  function f = escalon(x,y,z)
+                      switch (nargin)
+                          case 1, f = 1.*(x>=0);
+                          case 2, f = 1.*(x>=y);
+                          case 3, f = z.*(x>=y);
+                          otherwise
+                              fprintf('Error: Revise los argumentos de entrada')
+                  end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema01_b.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 2.</strong> Gŕafica de la función escalón unitario.
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 3.</strong> Función rampa.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab;">
+                  function f = rampa(x,y,z)
+                      switch (nargin)
+                          case 1, f = x.*(x>=0);
+                          case 2, f = (x-y).*(x>=y);
+                          case 3, f = z*(x-y).*(x>=y);
+                          otherwise
+                              fprintf('Error: Revise los argumentos de entrada')
+                  end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema01_b.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 3.</strong> Gŕafica de la rampa.
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div id="problema2" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 2</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Haga un programa para visualizar la función compuerta unitaria de ancho 1.
+            </p>
+            <ol type="a">
+              <li>Utilizar los comandos <code>zeros</code> y <code>ones</code>.</li>
+              <li>Utilizar la función desarrollada en el <a href="#problema1">problema 1</a>.</li>
+            </ol>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 4.</strong> Compuerta unitaria empleando zeros y ones.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  L = 1;
+
+                  X = -5:0.01:5;
+                  Y = ones(size(X)).*(-0.5*L*ones(size(X)) <= X & X <= 0.5*L*ones(size(X)));
+
+                  plot(X,Y)
+                  ylim([-0.5, 1.5])
+                  xlabel('X');
+                  ylabel('Y');
+                  title(sprintf('Funcion compuerta unitaria\n(Usando comandos "zeros" y "ones")'));
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema02_a.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 4.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 5.</strong> Compuerta unitaria empleando la función <code>escalon</code> desarrollada en el <a href="#problema1">problema 1</a>.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  L = 1;
+
+                  X = -5:0.01:5;
+                  Y = escalon(X,-0.5*L).*escalon(-X,-0.5*L);
+
+                  plot(X,Y)
+                  ylim([-0.5, 1.5])
+                  xlabel('X');
+                  ylabel('Y');
+                  title(sprintf('Funcion compuerta unitaria\n(Usando la funcion "escalon" del problema 1)'))
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema02_a.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 5.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="problema3" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 3</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Desarrollar un conjunto de comandos <span class="smallcaps">Matlab</span><sup>®</sup> para aproximar
+              las siguientes señales periódicas en tiempo continuo, dibujando 5 ciclos de cada una:
+            </p>
+            <ol type="a">
+              <li>Onda Cuadrada, de amplitud 5 Volts, frecuencia fundamental 20 Hz.</li>
+              <li>Señal diente de sierra, amplitud 5 Volts y frecuencia fundamental 20Hz.</li>
+            </ol>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 6.</strong> Función onda cuadrada.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  function f = squarew(x,y,z,w)
+                      switch (nargin)
+                          case 1, f = 1.*(mod(floor(2*x),2) == 0);
+                          case 2, f = 1.*(mod(floor(2*y*x),2) == 0);
+                          case 3, f = z.*(mod(floor(2*y*x),2) == 0);
+                          case 4, f = z.*(mod(floor(2*y*(x + w)),2) == 0);
+                          otherwise
+                              fprintf('Error: Revise los argumentos de entrada\n')
+                    end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema03_a.png" style="max-width:350px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 6.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 7.</strong> Función de onda diente de sierra
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  function f = saww(x,y,z,w)
+                      switch (nargin)
+                          case 1, f = x - floor(x);
+                          case 2, f = y*x - floor(y*x);
+                          case 3, f = z*(y*x - floor(y*x));
+                          case 4, f = z*(y*(x + w) - floor(y*(x + w)));
+                          otherwise
+                              fprintf('Error: Revise los argumentos de entrada')
+                  end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema03_b.png" style="max-width:350px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 7.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="problema4" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 4</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              La solución a una ecuación diferencial está dada por:
+              $$x\left(t\right)=10\mathrm{e}^{-t} - 5\mathrm{e}^{-0.5t}$$
+              Usando <span class="smallcaps">Matlab</span><sup>®</sup>, grafique la solución de la ecuación
+              en el siguiente intervalo [0,5] con una frecuencia de muestreo de 100 Hz.
+            </p>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 8.</strong>
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  Fs = 100;
+
+                  t  = linspace(0,5,5*Fs);
+                  X  = 10*exp(1*t) - 5*exp(-0.5*t);
+
+                  plot(t,X);
+                  xlabel('Tiempo (s)')
+                  ylabel('Intensidad')
+                  title(sprintf('X(t) = 10e^{t} - 5e^{-0.5t}\nFrecuencia de Muestreo 100 Hz'))
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema04.png" style="max-width:350px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 8.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="problema5" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 5</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Repita el <a href="#problema4">problema anterior</a> para la siguiente expresión:
+              $$x\left(t\right)=10\mathrm{e}^{-t} + 5\mathrm{e}^{-0.5t}$$
+            </p>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 9.</strong>
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  Fs = 100;
+
+                  t  = linspace(0,5,5*Fs);
+                  X  = 10*exp(1*t) + 5*exp(-0.5*t);
+
+                  plot(t,X);
+                  xlabel('Tiempo (s)')
+                  ylabel('Intensidad')
+                  title(sprintf('X(t) = 10e^{t} + 5e^{-0.5t}\nFrecuencia de Muestreo 100 Hz'))
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema05.png" style="max-width:350px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 9.</strong>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div id="problema6" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 6</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Una señal sinusoidal con amortiguación exponencial está definida por la siguiente
+              expresión:
+              $$x\left(t\right) = \mathrm{e}^{-a t}\cos\left(2\pi f t\right)$$
+              donde $f = 1\ Hz$ y el parámetro $a$ es variable y toma valores sobre el siguiente conjunto: $1$, $5$,
+              $20$. Usando <span class="smallcaps">Matlab</span><sup>®</sup>, investigar el efecto de variar
+              dicho parámetro en la señal en el intervalo $\left[0, 5\right]$. Utilice una frecuencia de muestreo
+              de $20\ Hz$. Calcule el valor de $a$ para el caso de amortiguamiento crítico.
+              Haga una gráfica para cada caso.
+            </p>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 10.</strong>
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  Fs = 20;
+                  f  = 1;
+
+                  t  = linspace(0,5,5*Fs);
+                  X  = zeros(3,length(t));
+
+                  X(1,:) = exp( -1*t).*cos(2*pi*f.*t);
+                  X(2,:) = exp( -5*t).*cos(2*pi*f.*t);
+                  X(3,:) = exp(-20*t).*cos(2*pi*f.*t);
+
+                  hold on
+                  plot(t,X(1,:),'r','DisplayName','a =  1')
+                  plot(t,X(2,:),'g','DisplayName','a =  5')
+                  plot(t,X(3,:),'b','DisplayName','a = 20')
+                  xlabel('Tiempo (s)')
+                  ylabel('Amplitud')
+                  title('X(t)=e^{-at} cos(2\pi t)')
+                  legend('show')
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema06.png" style="max-width:600px;">
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 10.</strong>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <p>
+              De la ecuacion del oscilador amortiguado:
+              $$ m \frac{\mathrm{d}^{2}x}{\mathrm{d}t^2} + b \frac{\mathrm{d}^{2}x}{\mathrm{d}t^2} + kx = 0. $$
+
+              Para el caso con amortiguamiento débil, $b^2 < 4km$, la solución es de la forma
+              $$ x\left(t\right) = x_0 \mathrm{e}^{-\frac{b}{2m}}\cos\left(\omega t\right). $$
+
+              Comparando esta última expresión con la ecuación dada en
+              el enunciado del problema, podemos identificar los términos:
+
+              $$a = \frac{b}{2m}$$
+
+              y
+
+              $$\omega = \sqrt{\frac{k}{m} - \left(\frac{b}{2m}\right)^2} = 2\pi . $$
+
+              Para el caso de amortiguamiento crítico se tiene que cumplir la
+              condición $b = 4km$ de modo que
+              $$ a^2_c = \frac{k}{m} $$
+
+              Despejando de $\omega$, para un valor dado de $a$ se tiene
+              $$ a_c = \sqrt{4\pi^2 - a^2} $$
+            </p>
+          </div>
+        </div>
+
+        <div id="problema7" class="row scrollspy">
+          <div class="col s12">
+            <h1 class="h5 text300 base-text">Problema 7</h1>
+          </div>
+
+          <div class="col s12 divider"></div>
+
+          <div class="col s12">
+            <p>
+              Para la gráfica mostrada, haga una función en <span class="smallcaps">Matlab</span><sup>®</sup>
+              que visualize $h\left(t\right)$. Use el comando <code>function</code>. Graficar:
+            </p>
+            <ol type="a">
+              <li>$h\left(t+1\right)$</li>
+              <li>$h\left(\frac{t}{2}-2\right)$</li>
+              <li>$h\left(1-2t\right)$</li>
+              <li>$4h\left(\frac{t}{4}\right)$</li>
+              <li>$\frac{1}{2}h\left(t\right)u\left(t\right) + h\left(-t\right)u\left(t\right)$</li>
+              <li>$h\left(\frac{t}{2}\right)\delta\left(t+1\right)$</li>
+              <li>$h\left(t\right)\left(u\left(t+1\right)-u\left(t-1\right)\right)$</li>
+            </ol>
+          </div>
+
+          <div class="col s12 m8 offset-m2 l6 offset-l3">
+            <div class="card white">
+              <div class="s-pad-10 card-image center-align">
+                <img src="./laboratorio_2/problema07.png" style="max-width:600px;">
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <h2 class="base-text text900 h6">Solución</h2>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 11.</strong> Función que replica la gráfica mostrada en el enunciado.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  function f = hfun(x)
+                      f = ((mod(floor(x),2) == 0).*1 + ...
+                          (mod(floor(x),2) == 1).*(floor(x)-x + 1)).*...
+                          (-2 &lt; x & x &lt; 2);
+                  end
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="card-action caption s-pad-10">
+                <strong>Script 12.</strong> Script para realizar los gráficos solicitados.
+              </div>
+              <div class="card-content s-pad-0 code">
+                <pre class="brush: matlab">
+                  t = -10:0.0001:10;
+
+                  figure(1)
+                  x = hfun(t);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h(t)$$','interpreter','latex')
+                  grid on
+
+                  figure(2)
+                  x = hfun(t+1);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h(t+1)$$','interpreter','latex')
+                  grid on
+
+                  figure(3)
+                  x = hfun(0.5*t - 2);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h({1 \over 2}t-2)$$','interpreter','latex')
+                  grid on
+
+                  figure(4)
+                  x = hfun(1 - 2*t);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h(1-2t)$$','interpreter','latex')
+                  grid on
+
+                  figure(5)
+                  x = 4*hfun(0.25*t);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$4h({1\over 4}t)$$','interpreter','latex')
+                  grid on
+
+                  figure(6)
+                  x = 0.5.*hfun(t).*escalon(t) + hfun(-t).*escalon(t);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$${1\over 2}h(t)u(t) + h(-t)u(t)$$','interpreter','latex')
+                  grid on
+
+                  figure(7)
+                  x = hfun(0.5*t).*impulso(t+1);
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h({1\over 2}t)\delta(t)$$','interpreter','latex')
+                  grid on
+
+                  figure(8)
+                  x = hfun(t).*(escalon(t+1)-escalon(t-1));
+                  plot(t,x)
+                  ylim([min(x)-0.5,max(x) + 0.5])
+                  title('$$h(t)(u(t+1)-u(t-1))$$','interpreter','latex')
+                  grid on
+                </pre>
+              </div>
+            </div>
+          </div>
+
+          <div class="col s12">
+            <div class="card white">
+              <div class="s-pad-0 card-image center-align">
+                <div class="row s-mar-0">
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_a.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_b.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_c.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_d.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_e.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_f.png" style="max-width:400px;">
+                  </div>
+                  <div class="col s12 m6 l6 s-mar-0 s-pad-10 center-align">
+                    <img src="./laboratorio_2/problema07_g.png" style="max-width:400px;">
+                  </div>
+                </div>
+              </div>
+              <div class="card-action caption s-pad-10 center-align">
+                <strong>Figura 11.</strong> Resultados de la ejecucion del script 12.
+              </div>
+            </div>
+          </div>
+
+
+        </div>
+      </div>
+    </main>
+
+    <footer class="page-footer gray-gradient s-mar-t0">
+      <div class="footer-copyright transparent">
+        <div class="container center base-text">
+        © 2015 Martín Josemaría Vuelta Rojas
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      var marker1, marker2;
+      var poly, geodesicPoly;
+
+      function initMap() {
+        map = new google.maps.Map(document.getElementById('map'), {
+          scrollwheel: false,
+          zoom: 3,
+          center: {
+            lat: 34,
+            lng: -40.605
+          }
+        });
+
+        map.controls[google.maps.ControlPosition.TOP_CENTER].push(
+          document.getElementById('info'));
+
+        marker1 = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          position: {
+            lat: 40.78139796148296,
+            lng: -73.96668954467765
+          }
+        });
+
+        marker2 = new google.maps.Marker({
+          map: map,
+          draggable: true,
+          position: {
+            lat: -12.067156558830048,
+            lng: -77.0886956434249
+          }
+        });
+
+        var bounds = new google.maps.LatLngBounds(
+          marker1.getPosition(), marker2.getPosition());
+
+        map.setCenter({
+          lat: (marker1.position.lat() + marker2.position.lat())*0.5,
+          lng: (marker1.position.lng() + marker2.position.lng())*0.5
+        })
+
+
+        google.maps.event.addListener(marker1, 'position_changed', update);
+        google.maps.event.addListener(marker2, 'position_changed', update);
+
+        poly = new google.maps.Polyline({
+          strokeColor: '#FF0000',
+          strokeOpacity: 1.0,
+          strokeWeight: 3,
+          map: map,
+        });
+
+        geodesicPoly = new google.maps.Polyline({
+          strokeColor: '#CC0099',
+          strokeOpacity: 1.0,
+          strokeWeight: 3,
+          geodesic: true,
+          map: map
+        });
+
+        var labels = document.getElementsByTagName('label')
+        for(var i = 0; i < labels.length; i++){
+          if(labels[i].parentElement.classList.contains('input-field')){
+            labels[i].classList.add('active')
+          }
+        }
+
+        update();
+      }
+
+      function update() {
+        var path = [marker1.getPosition(), marker2.getPosition()];
+        poly.setPath(path);
+        geodesicPoly.setPath(path);
+        var distance = google.maps.geometry.spherical.computeDistanceBetween(path[0], path[1]);
+        document.getElementById('distance').value = (distance/1000).toString();
+        document.getElementById('latitude1').value = path[0].lat();
+        document.getElementById('longitude1').value = path[0].lng();
+        document.getElementById('latitude2').value = path[1].lat();
+        document.getElementById('longitude2').value = path[1].lng();
+      }
+    </script>
+    <script src="https://maps.googleapis.com/maps/api/js?signed_in=true&libraries=geometry&callback=initMap" async defer></script>
+    <script type="text/javascript" charset="utf-8" src="../static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/modernizr.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/jquery.smoothState.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/attrchange.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/shBrushPlain.js"></script>
+    <script type="text/javascript" charset="utf-8" src="../static/js/pdd.js"></script>
+  </body>
+</html>
