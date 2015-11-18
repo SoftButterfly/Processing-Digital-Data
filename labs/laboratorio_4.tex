@@ -210,6 +210,11 @@
         \end{enumerate}
       \end{minipage}%
 
+      \floatsetup[figure]{
+        capposition=top,
+        style=ruled,
+      }
+
       \noindent \emph{Nota}: $G$ es la función compuerta unitaria.
 
     \subsubsection*{Solución}
@@ -221,84 +226,164 @@
                            \Theta\left(t - \frac{1}{2}\right).
       \end{equation*}
 
-      \noindent Empleando la función $G$ podemos definir la función triangulo,
+      \noindent Empleando la función $G$ podemos definir la función triángulo,
       $\Lambda$, como
 
       \begin{equation*}
          \Lambda\left(t\right) = \left(1 - 2\left|t\right|\right)G\left(t\right)
       \end{equation*}
 
+      \noindent Con estas dos funciones definimos las funciones $f_3$ y $f_4$
+      como
+
+      \begin{equation*}
+         f_3\left(t\right) = \Lambda\left(\frac{1}{2}t\right) +
+                             \Lambda\left(\frac{1}{2}t + \frac{1}{2}\right) +
+                             \Lambda\left(\frac{1}{2}t + 1\right),
+      \end{equation*}
+
+      \begin{equation*}
+         f_4\left(t\right) = - \Lambda\left(\frac{1}{2}t\right) +
+                               \Lambda\left(\frac{1}{2}t + 1\right).
+      \end{equation*}
+
+      \noindent Empleando la transformada de Fourier definida por
+
+      \begin{equation*}
+        \mathcal{F}\left(f,t|\omega\right) = \widehat{f}\left(\omega\right) = \int_{-\infty}^{\infty}f\left(t\right)\exp\left(i \omega t\right)dt
+      \end{equation*}
+
+      \noindent y que
+
+      \begin{equation*}
+        \widehat{G}\left(\omega\right) = \mathrm{sinc}\left(\frac{\omega}{2}\right),
+      \end{equation*}
+
+      \begin{equation*}
+        \widehat{\Lambda}\left(\omega\right) = \frac{1}{2}\mathrm{sinc}^{2}\left(\frac{\omega}{4}\right),
+      \end{equation*}
+
+      \noindent tenemos
+
+      \begin{enumerate}[label=\alph*)]
+        \item $\widehat{f}_{1}\left(\omega\right)$
+          \begin{equation*}
+            \begin{split}
+              \widehat{f}_{1}\left(\omega\right) & = \mathcal{F}\left(G,\left.\frac{t}{2}\right|\omega\right) - \mathcal{F}\left(G,t|\omega\right) \\
+                                                 & = 2\mathcal{F}\left(G,t|2\omega\right) - \mathcal{F}\left(G,t|\omega\right) \\
+                                                 & = 2\mathrm{sinc}\left(\omega\right) - \mathrm{sinc}\left(\frac{\omega}{2}\right)
+            \end{split}
+          \end{equation*}
+
+        \item $\widehat{f}_{2}\left(\omega\right)$
+          \begin{equation*}
+            \begin{split}
+              \widehat{f}_{2}\left(\omega\right) & = 5\mathcal{F}\left(G,t-1|\omega\right) - \mathcal{F}\left(G,t+1|\omega\right) \\
+                                                 & = 5\exp\left(-i \omega\right)\mathcal{F}\left(G,t|\omega\right) - \exp\left(i \omega\right)\mathcal{F}\left(G,t|\omega\right) \\
+                                                 & = 2\mathrm{sinc}\left(\frac{\omega}{2}\right)\left(2\cos\left(\omega\right) - 3i\sin\left(\omega\right) \right)
+            \end{split}
+          \end{equation*}
+
+        \item $\widehat{f}_{3}\left(\omega\right)$
+          \begin{equation*}
+            \begin{split}
+              \widehat{f}_{3}\left(\omega\right) & = \mathcal{F}\left(\Lambda,\left.\frac{t}{2}\right|\omega\right) + \mathcal{F}\left(\Lambda,\left.\frac{t}{2} + \frac{1}{2}\right|\omega\right) + \mathcal{F}\left(\Lambda,\left.\frac{t}{2} + 1\right|\omega\right) \\
+                                                 & = 2 \mathcal{F}\left(\Lambda,t| 2 \omega\right) + 2 \exp\left(i \omega\right) \mathcal{F}\left(\Lambda,t|2 \omega\right) + 2 \exp\left(2 i \omega\right) \mathcal{F}\left(\Lambda,t| 2\omega\right) \\
+                                                 & = \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) + \exp\left(i \omega\right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) + \exp\left(2 i \omega\right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) \\
+                                                 & = \left(1 + 2 \cos\left(\omega\right) \right)\exp\left(i \omega\right)\mathrm{sinc}^{2}\left(\frac{\omega}{2}\right)
+            \end{split}
+          \end{equation*}
+
+        \item $\widehat{f}_{1}\left(\omega\right)$
+          \begin{equation*}
+            \begin{split}
+              \widehat{f}_{3}\left(\omega\right) & = - \mathcal{F}\left(\Lambda,\left.\frac{t}{2}\right|\omega\right) + \mathcal{F}\left(\Lambda,\left.\frac{t}{2} + 1\right|\omega\right) \\
+                                                 & = - 2 \mathcal{F}\left(\Lambda,t| 2 \omega\right) + 2 \exp\left(2 i \omega\right) \mathcal{F}\left(\Lambda,t| 2\omega\right) \\
+                                                 & = - \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) + \exp\left(2 i \omega\right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) \\
+                                                 & = \left(\exp\left(2 i \omega\right) - 1\right)\mathrm{sinc}^{2}\left(\frac{\omega}{2}\right)
+            \end{split}
+          \end{equation*}
+      \end{enumerate}
+
+      \noindent En \textsc{Matlab} implementamos las funciones
 
       \begin{listing}[H]
-        \caption{Función compuerta unitaria}
+        \caption{Función compuerta unitaria, $G\left(t\right)$.}
         \label{script01A}
         \inputminted{matlab}{./laboratorio_4/gate.m}
-      \end{listing}
+      \end{listing}\vspace{-1.0em}
 
       \begin{listing}[H]
-        \caption{Función $x\left(n\right)$}
+        \caption{Función triángulo, $\Lambda\left(t\right)$.}
         \label{script01B}
-        \inputminted{matlab}{./laboratorio_3/p1_X.m}
-      \end{listing}
+        \inputminted{matlab}{./laboratorio_4/triangle.m}
+      \end{listing}\vspace{-1.0em}
 
       \begin{listing}[H]
-        \caption{Función $h\left(n\right)$}
+        \caption{Función $f_1\left(t\right)$.}
         \label{script01C}
-        \inputminted{matlab}{./laboratorio_3/p1_H.m}
-      \end{listing}
+        \inputminted{matlab}{./laboratorio_4/p1_f1.m}
+      \end{listing}\vspace{-1.0em}
 
       \begin{listing}[H]
-        \caption{Convoluciones $x\left(n\right)*h\left(n\right)$, $x\left(n+2\right)*h\left(n\right)$ y $x\left(n\right)*h\left(n+2\right)$ en \textsc{Matlab} }
+        \caption{Función $f_2\left(t\right)$.}
         \label{script01D}
-        \inputminted{matlab}{./laboratorio_3/problema01.m}
-      \end{listing}
+        \inputminted{matlab}{./laboratorio_4/p1_f2.m}
+      \end{listing}\vspace{-1.0em}
 
       \begin{listing}[H]
-        \caption{Resultados de ejecutar el \emph{script \ref{script01D}}}
+        \caption{Función $f_3\left(t\right)$.}
         \label{script01E}
-        \begin{minted}{matlab}
-          >> problema01
-          x(n)*h(n)  :  0  0  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0
-          x(n+2)*h(n):  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0  0  0
-          x(n)*h(n+2):  0  0  0  0  0  0  0  2  4  2  2  0 -2  0  0  0  0  0  0  0  0
-        \end{minted}
-      \end{listing}
+        \inputminted{matlab}{./laboratorio_4/p1_f3.m}
+      \end{listing}\vspace{-1.0em}
+
+      \begin{listing}[H]
+        \caption{Función $f_4\left(t\right)$.}
+        \label{script01F}
+        \inputminted{matlab}{./laboratorio_4/p1_f4.m}
+      \end{listing}\vspace{-1.0em}
 
       \begin{figure}[H]
-        \caption{Gráfico de la función impulso unitario del \emph{script \ref{script01A}}.}
+        \caption{Gráfico de la función $f_1$ y su espectro de potencia normalizado.}
         \label{script01Afigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_impulso.png}
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_f1.png}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_F1.png}
+        \end{center}
       \end{figure}
 
       \begin{figure}[H]
-        \caption{Gráfico de la función $x\left(n\right)$ del \emph{script \ref{script01B}}.}
+        \caption{Gráfico de la función $f_2$ y su espectro de potencia normalizado.}
         \label{script01Bfigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_x.png}
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_f2.png}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_F2.png}
+        \end{center}
       \end{figure}
 
       \begin{figure}[H]
-        \caption{Gráfico de la función $h\left(n\right)$ del \emph{script \ref{script01C}}.}
+        \caption{Gráfico de la función $f_3$ y su espectro de potencia normalizado.}
         \label{script01Cfigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_h.png}
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_f3.png}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_F3.png}
+        \end{center}
       \end{figure}
 
       \begin{figure}[H]
-        \caption{Gráfico de la función $y_1\left(n\right)=x\left(n\right)*h\left(n\right)$ calculada \emph{script \ref{script01D}}.}
+        \caption{Gráfico de la función $f_1$ y su espectro de potencia normalizado.}
         \label{script01Dfigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y1.png}
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_f4.png}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema01_F4.png}
+        \end{center}
       \end{figure}
 
-      \begin{figure}[H]
-        \caption{Gráfico de la función $y_2\left(n\right)=x\left(n+2\right)*h\left(n\right)$ calculada \emph{script \ref{script01D}}.}
-        \label{script01Efigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y2.png}
-      \end{figure}
-
-      \begin{figure}[H]
-        \caption{Gráfico de la función $y_3\left(n\right)=x\left(n\right)*h\left(n+2\right)$ calculada \emph{script \ref{script01D}}.}
-        \label{script01Ffigure}
-        \includegraphics[width=0.90\textwidth]{./laboratorio_3/problema01_y3.png}
-      \end{figure}
+      \begin{listing}[H]
+        \caption{Script para obtener las \emph{figs. \ref{script01Afigure}. \ref{script01Bfigure}. \ref{script01Cfigure}} y \emph{\ref{script01Dfigure}.}}
+        \label{script01G}
+        \inputminted{matlab}{./laboratorio_4/problema01.m}
+      \end{listing}\vspace{-1.0em}
 
       \noindent De forma analítica, obtenemos las convoluciones solicitadas empleando la definición:
       $$y\left(m\right) = x\left(n\right)*h\left(n\right) = \sum_n x\left(n\right)h\left(m-n\right)$$
@@ -498,7 +583,7 @@
                               & = \sum_{n=-\infty}^{\infty} \left[u\left(-n\right) - u\left(-n-2\right)\right]
                                                             \left[u\left(m-n-1\right) - u\left(m-n-4\right)\right] \\
                               & = \sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-1\right) - \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-1\right) - \\
-                              & \phantom{=}\ \,\sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-4\right) + \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-4\right)
+                              & \phantom{=}\ \sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-4\right) + \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-4\right)
             \end{split}
           \end{equation*}
           \vfill
