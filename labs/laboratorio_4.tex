@@ -385,47 +385,15 @@
         \inputminted{matlab}{./laboratorio_4/problema01.m}
       \end{listing}\vspace{-1.0em}
 
-      \noindent De forma analítica, obtenemos las convoluciones solicitadas empleando la definición:
-      $$y\left(m\right) = x\left(n\right)*h\left(n\right) = \sum_n x\left(n\right)h\left(m-n\right)$$
-      \noindent Así obtenemos
-
-      \begin{equation*}
-        \begin{split}
-          y_1\left(m\right) & = x\left(n\right)*h\left(n\right) \\
-                            & = \sum_n \left[\delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)\right]
-                                       \left[2\delta\left(m-n+1\right) + 2\delta\left(m-n-1\right)\right] \\
-                            & = 2\delta\left(m+1\right) + 4\delta\left(m\right) + 2\delta\left(m-1\right) + 2\delta\left(m-2\right) - 2\delta\left(m-4\right) \\
-        \end{split}
-      \end{equation*}
-
-      \begin{equation*}
-        \begin{split}
-          y_2\left(m\right) & = x\left(n+2\right)*h\left(n\right) \\
-                            & = \sum_n \left[\delta\left(n+2\right) + 2\delta\left(n+1\right) - \delta\left(n-1\right)\right]
-                                       \left[2\delta\left(m-n+1\right) + 2\delta\left(m-n-1\right)\right] \\
-                            & = 2\delta\left(m+3\right) + 4\delta\left(m+2\right) + 2\delta\left(m+1\right) + 2\delta\left(m\right) - 2\delta\left(m-2\right) \\
-        \end{split}
-      \end{equation*}
-
-      \begin{equation*}
-        \begin{split}
-          y_3\left(n\right) & = x\left(n\right)*h\left(n+2\right) \\
-                            & = \sum_n \left[\delta\left(n\right) + 2\delta\left(n-1\right) - \delta\left(n-3\right)\right]
-                                       \left[2\delta\left(m-n+3\right) + 2\delta\left(m-n+1\right)\right] \\
-                            & = 2\delta\left(m+3\right) + 4\delta\left(m+2\right) + 2\delta\left(m+1\right) + 2\delta\left(m\right) - 2\delta\left(m-2\right) \\
-        \end{split}
-      \end{equation*}
-
   \newpage
   \subsection*{Problema 2}
-    \noindent Considere un sistema LIT cuya respuesta a la señal $x_1\left(t\right)$ es $y_1\left(t\right)$
+    \noindent Hallar la transformada de Fourier de $x\left(t\right)$ y graficar en Matlab:
 
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X1.png}
-        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y1.png}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \includegraphics[width=0.5\textwidth]{./lab4prob2a.png}
+        \end{center}
+      \end{figure}\vspace{-1.5em}
 
     \noindent Hallar las respuestas del sistema anterior a las siguientes excitaciones:
 
