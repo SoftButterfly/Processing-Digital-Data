@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]><html lang="es" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>   <html lang="es" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>   <html lang="es" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--><html lang="es" class="no-js"><!--<![endif]-->
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,minimum-scale=1,user-scalable=no">
+    <meta name="author" content="ZodiacFireworks (Martin Josemaría Vuelta Rojas)">
+    <meta name="description" content="Web del curso de Procesamiento de Datos Digitales de la Facultad de Ciencias Físcas de la Universidad Nacional Mayor de San Marcos para el periodo académico 2015-II a cargo del Lic. César Omar Jiménez Tintaya. Lima, Perú.">
+    <meta name="generator" content="Hand made with love :3">
+    <meta name="keywords" content="zodiacfireworks,martin,josemaría,vuelta,rojas,procesamiento,datos,señales,digitales,unmsm,universidad,nacional,mayor,san,marcos,césar,omar,jiménez,tintaya">
+    <meta name="creator" content="ZodiacFireworks">
+    <meta name="creator" content="Martin Josemaría Vuelta Rojas">
+    <meta name="publisher" content="ZodiacFireworks (Martin Josemaría Vuelta Rojas)">
+    <meta name="robots" content="index,folow">
+
+    <meta name="referer" content="origin">
+    <meta name="application-name" content="PDD - UNMSM">
+    <meta name="application-url" content="http://zodiacfireworks.github.io">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="theme-color" content="papayawhip">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="mobileoptimized" content="content">
+
+    <!-- Apple meta tags -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+    <meta name="apple-mobile-web-app-title" content="Procesamiento de Datos Digitales - UNMSM">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+    <!-- Microsoft meta tags -->
+    <meta name="msapplication-notification" content="cycle=7;frequency=60;polling-uri=http://zodiacfireworks.github.io/Processing-Digital-Data/notifications.xml">
+    <meta name="msapplication-starturl" content="./http://zodiacfireworks.github.io/Processing-Digital-Data">
+    <meta name="msapplication-tooltip" content="Procesamiento de datos digitales">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="msapplication-navbutton-color" content="#FF3300">
+    <meta name="msapplication-window" content="width=800;height=600">
+    <meta name="msapplication-TileImage" content="images/benthepcguy-144.png">
+    <meta name="msapplication-TileColor" content="#d83434"/>
+    <meta name="msapplication-square70x70logo" content="images/tinylogo.png">
+    <meta name="msapplication-square150x150logo" content="images/logo.png">
+    <meta name="msapplication-wide310x150logo" content="images/widelogo.png">
+    <meta name="msapplication-square310x310logo" content="images/largelogo.png">
+
+    <!-- Title -->
+    <title>Procesamiento de Datos Digitales | UNMSM</title>
+
+    <!-- Assets -->
+    <link rel="canonical" href="http://zodiacfireworks.github.io">
+    <link rel="shortcut icon" type="image/x-icon" href="favicon.png">
+
+    <script type="text/javascript" charset="utf-8" src="./static/js/modernizr.min.js"></script>
+
+    <link rel="stylesheet" href="./static/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./static/css/materialize.min.css">
+    <link rel="stylesheet" href="./static/css/material-icons.min.css">
+    <link rel="stylesheet" href="./static/css/syntaxhighligther/shCore.css">
+    <link rel="stylesheet" href="./static/css/syntaxhighligther/shThemeDefault.css">
+    <link rel="stylesheet" href="./static/css/pdd.css">
+  </head>
+  <body lang="es" class="pdd-with-preloader pdd-home">
+    <div id="pdd-preloader" class="pdd-color--background-dark">
+      <div class="pdd-preloader--wrapper">
+        <div class="pdd-preloader--plot">
+        </div>
+      </div>
+    </div>
+    <div id="pdd-container" class="pdd-color--background-light z-depth-0">
+      <div id="pdd-side-nav" class="side-nav fixed pdd-color--background-light">
+        <ul class="table-of-contents">
+          <li class="pdd-side-nav--brand-logo pdd-color--background-accent waves-effect waves-block waves-light">
+            <a href="." class="pdd-color--text-light">
+            PDD
+            </a>
+          </li>
+          <li class="pdd-side-nav--link waves-effect waves-block">
+            <a href="#home">
+              <span class="fa-stack fa-lg pdd-side-nav--link-icon">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-home   fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="pdd-side-nav--link-text">
+                Inicio
+              </span>
+            </a>
+          </li>
+          <li class="pdd-side-nav--link waves-effect waves-block">
+            <a href="#materials">
+              <span class="fa-stack fa-lg pdd-side-nav--link-icon">
+                <i class="fa fa-circle fa-stack-2x"></i>
+                <i class="fa fa-book   fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="pdd-side-nav--link-text">
+                Materiales
+              </span>
+            </a>
+          </li>
+          <li class="pdd-side-nav--link waves-effect waves-block">
+            <a href="#laboratories">
+              <span class="fa-stack fa-lg pdd-side-nav--link-icon">
+                <i class="fa fa-circle   fa-stack-2x"></i>
+                <i class="fa fa-terminal fa-stack-1x fa-inverse"></i>
+              </span>
+              <span class="pdd-side-nav--link-text">
+                Laboratorios
+              </span>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div id="pdd-content">
+        <main>
+          <section id="home" style="min-height:500px;" class="scrollspy"></section>
+          <section id="materials" style="min-height:500px;" class="scrollspy"></section>
+          <section id="laboratories" style="min-height:500px;" class="scrollspy"></section>
+        </main>
+        <!-- header id="pdd-header" class="pdd-color--background-accent">
+          <div class="row">
+            <div class="col s12 pdd-color--text-light">
+              <h1 class="h2 thin">
+              Procesamiento Digital de Señales
+              </h1>
+              <div class="divider pdd-color--background-dark"></div>
+              <p class="light">
+                Faculdad de Ciencias Físicas - E.A.P. de Física<br>
+                Universidad Nacional Mayor de San Marcos
+              </p>
+            </div>
+          </div>
+          <nav class="pdd-color--background-accent z-depth-0">
+          holi boli
+          </nav>
+        </header>
+        <main>
+
+          zdca
+        </main>
+        <footer>
+
+          sdfas
+        </footer -->
+      </div>
+
+      <!-- Dropdown Structure -->
+      <!-- ul id="dropdown1" class="dropdown-content">
+        <li><a href="#!">one</a></li>
+        <li><a href="#!">two</a></li>
+        <li class="divider"></li>
+        <li><a href="#!">three</a></li>
+      </ul>
+      <nav class="pdd-color--background-light pdd-color--text-dark">
+        <div class="nav-wrapper">
+          <a href="#!" class="brand-logo">Logo</a>
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <ul class="right hide-on-med-and-down">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="components.html">Components</a></li>
+            <li><a class="dropdown-button" href="#!" data-activates="dropdown1">Dropdown<i class="material-icons right">arrow_drop_down</i></a></li>
+          </ul>
+          <ul class="side-nav" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="components.html">Components</a></li>
+          </ul>
+        </div>
+      </nav -->
+    </div>
+
+    <script type="text/javascript" charset="utf-8" src="./static/mathjax/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/jquery-2.1.4.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/materialize.min.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/syntaxhighligther/shCore.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/syntaxhighligther/brushes/shBrushJScript.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/syntaxhighligther/brushes/shBrushGNUPlot.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/syntaxhighligther/brushes/shBrushMatlab.js"></script>
+    <script type="text/javascript" charset="utf-8" src="./static/js/pdd.js"></script>
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+    <!-- script>
+      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+      e.src='//www.google-analytics.com/analytics.js';
+      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+      ga('create','UA-XXXXX-X');ga('send','pageview');
+    </script -->
+  </body>
+</html>

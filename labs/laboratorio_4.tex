@@ -173,13 +173,13 @@
   \maketitle
 
   \subsection*{Problema 1}
+    \floatsetup[figure]{
+      capposition=top,
+      style=plain,
+    }
+
     \noindent Graficar en \textsc{Matlab} las señales a y b, y hallar
       la transformada de Fourier en forma analítica (usar propiedades):
-
-      \floatsetup[figure]{
-        capposition=top,
-        style=plain,
-      }
 
       \begin{enumerate}[label=\alph*)]
         \item $f_1\left(t\right) = G\left(\frac{t}{2}\right) - G\left(t\right)$
@@ -210,14 +210,14 @@
         \end{enumerate}
       \end{minipage}%
 
+      \noindent \emph{Nota}: $G$ es la función compuerta unitaria.
+
+    \subsubsection*{Solución}
       \floatsetup[figure]{
         capposition=top,
         style=ruled,
       }
 
-      \noindent \emph{Nota}: $G$ es la función compuerta unitaria.
-
-    \subsubsection*{Solución}
       \noindent Definimos la función compuerta unitaria, $G$, empleando la función
       $\Theta$ de Heaviside de la siguiente manera
 
@@ -250,7 +250,7 @@
       \noindent Empleando la transformada de Fourier definida por
 
       \begin{equation*}
-        \mathcal{F}\left(f,t|\omega\right) = \widehat{f}\left(\omega\right) = \int_{-\infty}^{\infty}f\left(t\right)\exp\left(i \omega t\right)dt
+        \mathcal{F}\left(f,t|\omega\right) = \widehat{f}\left(\omega\right) = \int_{-\infty}^{\infty}f\left(t\right)\exp\left(- i \omega t\right)dt
       \end{equation*}
 
       \noindent y que
@@ -387,91 +387,80 @@
 
   \newpage
   \subsection*{Problema 2}
+    \floatsetup[figure]{
+      capposition=top,
+      style=plain,
+    }
+
     \noindent Hallar la transformada de Fourier de $x\left(t\right)$ y graficar en Matlab:
 
       \begin{figure}[H]
         \begin{center}
-          \includegraphics[width=0.5\textwidth]{./lab4prob2a.png}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema02_x.png}
+        \end{center}
+      \end{figure}
+
+    \noindent Si $x\left(t\right)$ pasa a través del bloque de la figura,
+      calcule la transformada de Fourier de $y\left(t\right)$.
+
+      \begin{figure}[H]
+        \begin{center}
+          \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema02_diagram.png}
         \end{center}
       \end{figure}\vspace{-1.5em}
 
-    \noindent Hallar las respuestas del sistema anterior a las siguientes excitaciones:
-
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X2.png}
-        \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X3.png}
-      \end{center}
-    \end{figure}
-
     \subsubsection*{Solución}
-      \noindent Las funciones $x_2\left(t\right)$ y $x_3\left(t\right)$ se pueden representar en función de $x_1\left(t\right)$ como
-      $$x_2\left(t\right) = x_1\left(t\right) + x_1\left(t - 1\right)$$
-      \noindent y
-      $$x_3\left(t\right) = x_1\left(t\right) - x_1\left(t - 2\right).$$
+      \floatsetup[figure]{
+        capposition=top,
+        style=ruled,
+      }
 
-      De forma que si consideramos la función de transferencia del sistema como $h\left(t\right)$ y
-      $$y_1\left(t\right) = x_1\left(t\right) * h\left(t\right),$$
-      \noindent entonces
-      $$y_2\left(t\right) = x_1\left(t\right) * h\left(t\right) + x_1\left(t - 1\right) * h\left(t\right) = y_1\left(t\right) + y_1\left(t - 1\right)$$
-      \noindent y
-      $$y_3\left(t\right) = x_1\left(t\right) * h\left(t\right) - x_1\left(t - 2\right) * h\left(t\right) = y_1\left(t\right) - y_1\left(t - 2\right).$$
-      \noindent Con estas observaciones escribimos las soluciones a este problema en \textsc{MatLab}
+      \noindent La función $x\left(t\right)$ se puede modelar empleando la función triángulo como
 
-      \begin{listing}[H]
-        \caption{Función $x_1\left(t\right)$}
-        \label{script02A}
-        \inputminted{matlab}{./laboratorio_3/p2_X1.m}
-      \end{listing}
+        \begin{equation*}
+         x\left(t\right) = - \Lambda\left(\frac{1}{2}t + \frac{1}{2}\right)
+                           - \Lambda\left(\frac{1}{2}t \right)
+                           + \Lambda\left(\frac{1}{2}t - 1\right).
+        \end{equation*}
 
-      \begin{listing}[H]
-        \caption{Función $y_1\left(t\right)$}
-        \label{script02B}
-        \inputminted{matlab}{./laboratorio_3/p2_Y1.m}
-      \end{listing}
+      \noindent Así, la transformada de fourier vendrá dada por:
 
-      \begin{listing}[H]
-        \caption{Función $x_2\left(t\right)$}
-        \label{script02C}
-        \inputminted{matlab}{./laboratorio_3/p2_X2.m}
-      \end{listing}
+        \begin{equation*}
+          \begin{split}
+            \widehat{f}\left(\omega\right) & = - \mathcal{F}\left(\Lambda,\left.\frac{t}{2} + \frac{1}{2} \right|\omega\right) - \mathcal{F}\left(\Lambda,\left.\frac{t}{2}\right|\omega\right) + \mathcal{F}\left(\Lambda,\left.\frac{t}{2}\right|\omega\right) \\
+                                           & = - 2 \mathcal{F}\left(\Lambda,t + 1 |2 \omega\right) - 2 \mathcal{F}\left(\Lambda,t|2 \omega\right) + 2 \mathcal{F}\left(\Lambda,\left.t - 2\right| 2 \omega\right) \\
+                                           & = - 2 \exp\left(i \omega\right) \mathcal{F}\left(\Lambda,t |2 \omega\right) - 2 \mathcal{F}\left(\Lambda,t|2 \omega\right) + 2 \exp\left(- 2 i \omega\right) \mathcal{F}\left(\Lambda,t| 2 \omega\right) \\
+                                           & = - \exp\left(i \omega\right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) - \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) + \exp\left(- 2 i \omega\right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right) \\
+                                           & = \left( - \exp\left(i \omega\right) - 1 + \exp\left(- 2 i \omega\right) \right) \mathrm{sinc}^{2}\left(\frac{\omega}{2}\right)
+          \end{split}
+        \end{equation*}
 
-      \begin{listing}[H]
-        \caption{Función $y_2\left(t\right)$}
-        \label{script02D}
-        \inputminted{matlab}{./laboratorio_3/p2_Y2.m}
-      \end{listing}
+      \noindent En \textsc{Matlab} implementamos la función $x\left(t\right)$
+        en términos de la función triángulo tal como muestra el \emph{script
+        \ref{script02A}} y calculamos su espectro de potencia según el
+        \emph{script \ref{script02B}} para obtner la \emph{figura
+        \ref{script02Bfigure}}
 
-      \begin{listing}[H]
-        \caption{Función $x_3\left(t\right)$}
-        \label{script02E}
-        \inputminted{matlab}{./laboratorio_3/p2_X3.m}
-      \end{listing}
+        \begin{listing}[H]
+          \caption{Función $x\left(t\right)$.}
+          \label{script02A}
+          \inputminted{matlab}{./laboratorio_4/p2_x.m}
+        \end{listing}
 
-      \begin{listing}[H]
-        \caption{Función $y_3\left(t\right)$}
-        \label{script02F}
-        \inputminted{matlab}{./laboratorio_3/p2_Y3.m}
-      \end{listing}
+        \begin{listing}[H]
+          \caption{Función $x\left(t\right)$.}
+          \label{script02B}
+          \inputminted{matlab}{./laboratorio_4/problema02.m}
+        \end{listing}
 
       \begin{figure}[H]
-          \caption{Función $x_2\left(t\right)$ y respuesta $y_2\left(t\right)$ empleando los \emph{scripts \ref{script02C}} y \emph{\ref{script02D}}.}
+          \caption{Función $x\left(t\right)$ y espectro su espectro de potencia normalizado.}
           \label{script02Afigure}
           \begin{center}
-              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X2.png}
-              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y2.png}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema02_x.png}
+              \includegraphics[width=0.45\textwidth]{./laboratorio_4/problema02_X.png}
           \end{center}
       \end{figure}
-
-      \begin{figure}[H]
-          \caption{Función $x_3\left(t\right)$ y respuesta $y_3\left(t\right)$ empleando los \emph{scripts \ref{script02E}} y \emph{\ref{script02F}}.}
-          \label{script02Bfigure}
-          \begin{center}
-              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_X3.png}
-              \includegraphics[width=0.45\textwidth]{./laboratorio_3/problema02_Y3.png}
-          \end{center}
-      \end{figure}
-      \vspace{\fill}
 
   \newpage
   \subsection*{Problema 3}
