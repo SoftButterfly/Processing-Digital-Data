@@ -439,7 +439,7 @@
         en términos de la función triángulo tal como muestra el \emph{script
         \ref{script02A}} y calculamos su espectro de potencia según el
         \emph{script \ref{script02B}} para obtner la \emph{figura
-        \ref{script02Bfigure}}
+        \ref{script02Afigure}}
 
         \begin{listing}[H]
           \caption{Función $x\left(t\right)$.}
@@ -462,21 +462,126 @@
           \end{center}
       \end{figure}
 
+      \noindent La respuesta del sistema, representado por el bloque, al paso de
+      la señal $x\left(t\right)$ será
+
+      \begin{equation*}
+        y\left(t\right) = k x\left(\tau\right) * \frac{d x\left(\tau\right)}{d \tau}
+      \end{equation*}
+
+      \noindent La transformada de Fourier de la salida $y\left(t\right)$ estará dada por
+
+      \begin{equation*}
+        \begin{split}
+          \widehat{y}\left(\omega\right) & = \mathcal{F}\left(\left.k x * \frac{dx}{dt},t\right|\omega\right) \\
+                                         & = k \mathcal{F}\left(x, t| \omega\right)\mathcal{F}\left(\left.\frac{dx}{dt},t\right|\omega\right) \\
+                                         & = i \omega k\mathcal{F}\left(x,t|\omega\right) \mathcal{F}\left(x,t|\omega\right) \\
+                                         & = i \omega k \left( - \exp\left(i \omega\right) - 1 + \exp\left(- 2 i \omega\right) \right)^{2} \mathrm{sinc}^{4}\left(\frac{\omega}{2}\right)
+        \end{split}
+      \end{equation*}
+
   \newpage
   \subsection*{Problema 3}
-    \noindent Calcular la convolución entre los siguientes pares de señales:
-    \begin{enumerate}[label=\alph*)]
-      \item $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
-      \item $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
-      \item $x\left(n\right) = u\left(n\right)$ y $h\left(n\right) = \left(\frac{1}{2}\right)^{-n} u\left(-n\right)$
-      \item $x\left(t\right) = \exp\left(-at\right) u(t)$ y $h(t) = exp(-at) u(t)$
-    \end{enumerate}
+    \floatsetup[figure]{
+      capposition=top,
+      style=plain,
+    }
 
-    \noindent Donde $u\left(n\right)$ es la función escalón unitario.
+    \noindent Halle y grafique la transformada de Fourier de las siguientes señales:
+      \begin{enumerate}[label=\alph*)]
+        \item $x\left(t\right)$
+
+          \begin{figure}[H]
+            \begin{center}
+              \includegraphics[width=0.5\textwidth]{./laboratorio_4/problema03_a.png}
+            \end{center}
+          \end{figure}\vspace{-1.5em}
+
+        \item La función periódica mostrada en la figura:
+
+          \begin{equation*}
+            x\left(n\right) = \left\{
+              \begin{array}{ccl}
+                1 & ; & \mathrm{Si}\ n\ \mathrm{impar}\\
+                2 & ; & \mathrm{Si}\ n\ \mathrm{par}\\
+              \end{array}
+            \right.
+          \end{equation*}
+
+          con $n \in \mathbb{Z}$.
+
+          \begin{figure}[H]
+            \begin{center}
+              \includegraphics[width=0.5\textwidth]{./laboratorio_4/problema03_b.png}
+            \end{center}
+          \end{figure}\vspace{-1.5em}
+
+        \item $$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$
+      \end{enumerate}
 
     \subsubsection*{Solución}
+      \floatsetup[figure]{
+        capposition=top,
+        style=ruled,
+      }
+
       \begin{enumerate}[label=\alph*)]
-        \item $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
+        \item Modelamos la función $x\left(x\right)$ empleando la función
+          $\Theta$ de Heavisde.
+
+          \begin{equation*}
+            G\left(t\right) = \frac{1}{a}\left(
+                                \Theta\left(t + \frac{a}{2}\right) -
+                                \Theta\left(t - \frac{a}{2}\right)
+                              \right).
+          \end{equation*}
+
+          \noindent De modo que la transformada de Fourier estará dada por
+
+          \begin{equation*}
+            \begin{split}
+              \widehat{G}\left(\omega\right) & = \frac{1}{a}\left(
+                                                   \Theta\left(t + \frac{a}{2}\right) -
+                                                   \Theta\left(t - \frac{a}{2}\right)
+                                                 \right) \\
+                                             & = \frac{1}{a}\left(
+                                                   \mathcal{F}\left(\Theta,\left.t + \frac{a}{2}\right|\omega\right) -
+                                                   \mathcal{F}\left(\Theta,\left.t - \frac{a}{2}\right|\omega\right)
+                                                 \right) \\
+                                             & = \frac{1}{a}\left(
+                                                   \exp\left( i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right) -
+                                                   \exp\left(-i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right)
+                                                 \right) \\
+                                             & = \frac{1}{a}\left(
+                                                   -\frac{i}{\omega}\exp\left( i\omega\frac{a}{2}\right)
+                                                   +\frac{i}{\omega}\exp\left(-i\omega\frac{a}{2}\right)
+                                                 \right) \\
+                                             & = \mathrm{sinc}\left(\frac{a\omega}{2}\right)
+            \end{split}
+          \end{equation*}
+
+        \item Modelamos la función $x\left(x\right)$ como una serie infinita de
+          impulsos unitarios
+
+          \begin{equation*}
+            G\left(t\right) = \frac{1}{a}\left(
+                                \Theta\left(t + \frac{a}{2}\right) -
+                                \Theta\left(t - \frac{a}{2}\right)
+                              \right).
+          \end{equation*}
+
+          \noindent De modo que la transformada de Fourier estará dada por
+
+
+
+
+
+
+
+
+
+
+        $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
 
           \begin{equation*}
             \begin{split}

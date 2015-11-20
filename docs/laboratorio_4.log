@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.28)  17 NOV 2015 10:38
+This is pdfTeX, Version 3.1415926-2.5-1.40.14 (TeX Live 2013/Debian) (format=pdflatex 2015.8.28)  20 NOV 2015 10:29
 entering extended mode
  \write18 enabled.
  %&-line parsing enabled.
@@ -1076,67 +1076,69 @@ File: uesint.fd
 LaTeX Font Info:    Font shape `T1/ul9/m/n' will be
 (Font)              scaled to size 8.99994pt on input line 119.
 
-<./lab4prob1c.png, id=4, 562.1pt x 421.575pt>
+<./lab4prob1c.png, id=4, 252.945pt x 216.81pt>
 File: ./lab4prob1c.png Graphic file (type png)
  <use ./lab4prob1c.png>
 Package pdftex.def Info: ./lab4prob1c.png used on input line 131.
-(pdftex.def)             Requested size: 180.0pt x 134.99681pt.
+(pdftex.def)             Requested size: 180.0pt x 154.28683pt.
 
-<./lab4prob1d.png, id=5, 562.1pt x 421.575pt>
+<./lab4prob1d.png, id=5, 252.945pt x 216.81pt>
 File: ./lab4prob1d.png Graphic file (type png)
  <use ./lab4prob1d.png>
 Package pdftex.def Info: ./lab4prob1d.png used on input line 139.
-(pdftex.def)             Requested size: 180.0pt x 134.99681pt.
+(pdftex.def)             Requested size: 180.0pt x 154.28683pt.
 
-<./lab4prob2a.png, id=6, 411.136pt x 308.352pt>
+<./lab4prob2a.png, id=6, 252.945pt x 216.81pt>
 File: ./lab4prob2a.png Graphic file (type png)
  <use ./lab4prob2a.png>
 Package pdftex.def Info: ./lab4prob2a.png used on input line 150.
-(pdftex.def)             Requested size: 180.0pt x 135.00247pt.
+(pdftex.def)             Requested size: 180.0pt x 154.28683pt.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 152.
+(babel)             in language  on input line 153.
  [1
 
-{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lab4prob1c.png> <./lab4p
-rob1d.png>] <./lab4prob2b.png, id=30, 497.86pt x 51.392pt>
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} <./lab4prob1c.png (PNG copy
+)> <./lab4prob1d.png (PNG copy)>] <./lab4prob2b.png, id=28, 497.86pt x 51.392pt
+>
 File: ./lab4prob2b.png Graphic file (type png)
- <use ./lab4prob2b.png>
+
+<use ./lab4prob2b.png>
 Package pdftex.def Info: ./lab4prob2b.png used on input line 159.
 (pdftex.def)             Requested size: 180.0pt x 18.58107pt.
-
-<./lab4prob3a.png, id=32, 562.1pt x 421.575pt>
+ <./lab4prob3a.png, id=30, 252.945pt x 216.81pt>
 File: ./lab4prob3a.png Graphic file (type png)
- <use ./lab4prob3a.png>
-Package pdftex.def Info: ./lab4prob3a.png used on input line 169.
-(pdftex.def)             Requested size: 180.0pt x 134.99681pt.
 
-<./lab4prob3b.png, id=33, 562.1pt x 421.575pt>
+<use ./lab4prob3a.png>
+Package pdftex.def Info: ./lab4prob3a.png used on input line 169.
+(pdftex.def)             Requested size: 180.0pt x 154.28683pt.
+ <./lab4prob3b.png, id=31, 252.945pt x 216.81pt>
 File: ./lab4prob3b.png Graphic file (type png)
- <use ./lab4prob3b.png>
+
+<use ./lab4prob3b.png>
 Package pdftex.def Info: ./lab4prob3b.png used on input line 188.
-(pdftex.def)             Requested size: 180.0pt x 134.99681pt.
+(pdftex.def)             Requested size: 180.0pt x 154.28683pt.
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 191.
 Package babel Info: Redefining spanish shorthand >>
@@ -1161,7 +1163,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 191.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 191.
- [2 <./lab4prob2a.png (PNG copy)> <./lab4prob2b.png> <./lab4prob3a.png>]
+ [2 <./lab4prob2a.png (PNG copy)> <./lab4prob2b.png> <./lab4prob3a.png (PNG cop
+y)>]
 LaTeX Font Info:    Font shape `T1/ul9/m/n' will be
 (Font)              scaled to size 8.09995pt on input line 204.
 Package babel Info: Redefining spanish shorthand <<
@@ -1188,7 +1191,7 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 224.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 224.
- [3 <./lab4prob3b.png>]
+ [3 <./lab4prob3b.png (PNG copy)>]
 \openout3 = `laboratorio_4.pyg'.
 
 
@@ -1239,7 +1242,7 @@ Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 254.
 Here is how much of TeX's memory you used:
  15605 strings out of 493304
  230652 string characters out of 6139871
- 429676 words of memory out of 5000000
+ 428676 words of memory out of 5000000
  18767 multiletter control sequences out of 15000+600000
  41740 words of font info for 72 fonts, out of 8000000 for 9000
  957 hyphenation exceptions out of 8191
@@ -1256,9 +1259,9 @@ cm/cmr8.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy1
 /usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/symbols/msbm10.pfb></
 usr/local/share/texmf/fonts/type1/bh/luxi/ul9b8a.pfb></usr/local/share/texmf/fo
 nts/type1/bh/luxi/ul9r8a.pfb>
-Output written on laboratorio_4.pdf (4 pages, 132603 bytes).
+Output written on laboratorio_4.pdf (4 pages, 263747 bytes).
 PDF statistics:
- 129 PDF objects out of 1000 (max. 8388607)
+ 125 PDF objects out of 1000 (max. 8388607)
  99 compressed objects within 1 object stream
  37 named destinations out of 1000 (max. 500000)
  31 words of extra memory for PDF output out of 10000 (max. 10000000)
