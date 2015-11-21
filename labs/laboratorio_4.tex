@@ -516,7 +516,9 @@
             \end{center}
           \end{figure}\vspace{-1.5em}
 
-        \item $$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$
+        \item $f\left(t\right)$
+          $$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$
+
       \end{enumerate}
 
     \subsubsection*{Solución}
@@ -526,11 +528,11 @@
       }
 
       \begin{enumerate}[label=\alph*)]
-        \item Modelamos la función $x\left(x\right)$ empleando la función
+        \item Modelamos la función $x\left(t\right)$ empleando la función
           $\Theta$ de Heavisde.
 
           \begin{equation*}
-            G\left(t\right) = \frac{1}{a}\left(
+            x\left(t\right) = \frac{1}{a}\left(
                                 \Theta\left(t + \frac{a}{2}\right) -
                                 \Theta\left(t - \frac{a}{2}\right)
                               \right).
@@ -540,11 +542,7 @@
 
           \begin{equation*}
             \begin{split}
-              \widehat{G}\left(\omega\right) & = \frac{1}{a}\left(
-                                                   \Theta\left(t + \frac{a}{2}\right) -
-                                                   \Theta\left(t - \frac{a}{2}\right)
-                                                 \right) \\
-                                             & = \frac{1}{a}\left(
+              \widehat{x}\left(\omega\right) & = \frac{1}{a}\left(
                                                    \mathcal{F}\left(\Theta,\left.t + \frac{a}{2}\right|\omega\right) -
                                                    \mathcal{F}\left(\Theta,\left.t - \frac{a}{2}\right|\omega\right)
                                                  \right) \\
@@ -564,80 +562,47 @@
           impulsos unitarios
 
           \begin{equation*}
-            G\left(t\right) = \frac{1}{a}\left(
-                                \Theta\left(t + \frac{a}{2}\right) -
-                                \Theta\left(t - \frac{a}{2}\right)
+            G\left(t\right) = \sum_{k=\infty}^{\infty}\left(
+                                \delta\left(t -   k\right) +
+                                \delta\left(t - 2 k\right)
                               \right).
           \end{equation*}
 
           \noindent De modo que la transformada de Fourier estará dada por
 
-
-
-
-
-
-
-
-
-
-        $x\left(n\right) = \left(\frac{1}{2}\right)^n u\left(n-4\right)$ y $h\left(n\right) = 4^n u\left(2-n\right)$
-
           \begin{equation*}
             \begin{split}
-              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^n u\left(n-4\right)4^{m-n} u\left(2-m+n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
+              \widehat{x}\left(\omega\right) & = \frac{1}{a}\left(
+                                                   \mathcal{F}\left(\Theta,\left.t + \frac{a}{2}\right|\omega\right) -
+                                                   \mathcal{F}\left(\Theta,\left.t - \frac{a}{2}\right|\omega\right)
+                                                 \right) \\
+                                             & = \frac{1}{a}\left(
+                                                   \exp\left( i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right) -
+                                                   \exp\left(-i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right)
+                                                 \right) \\
+                                             & = \frac{1}{a}\left(
+                                                   -\frac{i}{\omega}\exp\left( i\omega\frac{a}{2}\right)
+                                                   +\frac{i}{\omega}\exp\left(-i\omega\frac{a}{2}\right)
+                                                 \right) \\
+                                             & = \mathrm{sinc}\left(\frac{a\omega}{2}\right)
             \end{split}
           \end{equation*}
 
-          \noindent Cuando $m<6$:
+        \item La transformada de $f\left(t\right)$ viene dada por
+          $$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$
 
           \begin{equation*}
             \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
-                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) \\
-                              & = \sum_{n=4}^{\infty} 2^{2m-3n} \\
-                              & = \sum_{n=0}^{\infty} 2^{2m-3\left(n+4\right)} \\
-                              & = \sum_{n=0}^{\infty} 2^{2m-3n-12} \\
-                              & = 2^{2m-12} \sum_{n=0}^{\infty} \left(2^{-3}\right)^{n} \\
-                              & = 2^{2m-12} \sum_{n=0}^{\infty} \left(\frac{1}{8}\right)^{n} \\
-                              & = 2^{2m-12} \left(\frac{1}{1-\frac{1}{8}}\right) \\
-                              & = \frac{2^{2m-9}}{7}
-            \end{split}
-          \end{equation*}
-          \vfill
-          \newpage
-
-          \noindent Cuando $m \geq 6$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n-4\right) u\left(n+2-m\right) \\
-                              & = \sum_{n=-\infty}^{\infty} 2^{2m-3n} u\left(n+2-m\right) \\
-                              & = \sum_{n=m-2}^{\infty} 2^{2m-3n} \\
-                              & = \sum_{n=0}^{\infty} 2^{2m-3\left(n+m-2\right)} \\
-                              & = \sum_{n=0}^{\infty} 2^{6-m-3n} \\
-                              & = 2^{6-m} \sum_{n=0}^{\infty} \left(2^{-3}\right)^{n} \\
-                              & = 2^{6-m} \sum_{n=0}^{\infty} \left(\frac{1}{8}\right)^{n} \\
-                              & = 2^{6-m} \left(\frac{1}{1-\frac{1}{8}}\right) \\
-                              & = \frac{2^{9-m}}{7}
+              \widehat{f}\left(\omega\right) & = \mathcal{F}\left(f,-t/|\omega\right) \\
+                                             & = \int_{-\infty}^{\infty}t^2\exp\left(-\frac{t}{\tau}\right)\exp\left(-i \omega t\right)dt \\
+                                             & = \int_{-\infty}^{\infty}t^2\exp\left(-i \left(\omega - \frac{i}{\tau} \right) t\right)dt \\
+                                             & = -2 \pi \delta\left(\omega - \frac{i}{\tau} \right)
             \end{split}
           \end{equation*}
 
-          \noindent Finalmente
+          \noindent Donde $\delta$ es la función Delta de Dirac.
 
-          \begin{equation*}
-            y\left(m\right) = \left\{
-              \begin{array}{lcl}
-                \displaystyle{\frac{2^{2m-9}}{7}} &;& n < 6 \\ [1em]
-                \displaystyle{\frac{2^{9-m}}{7}}  &;& n \geq 6
-              \end{array}
-            \right.
-          \end{equation*}
-
-        \item $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
+        $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
           \begin{equation*}
             \begin{split}
               y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
