@@ -1,0 +1,190 @@
+\documentclass[a4paper,11pt,final]{article}
+\usepackage[scaled=0.9]{luximono}
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{booktabs}
+\usepackage{epstopdf}
+\usepackage{floatrow}
+\usepackage{graphicx}
+\usepackage{hyperref}
+\usepackage{multicol}
+\usepackage{tabularx}
+\usepackage{textcomp}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amstext}
+\usepackage{caption}
+\usepackage{charter}
+\usepackage{amsbsy}
+\usepackage{amsthm}
+\usepackage{lipsum}
+\usepackage{minted}
+\usepackage{natbib}
+\usepackage{array}
+\usepackage{color}
+\usepackage{esint}
+\usepackage{float}
+
+% Hyperref setup
+\hypersetup{%
+  pdftitle={Procesamiento de datos digitales. Laboratorio 5},
+  pdfauthor={César Jiménez Tintaya},
+  pdfpagelayout=OneColumn,
+  pdfnewwindow=true,
+  pdfdisplaydoctitle=true,
+  pdfstartview=XYZ,
+  plainpages=false,
+  unicode=true,
+  bookmarksnumbered=true,
+  bookmarksopen=true,
+  bookmarksopenlevel=3,
+  breaklinks=true,
+  colorlinks=true,
+  linkcolor=blue,
+  pdfborder={0 0 0}%
+}
+
+% Minted settings
+\setminted[matlab]{
+  autogobble=true,
+  linenos=false,
+  bgcolor=grey_lighten_4,
+  fontfamily=\ttdefault,
+  resetmargins=true,
+  stripnl=true,
+  breaklines=true
+  breakautoindent=true,
+  breaksymbolleft=\tiny\ensuremath{\hookrightarrow},
+  breaksymbolright=\tiny\ensuremath{\hookleftarrow},
+  fontsize=\footnotesize
+}
+
+%% LaTeX commands.
+\makeatletter
+%% -----------------------------------------------------------------------------
+% Defining string as labels of certain blocks.
+\newcommand{\suma}{\Large$+$}
+\newcommand{\inte}{$\displaystyle \int$}
+\newcommand{\derv}{\huge$\frac{d}{dt}$}
+
+\definecolor{grey_lighten_4}{rgb}{0.9804, 0.9804, 0.9804}
+
+%% Redefinition of \maketitle command
+\def\@maketitle{%
+  \newpage
+  \null
+  \begin{center}%
+    \small{\uppercase{Univerisad Nacional Mayor de San Marcos}} \par%
+    \vskip 0.5em%
+    \small{\uppercase{Facultad de Ciencias Físicas}} \par%
+    \vskip 2em%
+    \let \footnote \thanks
+    \small{\textsc{Procesamiento de Datos Digitales}} \par%
+    \vskip 0.5em%
+    {\LARGE \@title \par}%
+    \vskip 1.5em%
+    {%
+      \normalsize
+      \lineskip .5em%
+      \begin{tabular}[t]{c}%
+      \@author
+      \end{tabular}\par%
+    }%
+    \vskip 1em%
+    {\normalsize \@date}%
+  \end{center}%
+  \par%
+  \vskip 1.5em%
+}
+
+\makeatother
+
+%% -----------------------------------------------------------------------------
+\begin{document}
+  \title{Laboratorio Nº5}
+  \author{Lic. César Jiménez Tintaya\\ \small{\texttt{cjimenezt@unmsm.edu.pe}}}
+  \date{}
+  \maketitle
+
+  \begin{enumerate}
+    \item Dada la señal en el dominio del tiempo:
+      $$y\left(t\right) = \sin\left(t\right) + 0.25\sin\left(10t\right)$$
+
+      \begin{enumerate}
+        \item En la gráfica del espectro de potencias, hallar la amplitud,
+              la frecuencia y el periodo correspondiente a cada pico.
+        \item Diseñe un filtro pasa-bajo y grafique la señal filtrada.
+              ¿Cuál es la frecuencia de corte?
+        \item Diseñe un filtro pasa-alto y grafique la señal filtrada.
+      \end{enumerate}
+
+    \item Con el programa de adquisición de datos \texttt{adqsonido.m}, realice
+      la grabación durante $5\ s$ de las voces de $2$ personas diferentes.
+
+      \begin{enumerate}
+        \item Aplique un filtro pasa-alto con frecuencia de corte de 100 Hz,
+              grabe el archivo obtenido.
+        \item Calcule la Transformada de Fourier discreta de las dos señales.
+              Grafique.
+        \item Calcule el coeficiente de correlación entre las TRF de ambas
+              señales. ¿Qué puede concluir?
+      \end{enumerate}
+
+    \item Descargue el archivo \texttt{pardata.txt}
+      \footnote{\url{http://fenlab.9k.com/pds/pardata.zip}} que contiene una
+      señal mareográfica real medida en la bahía de Paracas con un sensor
+      de nivel ultrasónico
+
+      \begin{enumerate}
+        \item Aplique un filtro mediano para eliminar los picos impulsivos. Grafique la señal antes y después de aplicar dicho filtro.
+        \item Representar la señal en el dominio de la frecuencia. Identificar los picos principales y periodos de retorno.
+        \item Aplicar un filtro adecuado para estudiar las mareas: ¿cuál es el periodo y amplitud de la marea?
+        \item Aplicar un filtro adecuado para estudiar las olas: ¿cuál es el periodo y amplitud de las olas?
+      \end{enumerate}
+
+      \emph{Sugerencia}: Revisar el artículo <<Estimación del nivel medio de bajamares de sicigias ordinarias en la bahía de Paracas>>
+      \footnote{\url{http://www.rif-fisica.org/images/1/11/111402401.pdf}}.
+
+    \item Se tiene una señal sísmica de tres componentes para la estación de
+      Ñaña \footnote{\url{http://fenlab.9k.com/pds/nana.mat}}.
+
+      La estación está ubicada en :
+
+      \begin{itemize}
+        \item Latitud  : $11.988^\circ\ S$
+        \item Longitud : $76.842^\circ\ W$
+        \item Altitud  : $575\ m.s.n.m$.
+      \end{itemize}
+
+      La ubicación del epicentro fue:
+
+      \begin{itemize}
+        \item Latitud    : $15.36^\circ\ S$
+        \item Longitud   : $70.90^\circ\ W$
+        \item Profundidad: $180\ km$.
+      \end{itemize}
+
+      \begin{enumerate}
+        \item Graficar la señal para las 3 componentes: Vertical (V), Norte (N), Este (E) en función del tiempo t.
+        \item Hallar la distancia epicentral y la diferencia de tiempo de arribo entre la fase P y S.
+        \item Hallar el contenido energético promedio de la señal.
+        \item Hallar la magnitud del sismo.
+      \end{enumerate}
+
+      \emph{Sugerencia}: Revisar el artículo <<Cálculo de la magnitud sísmica para la estación de Ñaña>>
+      \footnote{\url{http://www.rif-fisica.org/images/0/0b/101301755.pdf}}.
+
+    \item Buscar los datos del precio del dólar desde el 1 de enero del 2013
+      hasta el 31 de diciembre del 2013.
+
+      \begin{enumerate}
+        \item Completar la serie de tiempo para los sábados, domingos y feriados mediante interpolación. Graficar.
+        \item Representar la serie en el dominio de la frecuencia. Identificar los picos principales y periodos de retorno.
+        \item Filtre las fluctuaciones de alta frecuencia y grafique. ¿Cuál es la tendencia del precio del dólar?
+        \item Pronostique el precio del dólar para el 1 de enero del 2014, en base a interpolación polinomial.
+      \end{enumerate}
+
+  \end{enumerate}
+\end{document}
+

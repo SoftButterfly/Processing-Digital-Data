@@ -173,50 +173,18 @@
   \maketitle
 
   \subsection*{Problema 1}
-    \floatsetup[figure]{
-      capposition=top,
-      style=plain,
-    }
-
-    \noindent Graficar en \textsc{Matlab} las señales a y b, y hallar
-      la transformada de Fourier en forma analítica (usar propiedades):
+    \noindent Dada la señal en el dominio del tiempo:
+      $$y\left(t\right) = \sin\left(t\right) + 0.25\sin\left(10t\right)$$
 
       \begin{enumerate}[label=\alph*)]
-        \item $f_1\left(t\right) = G\left(\frac{t}{2}\right) - G\left(t\right)$
-        \item $f_2\left(t\right) = 5G\left(t-1\right) - G\left(t+1\right)$
-      \end{enumerate}\vspace{-1.35em}
-      \noindent\begin{minipage}[t]{0.5\textwidth}
-        \begin{enumerate}[label=\alph*)]
-          \setcounter{enumi}{2}
-          \item $f_3\left(t\right)$
-          \vspace{-1.0em}
-            \begin{figure}[H]
-              \begin{flushright}
-                \includegraphics[width=\textwidth-30pt]{./laboratorio_4/problema01_f3.png}
-              \end{flushright}
-            \end{figure}\vspace{-1.0em}
-        \end{enumerate}
-      \end{minipage}%
-      \begin{minipage}[t]{0.5\textwidth}
-        \begin{enumerate}[label=\alph*)]
-          \setcounter{enumi}{3}
-          \item $f_4\left(t\right)$
-            \vspace{-1.0em}
-            \begin{figure}[H]
-              \begin{flushright}
-                \includegraphics[width=\textwidth-30pt]{./laboratorio_4/problema01_f4.png}
-              \end{flushright}
-            \end{figure}\vspace{-1.0em}
-        \end{enumerate}
-      \end{minipage}%
-
-      \noindent \emph{Nota}: $G$ es la función compuerta unitaria.
+        \item En la gráfica del espectro de potencias, hallar la amplitud,
+              la frecuencia y el periodo correspondiente a cada pico.
+        \item Diseñe un filtro pasa-bajo y grafique la señal filtrada.
+              ¿Cuál es la frecuencia de corte?
+        \item Diseñe un filtro pasa-alto y grafique la señal filtrada.
+      \end{enumerate}
 
     \subsubsection*{Solución}
-      \floatsetup[figure]{
-        capposition=top,
-        style=ruled,
-      }
 
       \noindent Definimos la función compuerta unitaria, $G$, empleando la función
       $\Theta$ de Heaviside de la siguiente manera
