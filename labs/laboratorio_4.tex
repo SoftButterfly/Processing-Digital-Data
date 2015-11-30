@@ -487,7 +487,7 @@
       style=plain,
     }
 
-    \noindent Halle y grafique la transformada de Fourier de las siguientes señales:
+    \noindent Halle y grafíque la transformada de Fourier de las siguientes señales:
       \begin{enumerate}[label=\alph*)]
         \item $x\left(t\right)$
 
@@ -558,262 +558,147 @@
             \end{split}
           \end{equation*}
 
-        \item Modelamos la función $x\left(x\right)$ como una serie infinita de
-          impulsos unitarios
+        % \item Modelamos la función $x\left(n\right)$ como una serie infinita de
+        %   impulsos unitarios
 
-          \begin{equation*}
-            G\left(t\right) = \sum_{k=\infty}^{\infty}\left(
-                                \delta\left(t -   k\right) +
-                                \delta\left(t - 2 k\right)
-                              \right).
-          \end{equation*}
+        %   \begin{equation*}
+        %     x\left(n\right) = \sum_{m=\infty}^{\infty}\left(
+        %                         \delta\left(n -   m\right) +
+        %                         \delta\left(n - 2 m\right)
+        %                       \right).
+        %   \end{equation*}
 
-          \noindent De modo que la transformada de Fourier estará dada por
+        %   \noindent De modo que la transformada de Fourier estará dada por
 
-          \begin{equation*}
-            \begin{split}
-              \widehat{x}\left(\omega\right) & = \frac{1}{a}\left(
-                                                   \mathcal{F}\left(\Theta,\left.t + \frac{a}{2}\right|\omega\right) -
-                                                   \mathcal{F}\left(\Theta,\left.t - \frac{a}{2}\right|\omega\right)
-                                                 \right) \\
-                                             & = \frac{1}{a}\left(
-                                                   \exp\left( i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right) -
-                                                   \exp\left(-i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right)
-                                                 \right) \\
-                                             & = \frac{1}{a}\left(
-                                                   -\frac{i}{\omega}\exp\left( i\omega\frac{a}{2}\right)
-                                                   +\frac{i}{\omega}\exp\left(-i\omega\frac{a}{2}\right)
-                                                 \right) \\
-                                             & = \mathrm{sinc}\left(\frac{a\omega}{2}\right)
-            \end{split}
-          \end{equation*}
+        %   \begin{equation*}
+        %     \begin{split}
+        %       \widehat{x}\left(\omega\right) & = \frac{1}{a}\left(
+        %                                            \mathcal{F}\left(\Theta,\left.t + \frac{a}{2}\right|\omega\right) -
+        %                                            \mathcal{F}\left(\Theta,\left.t - \frac{a}{2}\right|\omega\right)
+        %                                          \right) \\
+        %                                      & = \frac{1}{a}\left(
+        %                                            \exp\left( i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right) -
+        %                                            \exp\left(-i\omega\frac{a}{2}\right)\mathcal{F}\left(\Theta,t|\omega\right)
+        %                                          \right) \\
+        %                                      & = \frac{1}{a}\left(
+        %                                            -\frac{i}{\omega}\exp\left( i\omega\frac{a}{2}\right)
+        %                                            +\frac{i}{\omega}\exp\left(-i\omega\frac{a}{2}\right)
+        %                                          \right) \\
+        %                                      & = \mathrm{sinc}\left(\frac{a\omega}{2}\right)
+        %     \end{split}
+        %   \end{equation*}
 
         \item La transformada de $f\left(t\right)$ viene dada por
-          $$f\left(t\right) = t^2\exp\left(-\frac{t}{\tau}\right)$$
-
           \begin{equation*}
             \begin{split}
-              \widehat{f}\left(\omega\right) & = \mathcal{F}\left(f,-t/|\omega\right) \\
+              \widehat{f}\left(\omega\right) & = \mathcal{F}\left(f,\left.-\frac{t}{\tau}\right|\omega\right) \\
                                              & = \int_{-\infty}^{\infty}t^2\exp\left(-\frac{t}{\tau}\right)\exp\left(-i \omega t\right)dt \\
                                              & = \int_{-\infty}^{\infty}t^2\exp\left(-i \left(\omega - \frac{i}{\tau} \right) t\right)dt \\
-                                             & = -2 \pi \delta\left(\omega - \frac{i}{\tau} \right)
+                                             & = -2 \pi \delta''\left(\omega - \frac{i}{\tau} \right)
             \end{split}
           \end{equation*}
 
           \noindent Donde $\delta$ es la función Delta de Dirac.
-
-        $x\left(n\right) = u\left(-n\right) - u\left(-n-2\right)$ y $h\left(n\right) = u\left(n-1\right) - u\left(n-4\right)$
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} \left[u\left(-n\right) - u\left(-n-2\right)\right]
-                                                            \left[u\left(m-n-1\right) - u\left(m-n-4\right)\right] \\
-                              & = \sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-1\right) - \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-1\right) - \\
-                              & \phantom{=}\ \sum_{n=-\infty}^{\infty} u\left(-n\right)u\left(m-n-4\right) + \sum_{n=-\infty}^{\infty} u\left(-n-2\right)u\left(m-n-4\right)
-            \end{split}
-          \end{equation*}
-          \vfill
-          \newpage
-
-          \noindent Cuando $m<0$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{m-1} 1 -
-                                  \sum_{n=-\infty}^{m-1} 1 -
-                                  \sum_{n=-\infty}^{m-4} 1 +
-                                  \sum_{n=-\infty}^{m-4} 1 \\
-                              & = 0
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $m=0$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{-1} 1 -
-                                  \sum_{n=-\infty}^{-2} 1 -
-                                  \sum_{n=-\infty}^{-3} 1 +
-                                  \sum_{n=-\infty}^{-3} 1 \\
-                              & = 1
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $0<m \wedge m<3$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
-                                  \sum_{n=-\infty}^{-2} 1 -
-                                  \sum_{n=-\infty}^{-2} 1 +
-                                  \sum_{n=-\infty}^{-2} 1 \\
-                              & = 2
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $m=3$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
-                                  \sum_{n=-\infty}^{-2} 1 -
-                                  \sum_{n=-\infty}^{-1} 1 +
-                                  \sum_{n=-\infty}^{-2} 1 \\
-                              & = 1
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $m>3$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{0} 1 -
-                                  \sum_{n=-\infty}^{-1} 1 -
-                                  \sum_{n=-\infty}^{0} 1 +
-                                  \sum_{n=-\infty}^{-1} 1 \\
-                              & = 0
-            \end{split}
-          \end{equation*}
-
-          \noindent Finalmente
-
-          \begin{equation*}
-            y\left(m\right) = \left\{
-              \begin{array}{lcl}
-                0 &;& m < 0  \vee  3 < m \\ [1em]
-                1 &;& m = 0  \vee  m = 3 \\ [1em]
-                2 &;& 0 < m \wedge m < 3
-              \end{array}
-            \right.
-          \end{equation*}
-          \vfill
-          \newpage
-
-        \item $x\left(n\right) = u\left(n\right)$ y $h\left(n\right) = \left(\frac{1}{2}\right)^{-n} u\left(-n\right)$
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = x\left(n\right) * h\left(n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} x\left(n\right)h\left(m-n\right) \\
-                              & = \sum_{n=-\infty}^{\infty} u\left(n\right) \left(\frac{1}{2}\right)^{n-m} u\left(n-m\right) \\
-                              & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right)
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $m < 0$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right) \\
-                              & = \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n-m} \\
-                              & = 2^{m} \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n} \\
-                              & = 2^{1+m}
-            \end{split}
-          \end{equation*}
-
-          \noindent Cuando $0 \leq m$:
-
-          \begin{equation*}
-            \begin{split}
-              y\left(m\right) & = \sum_{n=-\infty}^{\infty} \left(\frac{1}{2}\right)^{n-m} u\left(n\right) u\left(n-m\right) \\
-                              & = \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n-m} \\
-                              & = 2^{m} \sum_{n=0}^{\infty} \left(\frac{1}{2}\right)^{n} \\
-                              & = 2^{1+m}
-            \end{split}
-          \end{equation*}
-
-        \item $x\left(t\right) = \exp\left(-at\right) u(t)$ y $h(t) = \exp\left(-at\right) u(t)$
-
-          \begin{equation*}
-            \begin{split}
-              y\left(\tau\right) & = x\left(t\right) * h\left(t\right) \\
-                                 & = \int_{-\infty}^{\infty} x\left(t\right)h\left(\tau-t\right)dt \\
-                                 & = \int_{-\infty}^{\infty} \exp\left(-at\right) u(t) \exp\left(-a\tau + at\right) u(t-\tau) dt\\
-                                 & = \int_{0}^{\tau} \exp\left(-a\tau\right) dt \\
-                                 & = \exp\left(-a\tau\right) \tau
-            \end{split}
-          \end{equation*}
-
       \end{enumerate}
 
   \newpage
   \subsection*{Problema 4}
-    \noindent Para el diagrama de bloques mostrado
-    \begin{figure}[H]
-      \begin{center}
-        \includegraphics[width=0.7\textwidth]{./laboratorio_3/problema04_diagram.png}
-      \end{center}
-    \end{figure}
+    \noindent Dada la señal en el dominio del tiempo:
 
-    \noindent Donde
+      $$y\left(t\right) = \sin\left(t\right) + 0.25\sin\left(10t\right)$$
 
-    $$h_1\left(n\right) = \beta\delta\left(n-1\right)$$
-
-    \noindent y
-
-    $$h_2\left(n\right) = \exp\left(\alpha\right)\delta\left(n\right)$$
-
-    \begin{enumerate}[label=\alph*)]
-      \item Escribir la ecuación en diferencias que relaciona la entrada con la salida
-      \item Hallar $\alpha$ y $\beta$, de tal forma que la salida sea el promedio entre la entrada en el instante $n$ y
-      la entrada en el instante $n-1$.
-    \end{enumerate}
+      \begin{enumerate}[label=\alph*)]
+        \item Hacer un programa para graficar la señal para $4$ periodos, con una frecuencia de muestreo de $100\ Hz$.
+        \item Hacer un programa para graficar el espectro de frecuencias de la señal.
+        \item ¿Cuál es la amplitud y la frecuencia correspondiente a cada pico?
+      \end{enumerate}
 
     \subsubsection*{Solución}
+
       \begin{enumerate}[label=\alph*)]
-        \item La ecuación en diferencias se obtiene de calcular
-          $$ y\left(n\right) = \left[\left(x + x*h_1\right)*h_2\right]\left(n\right) $$
+        \item El período de la función dada es de $2\pi$.
+          \vspace{-2.0em}
 
-          \noindent Resolviendo $\left[x*h_1\right]\left(n\right)$, tenemos
+          \setbox0=\vbox{%
+            \begin{minipage}[t]{\textwidth-32pt}
+                \begin{listing}[H]
+                  \caption{Función $y\left(n\right)$}
+                  \label{script04AY}
+                  \inputminted{matlab}{./laboratorio_4/p4_y.m}
+                \end{listing}
+            \end{minipage}
+          }%
+          \makebox[\textwidth][l]{\box0}
+          \vspace{-2.0em}
 
-          \begin{equation*}
-            \begin{split}
-              y_1\left(n\right) & = x(m)*h_1(m) \\
-                                & = \sum_{m=-\infty}^{\infty} x\left(m\right)h_1\left(n-m\right) \\
-                                & = \sum_{m=-\infty}^{\infty} x\left(m\right)\beta\delta\left(n-m-1\right) \\
-                                & = \beta x\left(n-1\right)
-            \end{split}
-          \end{equation*}
+          \setbox0=\vbox{%
+            \begin{minipage}[t]{\textwidth-32pt}
+                \begin{listing}[H]
+                  \caption{Función $y\left(n\right)$}
+                  \label{script04AP}
+                  \inputminted{matlab}{./laboratorio_4/problema04_a.m}
+                \end{listing}
+            \end{minipage}
+          }%
+          \makebox[\textwidth][l]{\box0}
+          \vspace{-2.0em}
 
-          \noindent Haciendo $y_2\left(n\right)=y_1\left(n\right) + x\left(n\right)$, calculamos $\left[y_2*h_2\right]\left(n\right)$ como
+          \setbox0=\vbox{%
+              \begin{minipage}[t]{\textwidth-32pt}
+                \begin{figure}[H]
+                  \caption{Gráfica de la función $y\left(t\right)$}
+                  \includegraphics[width=0.95\textwidth]{./laboratorio_4/problema04_a.png}
+                \end{figure}
+              \end{minipage}
+          }%
+          \makebox[\textwidth][l]{\box0}
 
-          \begin{equation*}
-            \begin{split}
-              y\left(n\right) & = y_2(m)*h_2(m) \\
-                              & = \sum_{m=-\infty}^{\infty} y_2(m)h_2\left(n-m\right) \\
-                              & = \sum_{m=-\infty}^{\infty} \left[y_1\left(m\right) + x\left(m\right)\right]\exp\left(\alpha\right)\delta\left(n-m\right) \\
-                              & = \sum_{m=-\infty}^{\infty} \left[\beta x\left(m-1\right) + x\left(m\right)\right]\exp\left(\alpha\right)\delta\left(n-m\right) \\
-                              & = \left[\beta x\left(n-1\right) + x\left(n\right)\right]\exp\left(\alpha\right)
-            \end{split}
-          \end{equation*}
+        \item Calculamos la transformada de Fourier y graficamos el espectro de potencias
+          \vspace{-2.0em}
 
-          \noindent De modo que la ecuación en diferencias del sistema queda expresada como
+          \setbox0=\vbox{%
+            \begin{minipage}[t]{\textwidth-32pt}
+                \begin{listing}[H]
+                  \caption{Función $y\left(n\right)$}
+                  \label{script04B}
+                  \inputminted{matlab}{./laboratorio_4/problema04_b.m}
+                \end{listing}
+            \end{minipage}
+          }%
+          \makebox[\textwidth][l]{\box0}
+          \vspace{-2.0em}
 
-          $$y\left(n\right) = \left[\beta x\left(n-1\right) + x\left(n\right)\right]\exp\left(\alpha\right)$$
+          \setbox0=\vbox{%
+              \begin{minipage}[t]{\textwidth-32pt}
+                \begin{figure}[H]
+                  \caption{Gráfica del espectro de potencias de $y\left(t\right)$}
+                  \includegraphics[width=0.95\textwidth]{./laboratorio_4/problema04_b.png}
+                \end{figure}
+              \end{minipage}
+          }%
+          \makebox[\textwidth][l]{\box0}
 
-        \item Para que la señal de salida sea igual al promedio de los valores de la señal de entrada en el instante $n$
-          y en el instante $n-1$ se debe resolver el sistema
+          \item En el espectro de potencias se encuentran dos picos con frecuencias de
+            $1.5911\ \mathrm{Hz}$ y $0.1591\ \mathrm{Hz}$ con amplitudes de $0.2499$ y $0.9999$ respectivamente,
+            que coinciden con los valores calculados de las amplitudes de $0.25$ y
+            $1.00$ para las frecuencias $0.1592\ \mathrm{Hz}$ y $1.5915\ \mathrm{Hz}$ respectivamente.
 
-          \begin{equation}
-            \left\{
-              \begin{array}{ccc}
-                \exp\left(\alpha\right)      &=&  \displaystyle{\frac{1}{2}} \\[1em]
-                \exp\left(\alpha\right)\beta &=&  \displaystyle{\frac{1}{2}}
-              \end{array}
-            \right.
-          \end{equation}
+        \end{enumerate}
 
-          \noindent De donde resulta
-
-          $$ \alpha = \ln\left(\frac{1}{2}\right) \wedge \beta = 1$$
-      \end{enumerate}
 
   \newpage
   \subsection*{Problema 5}
-    \noindent Dada la siguiente ecuación en diferencias
-    $$y\left(n\right) = -a y\left(n-1\right) + b x\left(n\right) + c x\left(n-1\right),$$
-    realizar una representación en diagrama de bloques.
+    \noindent Descargue el archivo \texttt{datos.txt}\footnote{\url{http://fenlab.9k.com/pds/datos.rar}} de la web, que representa una señal de audio.
+      La frecuencia de muestreo es de $F_s = 8000\ Hz$. Hacer un programa en Matlab para que realice
+      lo siguiente:
+
+      \begin{enumerate}[label=\alph*)]
+        \item Hallar el número de datos N.
+        \item Hallar la duración de la señal.
+        \item Hallar el valor medio de la señal.
+        \item Graficar la señal $x\left(t\right)$.
+        \item Graficar el espectro de frecuencias.
+      \end{enumerate}
 
     \subsubsection*{Solución}
       \noindent Expresando la ecuación en diferencias como:
