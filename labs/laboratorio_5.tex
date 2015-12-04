@@ -399,7 +399,9 @@
       \noindent El coeficiente de correlación de las transformadas de Fourier
       de ambas señales es de 0.0018 lo cual indica una la existencia de
       una correlación lineal extremadamente débil, al punto que uno puede
-      indicar que tal relación no existe entre ambas señales.
+      indicar que tal relación no existe entre ambas señales. Para el caso de
+      las muestras de audio podemos decir que ambas muestras corresponden a
+      personas distintas.
 
   \newpage
   \subsection*{Problema 3}
@@ -419,6 +421,45 @@
       \footnote{\url{http://www.rif-fisica.org/images/1/11/111402401.pdf}}.
 
     \subsubsection*{Solución}
+      \noindent La solucion a este problema está contenida en el siguiente \emph{script}
+      \begin{listing}[H]
+        \label{script:3.1a}
+        \inputminted[lastline=29]{matlab}{./laboratorio_5/problema03.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
+
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{script:3.1b}
+        \inputminted[firstline=30,lastline=83]{matlab}{./laboratorio_5/problema03.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
+
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{script:3.1c}
+        \inputminted[firstline=85,lastline=137]{matlab}{./laboratorio_5/problema03.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
+
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{script:3.1d}
+        \inputminted[firstline=137]{matlab}{./laboratorio_5/problema03.m}
+      \end{listing}
+      \vspace{-1em}
       \vfill
 
       \newpage
@@ -430,6 +471,7 @@
           \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal.pdf}
         \end{center}
       \end{figure}
+      \vspace{-0.25em}
 
       \begin{figure}[H]
         \begin{center}
@@ -439,6 +481,7 @@
           \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal_median_filter.pdf}
         \end{center}
       \end{figure}
+      \vspace{-0.25em}
 
       \begin{figure}[H]
         \begin{center}
@@ -453,12 +496,64 @@
       \newpage
       \begin{figure}[H]
         \begin{center}
-          \caption{Espectro de potencia de la señal mareográfica filtrada.}
+          \caption{Espectro de potencia de la señal mareográfica filtrada indicando las frecuencias predominantes.}
           \label{p3f4}
           \vspace{-1em}
           \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_power_spectrum.pdf}
         \end{center}
       \end{figure}
+      \vspace{-0.25em}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal mareográfica filtrada con un filtro pasa bajo con una frecuencias de corte de $5.55\times10^{-4}$ Hz (T = 0.5 h) para el estudio de la componente de mareas.}
+          \label{p3f5}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal_tidal.pdf}
+        \end{center}
+      \end{figure}
+      \vspace{-0.25em}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencia de la componente de mareas de la señal mareográfica filtrada indicando las frecuencias predominantes.}
+          \label{p3f6}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_power_spectrum_tidal.pdf}
+        \end{center}
+      \end{figure}
+      \vfill
+
+      \newpage
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Acercamiento al espectro de potencia de la señal mareográfica filtrada en el rango de frecuencias de 0.01 Hz (T=100 s) a 0.13 Hz (T=7.69 s).}
+          \label{p3f7}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_power_spectrum_focus.pdf}
+        \end{center}
+      \end{figure}
+      \vspace{-0.25em}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Seis (6) primeras horas de la señal mareográfica filtrada con un filtro pasa banda entre las frecuencias de 0.0167 Hz (T = 60 s) y 0.1250 Hz (T = 8 s) para el estudio de la componente de las olas.}
+          \label{p3f8}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal_waves.pdf}
+        \end{center}
+      \end{figure}
+      \vspace{-0.25em}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencia de la componente de olas de la señal mareográfica filtrada indicando las frecuencias predominantes.}
+          \label{p3f9}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_power_spectrum_waves.pdf}
+        \end{center}
+      \end{figure}
+      \vfill
 
   \newpage
   \subsection*{Problema 4}

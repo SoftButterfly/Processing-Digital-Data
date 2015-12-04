@@ -3,12 +3,12 @@ close all
 clc
 
 %% Plot Settings ---------------------------------------------------------------
-    alw    = 0.75;  % AxesLineWidth
+    alw    =  0.75;  % AxesLineWidth
     Tfsz   = 12.00;  % Title Fontsize
     lfsz   = 12.00;  % Label Fontsize
-    tfsz   = 9.00;  % Ticks Fontsize
-    lw     = 0.75;  % LineWidth
-    msz    = 6.00;  % MarkerSize
+    tfsz   =  9.00;  % Ticks Fontsize
+    lw     =  0.75;  % LineWidth
+    msz    =  6.00;  % MarkerSize
 
 %% Señal -----------------------------------------------------------------------
     Fs = 100;
