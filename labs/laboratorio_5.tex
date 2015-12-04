@@ -185,124 +185,123 @@
     \end{enumerate}
 
     \subsubsection*{Solución}
+      \noindent La solucion a este problema está contenida en el siguiente \emph{script}
+      \begin{listing}[H]
+        \label{script:1.1a}
+        \inputminted[lastline=21]{matlab}{./laboratorio_5/problema01.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
 
-    \noindent La solucion a este problema está contenida en el siguiente \emph{script}
-    \begin{listing}[H]
-      \label{script:1.1a}
-      \inputminted[lastline=21]{matlab}{./laboratorio_5/problema01.m}
-    \end{listing}
-    \vspace{-1em}
-    \noindent {\footnotesize Continúa en la página siguiente\par}
-    \vfill
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{scr:1.1b}
+        \inputminted[firstline=23,lastline=80]{matlab}{./laboratorio_5/problema01.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
 
-    \newpage
-    \noindent {\footnotesize Continuación de la página anterior\par}
-    \vspace{-1em}
-    \begin{listing}[H]
-      \label{scr:1.1b}
-      \inputminted[firstline=23,lastline=80]{matlab}{./laboratorio_5/problema01.m}
-    \end{listing}
-    \vspace{-1em}
-    \noindent {\footnotesize Continúa en la página siguiente\par}
-    \vfill
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{scr:1.1c}
+        \inputminted[firstline=82]{matlab}{./laboratorio_5/problema01.m}
+      \end{listing}
 
-    \newpage
-    \noindent {\footnotesize Continuación de la página anterior\par}
-    \vspace{-1em}
-    \begin{listing}[H]
-      \label{scr:1.1c}
-      \inputminted[firstline=82]{matlab}{./laboratorio_5/problema01.m}
-    \end{listing}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal $x\left(t\right)$.}
+          \label{p1f1}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_signal.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Señal $x\left(t\right)$.}
-        \label{p1f1}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_signal.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencias de la señal $x\left(t\right)$ indiciando los valores de las amplitudes y frecuencias de las componentes la señal..}
+          \label{p1f2}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_power_spectrum.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Espectro de potencias de la señal $x\left(t\right)$ indiciando los valores de las amplitudes y frecuencias de las componentes la señal..}
-        \label{p1f2}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_power_spectrum.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal $x\left(t\right)$ sometida a un filtro pasa bajo.}
+          \label{p1f3}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filtered_signal.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Señal $x\left(t\right)$ sometida a un filtro pasa bajo.}
-        \label{p1f3}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filtered_signal.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Función de transferencia del filtro pasa bajo usado para obtener la fig. \ref{p1f3}. Se muestra la frecuencia de corte del filtro.}
+          \label{p1f4}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_transfer_function.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Función de transferencia del filtro pasa bajo usado para obtener la fig. \ref{p1f3}. Se muestra la frecuencia de corte del filtro.}
-        \label{p1f4}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_transfer_function.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Respuesta en magnitud del filtro pasa bajo usado para obtener la fig. \ref{p1f3}.}
+          \label{p1f5}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filter_magnitude.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Respuesta en magnitud del filtro pasa bajo usado para obtener la fig. \ref{p1f3}.}
-        \label{p1f5}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filter_magnitude.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Respuesta en fase del filtro pasa bajo usado para obtener la fig. \ref{p1f3}.}
+          \label{p1f6}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filter_phase.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Respuesta en fase del filtro pasa bajo usado para obtener la fig. \ref{p1f3}.}
-        \label{p1f6}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_lowpass_filter_phase.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal $x\left(t\right)$ sometida a un filtro pasa alto.}
+          \label{p1f7}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filtered_signal.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Señal $x\left(t\right)$ sometida a un filtro pasa alto.}
-        \label{p1f7}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filtered_signal.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Función de transferencia del filtro pasa alto usado para obtener la fig. \ref{p1f7}. Se muestra la frecuencia de corte del filtro.}
+          \label{p1f8}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_transfer_function.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Función de transferencia del filtro pasa alto usado para obtener la fig. \ref{p1f7}. Se muestra la frecuencia de corte del filtro.}
-        \label{p1f8}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_transfer_function.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Respuesta en magnitud del filtro pasa alto usado para obtener la fig. \ref{p1f7}.}
+          \label{p1f9}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filter_magnitude.pdf}
+        \end{center}
+      \end{figure}
 
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Respuesta en magnitud del filtro pasa alto usado para obtener la fig. \ref{p1f7}.}
-        \label{p1f9}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filter_magnitude.pdf}
-      \end{center}
-    \end{figure}
-
-    \begin{figure}[H]
-      \begin{center}
-        \caption{Respuesta en fase del filtro pasa alto usado para obtener la fig. \ref{p1f7}.}
-        \label{p1f10}
-        \vspace{-1em}
-        \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filter_phase.pdf}
-      \end{center}
-    \end{figure}
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Respuesta en fase del filtro pasa alto usado para obtener la fig. \ref{p1f7}.}
+          \label{p1f10}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema01_highpass_filter_phase.pdf}
+        \end{center}
+      \end{figure}
 
   \newpage
   \subsection*{Problema 2}
@@ -317,7 +316,90 @@
         \item Calcule el coeficiente de correlación entre las TRF de ambas
               señales. ¿Qué puede concluir?
       \end{enumerate}
+
     \subsubsection*{Solución}
+      \noindent La solucion a este problema está contenida en el siguiente \emph{script}
+      \begin{listing}[H]
+        \label{script:2.1a}
+        \inputminted[lastline=41]{matlab}{./laboratorio_5/problema02.m}
+      \end{listing}
+      \vspace{-1em}
+      \noindent {\footnotesize Continúa en la página siguiente\par}
+      \vfill
+
+      \newpage
+      \noindent {\footnotesize Continuación de la página anterior\par}
+      \vspace{-1em}
+      \begin{listing}[H]
+        \label{script:2.1b}
+        \inputminted[firstline=43]{matlab}{./laboratorio_5/problema02.m}
+      \end{listing}
+      \vspace{-1em}
+      \vfill
+
+      \newpage
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Muestra de audio N° 1.}
+          \label{p2f1}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample01_signal.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencia de la muestra de audio N° 1.}
+          \label{p2f2}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample01_power_spectrum.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Muestra de audio N° 1 filtrada con un filtro pasa alto.}
+          \label{p2f3}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample01_highpass_filtered_signal.pdf}
+        \end{center}
+      \end{figure}
+      \vfill
+
+      \newpage
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Muestra de audio N° 2.}
+          \label{p2f4}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample02_signal.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencia de la muestra de audio N° 2.}
+          \label{p2f5}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample02_power_spectrum.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Muestra de audio N° 2 filtrada con un filtro pasa alto.}
+          \label{p2f6}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema02_sample02_highpass_filtered_signal.pdf}
+        \end{center}
+      \end{figure}
+      \vfill
+
+      \newpage
+      \noindent El coeficiente de correlación de las transformadas de Fourier
+      de ambas señales es de 0.0018 lo cual indica una la existencia de
+      una correlación lineal extremadamente débil, al punto que uno puede
+      indicar que tal relación no existe entre ambas señales.
 
   \newpage
   \subsection*{Problema 3}
@@ -337,6 +419,46 @@
       \footnote{\url{http://www.rif-fisica.org/images/1/11/111402401.pdf}}.
 
     \subsubsection*{Solución}
+      \vfill
+
+      \newpage
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal mareográfica.}
+          \label{p3f1}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal mareográfica luego de aplicarle un filtro mediano.}
+          \label{p3f2}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal_median_filter.pdf}
+        \end{center}
+      \end{figure}
+
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Señal mareográfica filtrada luego de remover la componente contínua.}
+          \label{p3f3}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_signal_removed_mean.pdf}
+        \end{center}
+      \end{figure}
+      \vfill
+
+      \newpage
+      \begin{figure}[H]
+        \begin{center}
+          \caption{Espectro de potencia de la señal mareográfica filtrada.}
+          \label{p3f4}
+          \vspace{-1em}
+          \includegraphics[width=0.9\textwidth]{./laboratorio_5/problema03_power_spectrum.pdf}
+        \end{center}
+      \end{figure}
 
   \newpage
   \subsection*{Problema 4}
